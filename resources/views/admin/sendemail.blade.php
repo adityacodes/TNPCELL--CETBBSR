@@ -27,7 +27,7 @@
 					
 							{{Form::token()}}
 						    <br/>
-							<button id="chosen" class="btn btn-primary">Select</button>
+							<button id="chosen" class="btn btn-success btn-lg">SEND</button>
 						</div>
 					</div>
 				</div>

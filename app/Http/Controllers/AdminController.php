@@ -11,6 +11,7 @@ use App\Applied;
 use View;
 use DB, Excel;
 use App\User;
+use App\Branch;
 
 class AdminController extends Controller
 {
@@ -35,7 +36,6 @@ class AdminController extends Controller
     {
     	$tnpuser = TNP::where('regdno', '=', Auth::user()->name)->first();
     	return view('admin.dashboard')->withTNP($tnpuser);
-
     }
 
     /**
@@ -312,8 +312,8 @@ class AdminController extends Controller
     }
 
     public function getsendMail(){
-      $branch = Branch::all();
-      return view('admin.sendemail')->withBranchs($branch);
+      $branches = Branch::all();
+      return view('admin.sendemail')->withBranches($branches);
     }
 
     public function sendMail(Request $request){

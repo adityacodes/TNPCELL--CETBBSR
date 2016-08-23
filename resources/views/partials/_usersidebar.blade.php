@@ -28,7 +28,7 @@
         <ul class="nav">
             <!-- Main menu -->
             <li class="{{Request::is('admin')? "current" : ""}}">
-                <a href="/admin/post/create"><i class="glyphicon glyphicon-home"></i> Dashboard </a>
+                <a href="/admin"><i class="glyphicon glyphicon-home"></i> Dashboard </a>
             </li>
             <li class="{{Request::is('admin/post')|| Request::is('admin/post/*')? "current" : ""}} ">
                 <a href="/admin/post"><i class="glyphicon glyphicon-calender"></i>Posts - Admin</a>
@@ -44,6 +44,9 @@
             </li>
             <li class="{{Request::is('admin/standalone')? "current" : ""}}">
                 <a href="/admin/standalone"><i class="glyphicon glyphicon-user"></i> Standalone Mode</a>
+            </li>
+            <li class="{{Request::is('admin/sendgroupemail')? "current" : ""}}">
+                <a href="/admin/sendgroupemail"><i class="glyphicon glyphicon-email"></i> Send Bulk Mail</a>
             </li>
             
         </ul>
