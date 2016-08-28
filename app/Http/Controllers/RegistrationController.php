@@ -50,7 +50,7 @@ class RegistrationController extends Controller
                   Mail::send('email.verify', ['confirmation_code' => $confirmation_code, 'regdno' => $regdno, 'name' => $name], function($message) use ($request) {
                         $message->from('admin@cetbtnp.com', 'CETB TNP');
                         $message->to($request->email, $request->name)->subject('Verification Link');
-                    });
+                    }); 
                 
     
                 // Set flash message for the user to check email

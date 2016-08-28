@@ -42,6 +42,9 @@
             <li class="{{Request::is('admin/delete/user')? "current" : ""}}">
                 <a href="/admin/delete/user"><i class="glyphicon glyphicon-user"></i> Delete User</a>
             </li>
+            <li class="{{Request::is('admin/import')? "current" : ""}}">
+                <a href="/admin/import"><i class="glyphicon glyphicon-import"></i> IMPORT</a>
+            </li>
             <li class="{{Request::is('admin/standalone')? "current" : ""}}">
                 <a href="/admin/standalone"><i class="glyphicon glyphicon-user"></i> Standalone Mode</a>
             </li>

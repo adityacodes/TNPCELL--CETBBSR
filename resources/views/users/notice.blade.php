@@ -48,7 +48,7 @@
 				                <tr>
 				                  <td>1</td>
 				                  <td>Created At:</td>
-				                  <td>{{ date('M j, Y H:ia', strtotime($post->created_at)) }}</td>
+				                  <td>{{ date('M j, Y H:iA', strtotime($post->created_at)) }}</td>
 				                </tr>
 				                <tr>
 				                  <td>2</td>
@@ -97,7 +97,7 @@
 
 	            	</h4>
 		            	@if(!$applied || $applied->applied==0)
-		            	{!! Form::open(array('url' => 'checkeligibility/'.$post->slug, 'method' =>'POST')) !!}
+		            	{!! Form::open(array('action' => array('UserController@checkeligibility', $post->slug), 'method' =>'POST')) !!}
 		            			{!! Form::text('slug', null, array('hidden' => '', 'value' => $post->slug )) !!}
 	            				<button type="submit" class="btn btn-lg btn-block btn-success"><i class="glyphicon glyphicon-thumbs-up glyphicon-white"></i> APPLY</button></a>
 	            		{!! Form::close() !!}

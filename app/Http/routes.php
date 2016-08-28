@@ -49,7 +49,11 @@ Route::get('/home', 'HomeController@index');
 	Route::get('/admin', 'AdminController@getIndex');
 	Route::get('admin/applicants', ['as' => 'admin.applicant.posts','uses' => 'AdminController@applicantposts']);
 	Route::put('admin/applicants', ['as' => 'admin.applicants','uses' => 'AdminController@applicants']);
+
+//Export and Import features in Admin Panel
 	Route::get('admin/export/excel/{postid}', ['as' => 'admin.export.excel','uses' => 'AdminController@excel']);
+	Route::get('admin/import', ['as' => 'admin.import', 'uses' => 'AdminController@getImportDatabase']);
+	Route::post('admin/import', ['uses' => 'AdminController@postImportDatabase']);
 
 //Create And Delete Administrators 
 		Route::get('admin/administrators',['as' => 'admin.administrators','uses' => 'AdminController@administrators']);

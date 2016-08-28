@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Post;
 use App\TNP, Auth, Session;
 use App\Applied;
-use View;
+use View, Validator;
 use DB, Excel;
 use App\User;
 use App\Branch;
@@ -24,7 +24,7 @@ class AdminController extends Controller
     {
         $this->middleware('admin');
         $this->middleware('ajax', ['only' => ['applicants']]);
-        $this->middleware('superadmin', ['only' => ['delUser']]);
+        $this->middleware('superadmin', ['only' => ['delUser','getimportdatabase','getAddBranch']]);
 
         if(Auth::check()){
                 $user = TNP::where('regdno', '=', Auth::user()->name)->first();
@@ -226,7 +226,7 @@ class AdminController extends Controller
         
         $studentsArray = [];
 
-       $studentsArray[] = ['ID','NAME','REGDNO','DOB','GENDER','TENTH YEAR','TENTH PERCENT','TENTH BOARD','TWELTH YEAR','TWELTH PERCENT','TWELTH BOARD','DIPLOMA YEAR','DIPLOMA PERCENT','DIPLOMA BOARD','CGPA','ACTIVE BACKLOG','PRESENT ADDRESS','PERMANENT ADDRESS','FATHER NAME','FATHER OCCUPATION','MOTHER NAME',' MOTHER OCCUPATION','RELATIVE NAME','RELATIVE OCCUPATION','INTERNSHIPS','EMAIL'];
+       $studentsArray[] = ['ID','NAME','REGDNO','BRANCH','DOB','GENDER','TENTH YEAR','TENTH PERCENT','TENTH BOARD','TWELTH YEAR','TWELTH PERCENT','TWELTH BOARD','DIPLOMA YEAR','DIPLOMA PERCENT','DIPLOMA BOARD','CGPA','ACTIVE BACKLOG','PRESENT ADDRESS','PERMANENT ADDRESS','FATHER NAME','FATHER OCCUPATION','MOTHER NAME',' MOTHER OCCUPATION','RELATIVE NAME','RELATIVE OCCUPATION','INTERNSHIPS','EMAIL'];
 
         DB::table('t_n_p_s')->orderBy('id')->chunk(100, function($students) use ($request, &$studentsArray)
           {
@@ -333,14 +333,105 @@ class AdminController extends Controller
 
     }
 
-//Super Admin
-    #import to database 
-    #getimportdatabase
-    #postimportdatabase
+    public function getimportdatabase(){
+        return view('admin.import');
+    }
+
+    public function postimportdatabase(Request $request){
+          $students = Excel::load($request->file)->all();
+          $branches = Branch::select('name')->get();
+          $x = [];
+          foreach ($branches as $branch) {
+             array_push($x,$branch->name);
+          }
+
+          foreach ($students as $student) {
+            if(in_array($student->branch, $x)){
+                continue;
+            }
+            else{
+              Session::flash('success', 'Student named -" '.$student->name.' " failed branch constraint restriction in the excel sheet . Please check the file again.');
+              return redirect()->route('admin.import');
+            }
+          }
+          foreach ($students as $student){
+              //add each to database.
+            
+            $tnpuser = TNP::where('regdno', '=', $student->regdno);
+
+            if($tnpuser){
+                break;
+            }
+      $tnp = new TNP;
+
+              $tnp->name  = $student->name;
+              $tnp->regdno = $student->regdno;
+              $tnp->branch = $student->branch;
+              $tnp->dob = $student->dob;
+              $tnp->gender  = $student->gender;
+
+              $tnp->tenthyear = $student->tenth_year;
+              $tnp->tenthpercent = $student->tenth_percent;
+              $tnp->tenthboard  = $student->tenth_board;
+
+              if(!empty($student->diploma_year)){
+                //Diploma student
+                    $tnp->diplomayear = $student->diploma_year;
+                    $tnp->diplomapercent = $student->diploma_percent;
+                    $tnp->diplomaboard = $student->diploma_board;
+                    $tnp->twelthyear = " ";
+                    $tnp->twelthpercent = " ";
+                    $tnp->twelthboard = " ";
+                }
+              else{
+                //Twelth Student
+                  $tnp->diplomayear = " ";
+                  $tnp->diplomapercent = " ";
+                  $tnp->diplomaboard = " ";
+                  $tnp->twelthyear = $student->twelth_year;
+                  $tnp->twelthpercent = $student->twelth_percent;
+                  $tnp->twelthboard = $student->twelth_board;
+              }
+              
+              $tnp->cgpa = $student->cgpa;
+              $tnp->backlog = $student->active_backlog;
+              $tnp->paddress = $student->permanent_address;
+              $tnp->praddress = $student->present_address;
+              $tnp->fname = $student->father_name;
+              $tnp->foccupation =  $student->father_occupation;
+              $tnp->mname = $student->mother_name;
+              $tnp->moccupation  =  $student->mother_occupation;
+
+              if(empty($student->relative_name)){
+                  $tnp->rname = " ";
+                  $tnp->roccupation  = " ";
+              }
+              else{
+                $tnp->rname = $student->relative_name;
+                $tnp->roccupation  =   $student->relative_occupation;
+              }
+              $tnp->internships  = $student->internships;
+              $tnp->email = $student->email;
+              $tnp->timestamps = false;
+
+              $tnp->save();
+          }
+          
+          Session::flash('success', 'The students were successfully added to database');
+          return redirect()->route('admin.import');
+    }
 
     #add branches
     #getaddbranch
     #postaddbranch
+
+    public function getAddBranch(){
+
+    }
+
+    public function postAddBranch(){
+
+    }
 
 
 
