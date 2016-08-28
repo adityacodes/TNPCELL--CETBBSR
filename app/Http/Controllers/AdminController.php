@@ -24,7 +24,7 @@ class AdminController extends Controller
     {
         $this->middleware('admin');
         $this->middleware('ajax', ['only' => ['applicants']]);
-        $this->middleware('superadmin', ['only' => ['delUser','getimportdatabase','getAddBranch']]);
+        $this->middleware('superadmin', ['only' => ['delUser','getImportDatabase','getAddBranch']]);
 
         if(Auth::check()){
                 $user = TNP::where('regdno', '=', Auth::user()->name)->first();
@@ -333,11 +333,11 @@ class AdminController extends Controller
 
     }
 
-    public function getimportdatabase(){
+    public function getImportDatabase(){
         return view('admin.import');
     }
 
-    public function postimportdatabase(Request $request){
+    public function postImportDatabase(Request $request){
           $students = Excel::load($request->file)->all();
           $branches = Branch::select('name')->get();
           $x = [];
