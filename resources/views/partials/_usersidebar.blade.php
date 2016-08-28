@@ -31,13 +31,13 @@
                 <a href="/admin"><i class="glyphicon glyphicon-home"></i> Dashboard </a>
             </li>
             <li class="{{Request::is('admin/post')|| Request::is('admin/post/*')? "current" : ""}} ">
-                <a href="/admin/post"><i class="glyphicon glyphicon-calender"></i>Posts - Admin</a>
+                <a href="/admin/post"><i class="glyphicon glyphicon-bullhorn"></i>Posts - Admin</a>
             </li>
             <li class="{{Request::is('admin/applicants')? "current" : ""}}">
                 <a href="/admin/applicants"><i class="glyphicon glyphicon-list"></i> Applicants</a>
             </li>
             <li class="{{Request::is('admin/administrators')? "current" : ""}}">
-                <a href="/admin/administrators"><i class="glyphicon glyphicon-user"></i> Admins</a>
+                <a href="/admin/administrators"><i class="glyphicon glyphicon-tower"></i> Admins</a>
             </li>
             <li class="{{Request::is('admin/delete/user')? "current" : ""}}">
                 <a href="/admin/delete/user"><i class="glyphicon glyphicon-user"></i> Delete User</a>
@@ -46,10 +46,10 @@
                 <a href="/admin/import"><i class="glyphicon glyphicon-import"></i> IMPORT</a>
             </li>
             <li class="{{Request::is('admin/standalone')? "current" : ""}}">
-                <a href="/admin/standalone"><i class="glyphicon glyphicon-user"></i> Standalone Mode</a>
+                <a href="/admin/standalone"><i class="glyphicon glyphicon-share"></i> Standalone Mode</a>
             </li>
             <li class="{{Request::is('admin/sendgroupemail')? "current" : ""}}">
-                <a href="/admin/sendgroupemail"><i class="glyphicon glyphicon-email"></i> Send Bulk Mail</a>
+                <a href="/admin/sendgroupemail"><i class="glyphicon glyphicon-send"></i> Send Bulk Mail</a>
             </li>
             
         </ul>
