@@ -149,6 +149,49 @@ class AdminController extends Controller
 
         return redirect()->route('admin.administrators');
     }
+    public function checktnpuser(Request $request){
+
+      //add value to a cookie. check via javascript if cookie is set the only allow to proceed.
+
+    }
+    public function addtnpuser(Request $request){
+        //check existence has been passed ... ready to add to database
+        $this->validate($request, array(
+        'title' => 'required|max:255',
+
+        ));
+
+        $tnpuser = new TNP;
+        $tnpuser->name = $request->name;
+        $tnpuser->regdno = $request->regdno;
+        $tnpuser->branch = $request->branch;
+        $tnpuser->dob = $request->dob;
+        $tnpuser->gender = $request->gender;
+        $tnpuser->tenthyear = $request->tenthyear;
+        $tnpuser->tenthpercent = $request->tenthpercent;
+        $tnpuser->tenthboard = $request->tenthboard;
+
+
+        $tnpuser->twelthyear = $request->twelthyear;
+        $tnpuser->twelthpercent = $request->twelthpercent;
+        $tnpuser->twelthboard = $request->twelthboard;
+
+
+        $tnpuser->diplomayear = $request->diplomayear;
+        $tnpuser->diplomapercent = $request->diplomapercent;
+        $tnpuser->diplomaboard = $request->diplomaboard;
+
+        $tnpuser->cgpa = $request->cgpa;
+        $tnpuser->backlog = $request->backlog;
+        
+
+
+    }
+    public function edittnpuser(Request $request)
+    {
+      $regdno = TNP::where('regdno', '=', $request->regdno);
+
+    }
 
     public function makeadmin(Request $request){
 
