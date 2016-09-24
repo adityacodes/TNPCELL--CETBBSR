@@ -2,101 +2,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<link href="main/css/css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 <title>T&amp;P | College Of Engineering &amp; Technology</title>
+
+<!-- Favicon And Shortcut Images -->
+
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+<!-- CSS FILES -->
+
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<style>
- .box{
- width:255px; margin-left:10px;
--webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 1);
--moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 1);
-box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 1);
-background-color: #dadada;
-float:left 
- }
 
-.box a{
-    position: relative;
-  z-index: 1;
-}
-        
-        .bar {
-  margin: 5px;
-  text-align: center;
-  color: #FFF;
-  text-shadow: 0px 1px 2px rgba(0,0,0,0.25);
-  line-height: 5em;
-  position: relative;
-  height: 5em;
-  width: 200px;
-  background: rgba(0,0,0,0.2);
-  border-top: 1px solid rgba(250,253,255,0.2);
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
-  border-radius: 4px;
-}
-
-.bar:before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  height: 100%;
-  top: 0; right: 0; left: 0;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-}
-
-.bar:hover { box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
- background: rgba(0,0,0,0.3); }
-
-    .dropdown:hover .dropdown-menu {
-display: block;
-
-}
-
-.dropdown:hover .dropdown-menu {
-display: block;
-background-color: #08387f;
-        
-}
-
-     .dropdown-menu > li > a{
-        color:#fff;
-    }   
+<link rel="stylesheet" type="text/css" href="main/css/main1.css">
+<link href="main/css/css" rel="stylesheet" type="text/css">
+<link href="main/css/style.css" rel="stylesheet" type="text/css" media="all">
+<!--font-Awesome-->
+<link rel="stylesheet" href="css/font-awesome.min.css">
     
-    
-    .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-            background-image:none !important;
-        }
-        .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-            background-color:#fff;
-            color:#08387f;
-            
-        }    
-    @font-face {
-        font-family: font1;
-        src: url('main/pt/PTC55F.ttf');
-    }
-    
-    @font-face {
-        font-family: font2;
-        src: url('main/fonts/dance.ttf');
-    }
-    
-    @font-face {
-        font-family: font3;
-        src: url('main/fonts/franchise/Franchise-Free-Bold.ttf');
-    }
-    
-</style>
-    
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> 
 
 addEventListener("load", function() { 
@@ -110,13 +37,8 @@ addEventListener("load", function() {
      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-<link href="main/css/style.css" rel="stylesheet" type="text/css" media="all">
+
 <!-- start plugins -->
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!--font-Awesome-->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-<!-- font-Awesome-->
 
 </head>
     
@@ -255,6 +177,9 @@ addEventListener("load", function() {
     </div>   
 </div>
 
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 </body>
 
