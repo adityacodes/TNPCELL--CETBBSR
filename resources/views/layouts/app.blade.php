@@ -2,15 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<link href="./T&amp;P _ Delhi Technological University_files/css" rel="stylesheet" type="text/css">
+<link href="main/css/css" rel="stylesheet" type="text/css">
 <title>T&amp;P | College Of Engineering &amp; Technology</title>
-<link rel="shortcut icon" href="http://tnp.dtu.ac.in/favicon.ico" type="image/x-icon">
-<link rel="icon" href="http://tnp.dtu.ac.in/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 <!-- Bootstrap -->
-<link href="./T&amp;P _ Delhi Technological University_files/bootstrap.min.css" rel="stylesheet" type="text/css">
-    
-    
-<link href="./T&amp;P _ Delhi Technological University_files/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <style>
  .box{
  width:255px; margin-left:10px;
@@ -83,35 +80,42 @@ background-color: #08387f;
         }    
     @font-face {
         font-family: font1;
-        src: url('pt/PTC55F.ttf');
+        src: url('main/pt/PTC55F.ttf');
     }
     
     @font-face {
         font-family: font2;
-        src: url('fonts/dance.ttf');
+        src: url('main/fonts/dance.ttf');
     }
     
     @font-face {
         font-family: font3;
-        src: url('fonts/franchise/Franchise-Free-Bold.ttf');
+        src: url('main/fonts/franchise/Franchise-Free-Bold.ttf');
     }
     
 </style>
     
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script type="application/x-javascript"> 
+
+addEventListener("load", function() { 
+    setTimeout(hideURLbar, 0); 
+    }, false); 
+    function hideURLbar(){
+     window.scrollTo(0,1); 
+} 
+</script>
  <!--[if lt IE 9]>
      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-<link href="./T&amp;P _ Delhi Technological University_files/style.css" rel="stylesheet" type="text/css" media="all">
+<link href="main/css/style.css" rel="stylesheet" type="text/css" media="all">
 <!-- start plugins -->
-<script type="text/javascript" src="./T&amp;P _ Delhi Technological University_files/jquery.min.js"></script>
-<script type="text/javascript" src="./T&amp;P _ Delhi Technological University_files/bootstrap.js"></script>
-<script type="text/javascript" src="./T&amp;P _ Delhi Technological University_files/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <!--font-Awesome-->
-    <link rel="stylesheet" href="./T&amp;P _ Delhi Technological University_files/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 <!-- font-Awesome-->
 
 </head>
@@ -119,13 +123,13 @@ background-color: #08387f;
 <body style="background-color:#ececec;" cz-shortcut-listen="true">
 <div class="container" style="background-color:#0fa5d9;">
     <div class="row clearfix" style="background-color:#0fa5d9;">
-         <h2 class="text-center hidden-xs" style="font-family:font3;letter-spacing:3px;word-spacing:6px;font-size:42px;padding: 2px;color:#fff;">DEPARTMENT OF TRAINING &amp; PLACEMENT</h2>
+         <h2 class="text-center hidden-xs" style="font-family:font3;letter-spacing:3px;word-spacing:6px;font-size:42px;padding: 2px;color:#fff;">TRAINING &amp; PLACEMENT CELL</h2>
          <h2 class="text-center visible-xs" style="font-family:font3;letter-spacing:3px;word-spacing:6px;font-size:42px;padding: 2px;color:#fff;">CETB-TNP</h2>
     </div>
     <div class="row clearfix" style="background-color:#fff;">
           <br>
           <div class="col-lg-offset-1 img-responsive col-xs-offset-2" style="margin-left: 10%;" >
-               <img class="clearfix" src="140cet.jpg" style="float:left; display:inline-block;position:relative;top:-15px;"> 
+               <img class="clearfix" src="images/140cet.jpg" style="float:left; display:inline-block;position:relative;top:-15px;"> 
           </div>
           <div class="col-lg-offset-3 visible-lg">
                 <h2 style="font-family:font1;font-size:32px; color:#08387f;padding:2px;"><b>COLLEGE OF ENGINEERING &amp; TECHNOLOGY</b>  </h2>
@@ -199,10 +203,10 @@ background-color: #08387f;
         <!--  <div class="soc_icons navbar-right">
             <ul class="list-unstyled text-center">
               
-              <li><a href="http://tnp.dtu.ac.in/message_tnp2.html#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="http://tnp.dtu.ac.in/message_tnp2.html#"><i class="fa fa-google-plus"></i></a></li>
-              <li><a href="http://tnp.dtu.ac.in/message_tnp2.html#"><i class="fa fa-youtube"></i></a></li>
-              <li><a href="http://tnp.dtu.ac.in/message_tnp2.html#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="message_tnp2.html#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="message_tnp2.html#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="message_tnp2.html#"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="message_tnp2.html#"><i class="fa fa-linkedin"></i></a></li>
             </ul> 
           </div>
           -->
@@ -217,7 +221,7 @@ background-color: #08387f;
           <div class="col-lg-12">
               <div class="col-lg-6">
                   <a href="#" class="thumbnail">
-                    <img src="..." style="width:500px;height:500px;" alt="The Principal">
+                    <img src="#" style="width:500px;height:500px;" alt="The Principal">
                   </a>
                   <p style="margin-top: 80px;font-weight: bold;font-size: 16px;color:#08387f;font-weight:bold;">
                    Mr. P.K.Patra
