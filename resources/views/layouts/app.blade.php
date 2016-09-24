@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>T&amp;P | College Of Engineering &amp; Technology</title>
+<title>TNP-CELL | College Of Engineering &amp; Technology</title>
 
 <!-- Favicon And Shortcut Images -->
 
@@ -43,19 +43,19 @@ addEventListener("load", function() {
 </head>
     
 <body style="background-color:#ececec;" cz-shortcut-listen="true">
-<div class="container" style="background-color:#0fa5d9;">
-    <div class="row clearfix" style="background-color:#0fa5d9;">
-         <h2 class="text-center hidden-xs" style="font-family:font3;letter-spacing:3px;word-spacing:6px;font-size:42px;padding: 2px;color:#fff;">TRAINING &amp; PLACEMENT CELL</h2>
-         <h2 class="text-center visible-xs" style="font-family:font3;letter-spacing:3px;word-spacing:6px;font-size:42px;padding: 2px;color:#fff;">CETB-TNP</h2>
+<div class="container lightblue-bg">
+    <div class="row clearfix" class="lightblue-bg">
+         <h2 class="text-center hidden-xs tnptitle">TRAINING &amp; PLACEMENT CELL</h2>
+         <h2 class="text-center visible-xs tnpsmtitle">CETB-TNP</h2>
     </div>
-    <div class="row clearfix" style="background-color:#fff;">
+    <div class="row clearfix white-bg">
           <br>
           <div class="col-lg-offset-1 img-responsive col-xs-offset-2" style="margin-left: 10%;" >
-               <img class="clearfix" src="images/140cet.jpg" style="float:left; display:inline-block;position:relative;top:-15px;"> 
+               <img class="clearfix site-logo" src="images/140cet.jpg"> 
           </div>
           <div class="col-lg-offset-3 visible-lg">
-                <h2 style="font-family:font1;font-size:32px; color:#08387f;padding:2px;"><b>COLLEGE OF ENGINEERING &amp; TECHNOLOGY</b>  </h2>
-                <h2 style="margin-left:80px;font-size:20px;top:-15px; color:#777777;font-weight:bold;">Techno-Campus, Kalinga Nagar, Ghatikia, Bhubaneswar </h2>
+                <h2 class="clg-name"><b>COLLEGE OF ENGINEERING &amp; TECHNOLOGY</b>  </h2>
+                <h2 class="clg-address">Techno-Campus, Kalinga Nagar, Ghatikia, Bhubaneswar </h2>
           </div>
     </div>
     <div class="row col-lg-offset-1">
@@ -70,22 +70,22 @@ addEventListener("load", function() {
               </div>
               <!-- Collect the nav links, forms, and other content for toggling -->
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">           
-                  <ul class="nav navbar-nav">
+                  <ul class="nav navbar-nav white-color">
                     <li>
-                      <a href="http://tnp.dtu.ac.in/index.html">Home</a>
+                      <a href="http://tnp.cet.edu.in/index.html">Home</a>
                     </li>     
                     <li class="dropdown active">
                       <a class="dropdown-toggle" data-toggle="dropdown">Message&nbsp;&nbsp;<span class="caret"></span></a>
 
-                      <ul class="dropdown-menu" style="color:#fff;margin-right:150px;">
-                        <li style="border-bottom-style: solid;border-bottom-color: #08387f;border-bottom-width:thin;font-family: &#39;Open Sans&#39;, sans-serif;font-size:16px;">
+                      <ul class="dropdown-menu" >
+                        <li class="nav-subitem">
 
-                            <a href="http://tnp.dtu.ac.in/message_tnp2.html">Vice Chancellor Message</a>
+                            <a href="http://tnp.cet.edu.in/message_tnp2.html">Vice Chancellor Message</a>
 
                         </li>
-                        <li style="font-family: &#39;Open Sans&#39;, sans-serif;font-size:16px;">
+                        <li class="nav-subitem">
                               
-                              <a href="http://tnp.dtu.ac.in/message_tnp3.html">HOD's Message</a>
+                              <a href="http://tnp.cet.edu.in/message_tnp3.html">HOD's Message</a>
 
                         </li>
                       </ul>
@@ -93,28 +93,28 @@ addEventListener("load", function() {
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Procedure&nbsp;&nbsp;<span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu" style="color:#fff;">
-                          <li style="border-bottom-style: solid;border-bottom-color: #08387f;border-bottom-width:thin;font-family: &#39;Open Sans&#39;, sans-serif;font-size:16px;"><a href="http://tnp.dtu.ac.in/recruiter.html">Companies</a></li>
-                            <li style="font-family: &#39;Open Sans&#39;, sans-serif;font-size:16px;"><a href="http://tnp.dtu.ac.in/student.html">Students</a></li>
+                        <ul class="dropdown-menu" >
+                          <li class="nav-subitem"><a href="http://tnp.cet.edu.in/recruiter.html">Companies</a></li>
+                          <li class="nav-subitem"><a href="http://tnp.cet.edu.in/student.html">Students</a></li>
                         </ul>
                     </li>        
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Academics&nbsp;&nbsp;<span class="caret"></span></a>
-                      <ul class="dropdown-menu" style="color:#fff;">
-                          <li style="font-family: &#39;Open Sans&#39;, sans-serif;font-size:16px;"><a href="http://tnp.dtu.ac.in/student.html">Programmes</a></li>
-                          <li style="border-bottom-style: solid;border-bottom-color: #08387f;border-bottom-width:thin;font-family: &#39;Open Sans&#39;, sans-serif;font-size:16px;"><a href="http://tnp.dtu.ac.in/faculty.html">Faculty</a></li>
+                      <ul class="dropdown-menu" >
+                          <li class="nav-subitem"><a href="http://tnp.cet.edu.in/student.html">Programmes</a></li>
+                          <li class="nav-subitem"><a href="http://tnp.cet.edu.in/faculty.html">Faculty</a></li>
                       </ul>
                     </li>
                     <li>
-                      <a href="http://tnp.dtu.ac.in/why_dtu.html">Why Recruit ?</a>
+                      <a href="http://tnp.cet.edu.in/why_cet.html">Why Recruit ?</a>
                     </li>       
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Contact Us&nbsp;&nbsp;<span class="caret"></span> </a>  
-                        <ul class="dropdown-menu" style="color:#fff;">
-                          <li style="border-bottom-style: solid;border-bottom-color: #08387f;border-bottom-width:thin;font-family: &#39;Open Sans&#39;, sans-serif;font-size:16px;">
-                              <a href="http://tnp.dtu.ac.in/contact_tnp_16-17.html">Placement Office</a>
+                        <ul class="dropdown-menu" >
+                          <li class="nav-subitem">
+                              <a href="http://tnp.cet.edu.in/contact_tnp_16-17.html">Placement Office</a>
                           </li>
-                          <li style="font-family: &#39;Open Sans&#39;, sans-serif;font-size:16px;">
-                              <a href="http://tnp.dtu.ac.in/visit.html">Location</a>
+                          <li class="nav-subitem">
+                              <a href="http://tnp.cet.edu.in/visit.html">Location</a>
                           </li>
                         </ul>        
                     </li>      
@@ -153,8 +153,8 @@ addEventListener("load", function() {
                   </p>
               </div>
               <div class="well well-lg col-lg-6" style="-webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 1);font-family:font1;font-size:16px;padding:10px 10px 10px 10px;color:#000; letter-spacing: 1px; word-spacing: 3px;">
-                      The College Of Engineering And Technology has a glorious past of more than 10 years and has been widely acclaimed for its excellence in education, research and training. A special emphasis is laid on total personality development along with the quality education and technical training of the students. College OF Engineering And Technology is fully networked with industry, as well as with academic/scientific community. It has active collaborations with leading universities and industries in India and abroad. College Of Engineering And Technology is the alma mater of highly distinguished world class engineers and technologists, which include the father of Pentium Chip Vinod Dham, Promod Haque, the world's known venture capitalist, Raj Soin, the avionics wizards of US and a top ranking techno entrepreneur of Ohio, Durgadas Agrawal, the renowned techno-entrepreneur of Houston, to name a few.<br><br>
-                      College OF Engineering And Technology has kept the quality of education and research as its main focus of academic and professional activities and this has earned a high reputation in the country and abroad as is evident from DTU figuring several times among the top ten engineering institutions in the country along with the IITs. Alumni, Staff, students and supporters take pride in having contributed to the College OF Engineering And Technology reputation as India's flagship, research-led university, known for the excellence of its teaching, research, and service to its local, national and international communities. Our challenge for the future is to build on this strong base to establish ourselves firmly among the world's leading universities. I hope our outstanding students will support us in this endeavour and in turn emerge themselves, as pioneers of an exemplary society.
+                      The College Of Engineering And Technology has a glorious past of more than 10 years and has been widely acclaimed for its excellence in education, research and training. A special emphasis is laid on total personality development along with the quality education and technical training of the students. College OF Engineering And Technology is fully networked with industry, as well as with academic/scientific community. It has active collaborations with leading universities and industries in India and abroad. <br><br>
+                      College OF Engineering And Technology has kept the quality of education and research as its main focus of academic and professional activities and this has earned a high reputation in the country and abroad as is evident from CET figuring several times among the top ten engineering institutions in the country along with the IITs. Alumni, Staff, students and supporters take pride in having contributed to the College OF Engineering And Technology reputation as India's flagship, research-led university, known for the excellence of its teaching, research, and service to its local, national and international communities. Our challenge for the future is to build on this strong base to establish ourselves firmly among the world's leading universities. I hope our outstanding students will support us in this endeavour and in turn emerge themselves, as pioneers of an exemplary society.
               </div>
           </div>
     </div>
@@ -165,14 +165,14 @@ addEventListener("load", function() {
         <a href="http://cet.edu.in" style="color:#FFFFFF; font-size:64px;">C E T</a>
         </div>
         <div class="col-lg-8 hidden-xs">
-              <p class="link" style="color:#FFFFFF; margin-right:200px; margin-top:30px;">
-              <a href="http://tnp.dtu.ac.in/index.html" style="text-decoration:none;color:#fff; "><span style="font-size:20px; margin-left:40px;">HOME</span></a>
-              <span style="font-size:20px; margin-left:40px;">|</span>
-              <a href="http://tnp.dtu.ac.in/contact_tnp_16-17.html" style="text-decoration:none;color:#fff;"><span style="font-size:20px; margin-left:40px;">CONTACT</span></a>
-              <span style="font-size:20px; margin-left:40px;">|</span>
-              <a href="http://tnp.dtu.ac.in/visit.html" style="text-decoration:none;color:#fff;"><span style="font-size:20px;  margin-left:40px;">VISIT</span><br><br></a>
+              <p class="link white-color" style="margin-right:200px; margin-top:30px;">
+              <a href="/" class="footer-menu-item"><span class="footer-things">HOME</span></a>
+              <span class="footer-things">|</span>
+              <a href="/contact" class="footer-menu-item"><span class="footer-things">CONTACT</span></a>
+              <span class="footer-things">|</span>
+              <a href="/visit" class="footer-menu-item"><span class="footer-things">VISIT</span><br><br></a>
         </div>
-        <span style="font-size:16px;color:#fff; font:Arial, Helvetica, sans-serif">© College Of Engineering &amp; Technology | Design by CET-TNP, WEBD Team</span>
+        <span class="footer-clgtext">© College Of Engineering &amp; Technology | Design by CET-TNP, WEBD Team</span>
 
     </div>   
 </div>

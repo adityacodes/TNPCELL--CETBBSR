@@ -1,3 +1,76 @@
+.tnptitle{
+  font-family:font3;
+  letter-spacing:3px;
+  word-spacing:6px;
+  font-size:42px;
+  padding: 2px;color:#fff;
+}
+
+.tnpsmtitle{
+  font-family:font3;
+  letter-spacing:3px;
+  word-spacing:6px;
+  font-size:42px;
+  padding: 2px;color:#fff;
+}
+.white-bg{
+    background:#ffffff !important;
+}
+
+.white-color{
+  color: #fff !important; 
+}
+
+.lightblue-bg{
+  background-color:#0fa5d9;
+}
+
+.site-logo{
+  float:left; 
+  display:inline-block;
+  position:relative;
+  top:-15px;
+}
+
+.clg-name{
+  font-family:font1;
+  font-size:32px; 
+  color:#08387f;
+  padding:2px;
+}
+
+.clg-address{
+  margin-left:80px;
+  font-size:20px;
+  top:-15px; 
+  color:#777777;
+  font-weight:bold;
+}
+
+.nav-subitem{
+  border-bottom-style: solid;
+  border-bottom-color: #08387f;
+  border-bottom-width:thin;
+  font-family: &#39,Open Sans, sans-serif;
+  font-size:16px;
+}
+
+.footer-things{
+  font-size:20px; 
+  margin-left:40px;
+}
+.footer-menu-item{
+  text-decoration:none;
+  color:#fff;
+}
+
+.footer-clgtext{
+  font-size:16px;color:#fff; 
+  font:Arial, Helvetica, sans-serif;
+}
+
+
+
  .box{
  width:255px; margin-left:10px;
 -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 1);
