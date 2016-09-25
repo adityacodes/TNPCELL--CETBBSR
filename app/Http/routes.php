@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Main Website Routes
+Route::get('/', [ 'as' => 'main.index', 'uses'=>'MainController@getMainIndex']  );
+Route::get('about', [ 'as' => 'main.about', 'uses'=>'MainController@getMainAbout']  );
+Route::get('contact', [ 'as' => 'main.contact', 'uses'=>'MainController@getMainContact']  );
+Route::get('visit', [ 'as' => 'main.visit', 'uses'=>'MainController@getMainVisit']  );
+Route::get('whycet', [ 'as' => 'main.whycet', 'uses'=>'MainController@getMainWhyCet']  );
+Route::get('message/{slug}', [ 'as' => 'main.message', 'uses'=>'MainController@getMainMessage']  );
 
 Route::get('/home', 'HomeController@index');
 

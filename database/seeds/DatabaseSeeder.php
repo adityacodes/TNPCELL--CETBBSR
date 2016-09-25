@@ -23,6 +23,12 @@ class DatabaseSeeder extends Seeder
             'name' => 'CET',
         ]); 
 
+//Settings
+        DB::table('settings')->insert([
+                'metaname' => 'sitename',
+                'metavalue' => 'TRAINING &amp; PLACEMENT CELL',
+            ]);
+
 //Super Admins
         DB::table('t_n_p_s')->insert([
             'name' => 'DUMMY PERSON',

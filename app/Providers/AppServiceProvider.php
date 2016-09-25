@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Settings;
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $sitename = Settings::where('metaname','=','sitename')->value('metavalue');
+        View::share('sitename', $sitename);
     }
 
     /**
