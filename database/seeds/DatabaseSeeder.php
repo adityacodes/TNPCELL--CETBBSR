@@ -28,7 +28,18 @@ class DatabaseSeeder extends Seeder
                 'metaname' => 'sitename',
                 'metavalue' => 'TRAINING &amp; PLACEMENT CELL',
             ]);
-
+        DB::table('settings')->insert([
+                'metaname' => 'principal_name',
+                'metavalue' => 'PK Patra',
+            ]);
+        DB::table('settings')->insert([
+                'metaname' => 'principal_image',
+                'metavalue' => '/images/principal.jpg',
+            ]);
+        DB::table('settings')->insert([
+                'metaname' => 'principal_message',
+                'metavalue' => 'College of Engineering and Technology has been a pool of meritorious students consistently for many years. And hence it has always tried to facilitate quality engineering education to equip and enrich young men and women to meet global challenges in development, innovation and application of technology in the service of humanity. Ever since its inception, a strong commitment to excellence in teaching and research has made CET, Bhubaneswar one of the top most colleges in Odisha. Its rich academic tradition has always attracted the most talented students who later contribute to the progress of the society. I would like to acknowledge the students for their consistent hard work due to which this college has been able to become the first and foremost choice of the aspiring engineers of Odisha. Let me also at the same time acknowledge the great alumni power, the present and the past faculty members of the institution who have built up this institution to high acclaim. With the guidance of teachers and of the college’s administrative staff, I hope the students will reach their port of dreams, sailing with the wind and sometimes against it; but sail they must and not drift or lie at anchor.',
+            ]);
 //Super Admins
         DB::table('t_n_p_s')->insert([
             'name' => 'DUMMY PERSON',
