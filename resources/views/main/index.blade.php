@@ -53,7 +53,21 @@
 			    <a href="/user/dashboard" class="list-group-item">
 			        <span class="glyphicon glyphicon-user" style="font-size: 12px;"></span> STUDENTS PORTAL
 			    </a>
-
+			    <a href="http://cet.edu.in/facilities.php" class="list-group-item">
+			        <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px;"></span> FACILITIES
+			    </a>
+			    <a href="http://cet.edu.in/academics.php" class="list-group-item">
+			        <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px;"></span> ACADEMICS
+			    </a>
+			    <a href="http://cet.edu.in/addmission.php" class="list-group-item">
+			        <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px;"></span> ADDMISSION
+			    </a>
+			    <a href="http://cet.edu.in/notice.php" class="list-group-item">
+			        <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px;"></span> NOTICE BOARD
+			    </a>
+			    <a href="http://cet.edu.in/upcoming_event.php" class="list-group-item">
+			        <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px;"></span> UPCOMING EVENTS
+			    </a>
 		</div>
 	</div>
 </div>
