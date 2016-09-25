@@ -29,24 +29,39 @@ class MainController extends Controller
 		return view('main.index');
 	}
 
-	public function getMainAbout()
-	{
+	public function getMainCompanies(){
+
+		return view('main.companies');
+	}
+	public function getMainStudents(){
+
+		return view('main.students');
 
 	}
+	public function getMainProgrammes(){
 
-	public function getMainContact()
-	{
-		
+		return view('main.programmes');
+
 	}
+	public function getMainFaculty(){
 
-	public function getMainVisit()
-	{
-		
+		return view('main.faculty');
+
 	}
+	public function getMainOffice(){
 
-	public function getMainWhyCet()
-	{
-		
+		return view('main.office');
+
+	}
+	public function getMainLocation(){
+
+		return view('main.location');
+
+	}
+	public function getMainWhyCet(){
+
+		return view('main.whycet');
+
 	}
 	public function getMainMessage($slug)
 	{

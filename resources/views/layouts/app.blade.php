@@ -16,7 +16,7 @@
     <!-- CSS FILES -->
 
     <!-- Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" type="text/css" href="/main/css/main1.css">
     <link href="/main/css/css" rel="stylesheet" type="text/css">
@@ -52,7 +52,7 @@
     </div>
     <div class="row clearfix white-bg">
           <br>
-          <div class="col-lg-offset-1 img-responsive col-xs-offset-2" style="margin-left: 10%;" >
+          <div class="col-lg-offset-1 img-responsive text-xs-center text-md-center" style="margin-left: 10%;" >
                <img class="clearfix site-logo" src="/images/140cet.jpg"> 
           </div>
           <div class="col-lg-offset-3 visible-lg">
@@ -73,10 +73,10 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">           
                   <ul class="nav navbar-nav white-color">
-                    <li class="active">
+                    <li class="{{Request::is('/')? "active" : ""}}">
                       <a href="/">Home</a>
                     </li>     
-                    <li class="dropdown">
+                    <li class="dropdown {{Request::is('message/*')? "active" : ""}}">
                       <a class="dropdown-toggle" data-toggle="dropdown">Message&nbsp;&nbsp;<span class="caret"></span></a>
 
                       <ul class="dropdown-menu" >
@@ -87,39 +87,43 @@
                         </li>
                         <li class="nav-subitem">
                               
-                              <a href="#">PIC's Message</a>
+                              <a href="/message/pic">PIC's Message</a>
 
                         </li>
                       </ul>
                     </li> 
-                    <li class="dropdown">
+                    <li class="dropdown {{Request::is('procedure/*')? "active" : ""}}">
                         <a class="dropdown-toggle" data-toggle="dropdown">Procedure&nbsp;&nbsp;<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" >
-                          <li class="nav-subitem"><a href="http://tnp.cet.edu.in/recruiter.html">Companies</a></li>
-                          <li class="nav-subitem"><a href="http://tnp.cet.edu.in/student.html">Students</a></li>
+                          <li class="nav-subitem"><a href="/procedure/companies">Companies</a></li>
+                          <li class="nav-subitem"><a href="/procedure/students">Students</a></li>
                         </ul>
                     </li>        
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Academics&nbsp;&nbsp;<span class="caret"></span></a>
+                    <li class="dropdown {{Request::is('academics/*')? "active" : ""}}"><a class="dropdown-toggle" data-toggle="dropdown">Academics&nbsp;&nbsp;<span class="caret"></span></a>
                       <ul class="dropdown-menu" >
-                          <li class="nav-subitem"><a href="http://tnp.cet.edu.in/student.html">Programmes</a></li>
-                          <li class="nav-subitem"><a href="http://tnp.cet.edu.in/faculty.html">Faculty</a></li>
+                          <li class="nav-subitem"><a href="/academics/programmes">Programmes</a></li>
+                          <li class="nav-subitem"><a href="/academics/faculty">Faculty</a></li>
                       </ul>
                     </li>
+                    <li class="{{Request::is('whycet/*')? "active" : ""}}">
+                      <a href="/whycet">Why Recruit ?</a>
+                    </li>   
                     <li>
-                      <a href="http://tnp.cet.edu.in/why_cet.html">Why Recruit ?</a>
-                    </li>       
-                    <li class="dropdown">
+                      <a href="/login"><i class="fa fa-btn fa-sign-in"></i> Login</a>
+                    </li>     
+                    <li class="dropdown {{Request::is('contact/*')? "active" : ""}}">
                         <a class="dropdown-toggle" data-toggle="dropdown">Contact Us&nbsp;&nbsp;<span class="caret"></span> </a>  
                         <ul class="dropdown-menu" >
                           <li class="nav-subitem">
-                              <a href="http://tnp.cet.edu.in/contact_tnp_16-17.html">Placement Office</a>
+                              <a href="/contact/office">Placement Office</a>
                           </li>
                           <li class="nav-subitem">
-                              <a href="http://tnp.cet.edu.in/visit.html">Location</a>
+                              <a href="/contact/location">Location</a>
                           </li>
                         </ul>        
-                    </li>      
+                    </li>
+                         
                   </ul>
                 </div><!-- /.navbar-collapse -->
                 <!-- start soc_icons -->

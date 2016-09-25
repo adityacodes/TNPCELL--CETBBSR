@@ -136,23 +136,47 @@ class PostController extends Controller {
 		if ($request->input('slug') == $post->slug ) {
 			$this->validate($request, array(
 				'title' => 'required|max:255',
-				'body' => 'required'
+				'body' => 'required',
+				'tenthyear' => 'required', 
+				'tenthpercent' => 'required',
+				'twelthyear' => 'required',
+				'twelthpercent' => 'required',
+				'diplomayear'=> 'required',
+				'diplomapercent'=> 'required',
+				'cgpa'=> 'required',
+				'backlog'=> 'required',
 			));
 		}
+
 		else{
 			$this->validate($request, array(
 				'title' => 'required|max:255',
-				'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
-				'body' => 'required'
+				'slug'	=> 'required|alpha_dash|min:5|max:255|unique:posts,slug',
+				'body' => 'required',
+				'tenthyear' => 'required', 
+				'tenthpercent' => 'required',
+				'twelthyear' => 'required',
+				'twelthpercent' => 'required',
+				'diplomayear'=> 'required',
+				'diplomapercent'=> 'required',
+				'cgpa'=> 'required',
+				'backlog'=> 'required',
 			));
 		}
-
 		
 
 		//save the data
-		$post->title = $request->input('title');
-		$post->slug = $request->input('slug');
-		$post->body = $request->input('body');
+		$post->title = $request->title;
+		$post->tenthyear = $request->tenthyear;
+		$post->tenthpercent = $request->tenthpercent;
+		$post->twelthyear = $request->twelthyear; 
+		$post->twelthpercent = $request->twelthpercent;
+		$post->diplomayear =  $request->diplomayear;
+		$post->diplomapercent = $request->diplomapercent;
+		$post->cgpa = $request->cgpa;
+		$post->backlog = $request->backlog;
+		$post->slug = $request->slug;
+		$post->body = $request->body;
 
 		$post->save();
 		// set flash meessage to be shown

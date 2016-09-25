@@ -72,32 +72,33 @@ class UserController extends Controller{
 		$student = TNP::where('regdno', '=', Auth::user()->name)->first();
 		$post = Post::where('slug', '=', $slug)->first();
 		if(empty($student->diplomapercent) && 
-		  floatval($student->tenthyear) < floatval($post->tenthyear) &&
-          floatval($student->tenthpercent) < floatval($post->tenthpercent) &&
-          floatval($student->twelthyear) < floatval($post->twelthyear) &&
-          floatval($student->twelthpercent) < floatval($post->twelthpercent) &&
-          floatval($student->cgpa) < floatval($post->cgpa) &&
-          floatval($student->backlog) > floatval($post->backlog))
+		  floatval($student->tenthyear) >= floatval($post->tenthyear) &&
+          floatval($student->tenthpercent) >= floatval($post->tenthpercent) &&
+          floatval($student->twelthyear) >= floatval($post->twelthyear) &&
+          floatval($student->twelthpercent) >= floatval($post->twelthpercent) &&
+          floatval($student->cgpa) >= floatval($post->cgpa) &&
+          floatval($student->backlog) <= floatval($post->backlog))
 		{
-			//Twelth passing student is not eligible
-				Session::flash('warning', 'Sorry you are not eligible.');
-				return redirect()->route('notice.single', $slug);
-		}
-		elseif (empty($student->twelthpercent) &&
-			  floatval($student->tenthyear) < floatval($post->tenthyear) &&
-              floatval($student->tenthpercent) < floatval($post->tenthpercent) &&
-              floatval($student->diplomayear) < floatval($post->diplomayear) &&
-              floatval($student->diplomapercent) < floatval($post->diplomapercent) &&
-              floatval($student->cgpa) < floatval($post->cgpa) &&
-              floatval($student->backlog) > floatval($post->backlog)) {
-			//Diploma Passing Student is not eligible
-				Session::flash('warning', 'Sorry you are not eligible.');
-				return redirect()->route('notice.single', $slug);
-		}
-		else{
+			//Twelth passing student is eligible
 			$this->changeapplied($post->id, Auth::user()->id);
 			Session::flash('success', 'You have successfully applied.');
-
+			return redirect()->route('notice.single', $slug);
+		}
+		elseif (empty($student->twelthpercent) &&
+			  floatval($student->tenthyear) >= floatval($post->tenthyear) &&
+              floatval($student->tenthpercent) >= floatval($post->tenthpercent) &&
+              floatval($student->diplomayear) >= floatval($post->diplomayear) &&
+              floatval($student->diplomapercent) >= floatval($post->diplomapercent) &&
+              floatval($student->cgpa) >= floatval($post->cgpa) &&
+              floatval($student->backlog) <= floatval($post->backlog)) {
+			//Diploma Passing Student is eligible
+			$this->changeapplied($post->id, Auth::user()->id);
+			Session::flash('success', 'You have successfully applied.');
+			return redirect()->route('notice.single', $slug);
+		}
+		else{
+			
+			Session::flash('warning', 'Sorry you are not eligible.');
 			return redirect()->route('notice.single', $slug);
 		}
 	}

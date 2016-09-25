@@ -1,25 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
+    <div class="row clearfix" style="background-color: #ececec">
 
         @if(Session::has('success'))
     
-            <div class="alert alert-success alert-dismissible" role="alert">
+            <div class="alert alert-success alert-dismissible spacer2" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <strong>Success:</strong> {{Session::get('success')}}
             </div>
         @endif
         @if(Session::has('warning'))
     
-            <div class="alert alert-warning alert-dismissible" role="alert">
+            <div class="alert alert-warning alert-dismissible spacer2" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <strong>Warning:</strong> {{Session::get('warning')}}
             </div>
         @endif
-        
-        <div class="col-md-8 col-md-offset-2">
+      </div>
+
+      <div class="row clearfix" style="background-color: #ececec">  
+        <div class="col-md-8 col-md-offset-2" style="margin-top: 20px;">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
@@ -66,7 +67,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary btn-md">
                                     <i class="fa fa-btn fa-sign-in"></i> Login
                                 </button>
 
@@ -78,5 +79,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

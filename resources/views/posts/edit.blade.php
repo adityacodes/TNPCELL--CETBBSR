@@ -56,7 +56,7 @@
 				    	<div class="form-group">
 				    		<label class="col-lg-4 control-label" for="twpercentage">Twelth Percentage Must be > than:</label>
 				    		<div class="col-lg-4">
-				    			{!! Form::text('twelthpercent', null, array('class' => 'form-control', 'id' => 'twpercentage', 'placeholder' => 'Enter value here', 'required' => '','minlength'=>'5','maxlength' => '255' )) !!}
+				    			{!! Form::text('twelthpercent', null, array('class' => 'form-control', 'id' => 'twpercentage', 'placeholder' => 'Enter value here', 'required' => '' )) !!}
 				    		</div>
 				    	</div>
 				    	<div class="form-group">
@@ -68,7 +68,7 @@
 				    	<div class="form-group">
 				    		<label class="col-lg-4 control-label" for="dpyear">Diploma Passing Year Must be > than:</label>
 				    		<div class="col-lg-4">
-				    			{!! Form::text('diplomayear', null, array('class' => 'form-control', 'id' => 'dpyear', 'placeholder' => 'Enter value here', 'required' => '','minlength'=>'5','maxlength' => '255' )) !!}
+				    			{!! Form::text('diplomayear', null, array('class' => 'form-control', 'id' => 'dpyear', 'placeholder' => 'Enter value here', 'required' => '')) !!}
 				    		</div>
 				    	</div>
 				    	<div class="form-group">

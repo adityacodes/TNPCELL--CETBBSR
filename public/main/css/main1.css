@@ -1,5 +1,11 @@
+
+    @font-face {
+      font-family: 'font3';
+      src: url('/fonts/Simpleness.otf');
+    }
+
 .tnptitle{
-  font-family:font3;
+  font-family: 'font3';
   letter-spacing:3px;
   word-spacing:6px;
   font-size:42px;
@@ -142,15 +148,10 @@ background-color: #08387f;
         }    
     @font-face {
         font-family: font1;
-        src: url('main/pt/PTC55F.ttf');
+        src: url('/fonts/Metropolis-Regular.otf');
     }
     
     @font-face {
         font-family: font2;
         src: url('main/fonts/dance.ttf');
-    }
-    
-    @font-face {
-        font-family: font3;
-        src: url('main/fonts/franchise/Franchise-Free-Bold.ttf');
     }

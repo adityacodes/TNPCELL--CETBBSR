@@ -23,7 +23,7 @@
 			      </ol>
 			      <div class="carousel-inner" role="listbox">
 				        <div class="item active">
-				          <img class="first-slide" style='height: 100%; width: 100%; object-fit: contain;' src="/images/carousel/carousel_1.jpg" alt="First slide">
+				          <img class="first-slide" style="height: 100%; width: 100%; object-fit: contain;" src="/images/carousel/carousel_1.jpg" alt="First slide">
 				          
 				        </div>
 				        <div class="item">
@@ -50,7 +50,7 @@
 			    <a href="#" class="list-group-item active">
 			        <span class="glyphicon glyphicon-" style="font-size: 14px;"></span> USEFUL LINKS
 			    </a>
-			    <a href="/login" class="list-group-item">
+			    <a href="/user/dashboard" class="list-group-item">
 			        <span class="glyphicon glyphicon-user" style="font-size: 12px;"></span> STUDENTS PORTAL
 			    </a>
 
