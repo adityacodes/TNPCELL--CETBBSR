@@ -10,8 +10,14 @@
 
 		<div class="page-content container-fluid">
 	    	<div class="row">
+
+	    	@if(Request::is('admin'))
+
+
+	    	@else
 	    		@include('partials._usersidebar')
 
+	    	@endif
 	    		
 
 	    		@include('partials._usermessages')

@@ -108,9 +108,17 @@
                     </li>
                     <li class="{{Request::is('whycet/*')? "active" : ""}}">
                       <a href="/whycet">Why Recruit ?</a>
-                    </li>   
+                    </li>
+
                     <li>
-                      <a href="/login"><i class="fa fa-btn fa-sign-in"></i> Login</a>
+                      @if (Auth::guest())
+                       
+                        <a href="/login"><i class="fa fa-btn fa-sign-in"></i> Login</a>
+                      
+                      @else
+                        <a href="/user/dashboard"><i class="fa fa-btn fa-sign-in"></i> Dashboard</a>
+                      
+                      @endif
                     </li>     
                     <li class="dropdown {{Request::is('contact/*')? "active" : ""}}">
                         <a class="dropdown-toggle" data-toggle="dropdown">Contact Us&nbsp;&nbsp;<span class="caret"></span> </a>  

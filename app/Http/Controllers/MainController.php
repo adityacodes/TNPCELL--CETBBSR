@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use App\Settings;
 class MainController extends Controller
 {
     /**
@@ -65,6 +65,7 @@ class MainController extends Controller
 	}
 	public function getMainMessage($slug)
 	{
-		return view('main.message');
+		$settings= Settings::where('metaname', 'LIKE', $slug.'%')->get()->pluck('metavalue', 'metaname');
+		return view('main.message')->withSettings($settings)->with('slug', $slug);
 	}
 }

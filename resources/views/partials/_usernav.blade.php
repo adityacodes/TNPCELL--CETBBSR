@@ -55,7 +55,7 @@
 							                 
 							                    @endif
 
-							                    @if(Request::is('admin/*'))
+							                    @if(Request::is('admin/*') || Request::is('admin'))
 							                    	<a href="/user/dashboard" class="btn btn-primary btn-block btn-sm"><i class="glyphicon glyphicon-star"></i> Goto USER Panel</a>
 							                    @endif
 		                                        </p>

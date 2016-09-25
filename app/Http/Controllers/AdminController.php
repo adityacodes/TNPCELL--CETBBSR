@@ -35,7 +35,7 @@ class AdminController extends Controller
     public function getIndex()
     {
     	$tnpuser = TNP::where('regdno', '=', Auth::user()->name)->first();
-    	return view('admin.dashboard')->withTNP($tnpuser);
+    	return view('admin.index')->withTNP($tnpuser);
     }
 
     /**
