@@ -1,5 +1,5 @@
 <div class="row" style="height:60px; margin: 0px;">
-		<div class="navbar {{Request::is('admin/*')? "navbar-inverse" : "navbar-default"}}  navbar-fixed-top" role="navigation">
+		<div style="background-color:#0fa5d9;padding: 10px;" class="navbar  {{Request::is('admin/*')? "navbar-inverse" : "navbar-default"}}  navbar-fixed-top" role="navigation">
 		    <div class="container"> 
 		        <div class="navbar-header">
 		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -10,7 +10,7 @@
 		            @if(Request::is('admin/*'))
 		            	<a href="/admin/post" class="navbar-brand text-center" style="font-size:35px; color:white;"><strong>ADMIN PANEL</strong></a>
 		            @else
-		            	<a href="/" class="navbar-brand text-center" style="font-size:35px;"><strong>CETB-TNP</strong></a>
+		            	<a href="/" class="navbar-brand text-center" style="font-size:35px;color: 	white;"><strong>CETB-TNP</strong></a>
 		            @endif
 		        </div>
 		        <div class="collapse navbar-collapse">
@@ -27,11 +27,11 @@
 		                    </ul>
 		                 </li>              
 		             </ul>
-		            <ul class="nav navbar-nav navbar-right">
+		            <ul class="nav navbar-nav navbar-right" >
 		                <li class="dropdown">
-		                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">
 		                        <span class="glyphicon glyphicon-user"></span> 
-		                        <strong>{{$user['name']}}</strong>
+		                        <strong >{{$user['name']}}</strong>
 		                        <span class="glyphicon glyphicon-chevron-down"></span>
 		                    </a>
 		                    <ul class="dropdown-menu">

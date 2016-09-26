@@ -41,16 +41,22 @@
 								</thead>
 								<tbody>
 									@foreach($name as $n)
+
 										<tr>
 											<td>{{$n->regdno}}</td>
 											<td>{{$n->name}}</td>
 											<td class="actions">
+											@if($n->regdno == Auth::user()->name)
+
+											@else
+
 				                                <a href="{{ route('admin.administrators.delete', $n->regdno)}}">
 				                                    <button class="btn btn-sm btn-primary">
 				                                        <i class="glyphicon glyphicon-thumbs-down"></i>
 				                                        Remove Admin
 				                                    </button>
 				                                </a>
+				                             @endif
 				                            </td>
 										</tr>
 									@endforeach

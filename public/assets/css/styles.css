@@ -1,3 +1,14 @@
+@font-face {
+        font-family: font1;
+        src: url('/fonts/Metropolis-Regular.otf');
+    }
+.clg-name{
+  font-family:font1;
+  font-size:32px; 
+  color:#08387f;
+  padding:2px;
+}
+
 .navbar-login
 {
     width: 305px;
@@ -6,6 +17,13 @@
     margin-bottom: -10px;
 }
 
+.spacer2{
+  margin-top: 20px;
+}
+
+.spacer3{
+  margin-top: 30px;
+}
 .navbar-login-session
 {
     padding: 10px;
@@ -247,7 +265,7 @@ footer .copy{
 }
 
 .content-box-large {
-  padding: 20px;
+  padding: 10px;
 }
 
 .box-with-header {

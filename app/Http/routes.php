@@ -59,7 +59,7 @@ Route::get('/home', 'HomeController@index');
 	Route::get('admin/notice/unpublish/{id}',['as' => 'admin.notice.unpublish','uses'=>'AdminController@unpublish']);
 
 //Admin Dashboard And Applicant Routes
-	Route::get('/admin', 'AdminController@getIndex');
+	Route::get('/admin', ['as'=>'admin.dashboard','uses'=>'AdminController@getIndex']);
 	Route::get('admin/applicants', ['as' => 'admin.applicant.posts','uses' => 'AdminController@applicantposts']);
 	Route::put('admin/applicants', ['as' => 'admin.applicants','uses' => 'AdminController@applicants']);
 

@@ -19,8 +19,12 @@
                 <a href="/user/contact"><i class="glyphicon glyphicon-record"></i>Contact Admin</a>
             </li>
             
-    </ul>
-</div>
+        </ul>
+    </div>
+    <div class="text-center">
+        <img src="/images/140cet.jpg">
+        <p class="clg-name">CET, BBSR</p>
+    </div>
 </div>
 @else
     <div class="col-md-3">
@@ -39,6 +43,9 @@
             <li class="{{Request::is('admin/administrators')? "current" : ""}}">
                 <a href="/admin/administrators"><i class="glyphicon glyphicon-tower"></i> Admins</a>
             </li>
+            <li class="{{Request::is('admin/add/user')? "current" : ""}}">
+                <a href="/admin/add/user"><i class="glyphicon glyphicon-user"></i> Add TNP User</a>
+            </li>
             <li class="{{Request::is('admin/delete/user')? "current" : ""}}">
                 <a href="/admin/delete/user"><i class="glyphicon glyphicon-user"></i> Delete User</a>
             </li>
@@ -56,4 +63,5 @@
     </div>
     </div>
 @endif
+
     
