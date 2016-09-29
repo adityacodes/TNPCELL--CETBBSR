@@ -34,6 +34,7 @@ class CreatePostsTable extends Migration {
 
 			$table->string('cgpa',5);
 			$table->string('backlog',10);
+			$table->string('image');
 			
 			$table->timestamps();
 		});

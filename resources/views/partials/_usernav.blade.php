@@ -8,6 +8,7 @@
 		                <span class="icon-bar"></span> 
 		            </button>
 		            @if(Request::is('admin/*'))
+		            	<a href="/" class="navbar-brand text-center" style="font-size:35px; color:white;"><strong>CETB-TNP</strong></a>
 		            	<a href="/admin/post" class="navbar-brand text-center" style="font-size:35px; color:white;"><strong>ADMIN PANEL</strong></a>
 		            @else
 		            	<a href="/" class="navbar-brand text-center" style="font-size:35px;color: 	white;"><strong>CETB-TNP</strong></a>
@@ -48,7 +49,6 @@
 		                                        <p class="text-left small p-a-4"><h5>{{$user['email']}}</h5></p>
 		                                        <p class="text-left">
 		                                         @if(Auth::user()->isAdmin())
-							                   
 							                        <a href="/admin/post" class="btn btn-primary btn-block btn-sm"><i class="glyphicon glyphicon-star"></i> Goto Admin Panel</a>
 							                    @else
 							                    	<a href="/user/profile" class="btn btn-primary btn-block btn-sm"><i class="glyphicon glyphicon-star"></i> Profile</a>

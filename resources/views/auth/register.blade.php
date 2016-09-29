@@ -85,6 +85,8 @@ div.overlay {
                                 <button type="submit" class="btn btn-primary" id="register">
                                     <i class="fa fa-btn fa-user"></i> Register
                                 </button>
+
+                                <a class="btn btn-link" href="{{ url('/login') }}">Already a member?</a>
                             </div>
                         </div>
                     </form>

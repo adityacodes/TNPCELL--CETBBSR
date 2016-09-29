@@ -22,7 +22,14 @@
       <div class="row clearfix" style="background-color: #ececec">  
         <div class="col-md-8 col-md-offset-2" style="margin-top: 20px;">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading clearfix">
+
+                <strong>Login</strong>
+
+                <a href="/register"><button class="btn btn-primary btn-md pull-right">
+                        <i class="fa fa-btn fa-user"></i> Register
+                    </button></a>
+                </div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}

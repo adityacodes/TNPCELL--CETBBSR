@@ -17,8 +17,10 @@
 				<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
 			</div>
 			</div>
-			<div class="content-box-large box-with-header">
-				<h5>
+			<div class="content-box-large box-with-header img-responsive clearfix">
+				
+				<img src="{{$post->image}}" style="max-width: 100%;height: auto;" class="clearfix">
+				<h5 class="">
 					{{$post->body}}
 				</h5>
 			<br><br>

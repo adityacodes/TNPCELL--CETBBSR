@@ -25,8 +25,10 @@ class MainController extends Controller
 	 * @return Response
 	 */
 	public function getMainIndex()
-	{ 
-		return view('main.index');
+	{
+		$settings= Settings::where('metaname', 'LIKE', '%_%')->get()->pluck('metavalue', 'metaname');
+
+		return view('main.index')->withSettings($settings);
 	}
 
 	public function getMainCompanies(){
@@ -38,16 +40,17 @@ class MainController extends Controller
 		return view('main.students');
 
 	}
-	public function getMainProgrammes(){
+	public function getMainEvents(){
 
-		return view('main.programmes');
-
-	}
-	public function getMainFaculty(){
-
-		return view('main.faculty');
+		return view('main.events');
 
 	}
+	public function getMainAllumini(){
+
+		return view('main.allumini');
+
+	}
+	
 	public function getMainOffice(){
 
 		return view('main.office');

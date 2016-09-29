@@ -44,24 +44,29 @@
 
 </head>
     
-<body style="background-color:#ececec; margin:0px;" cz-shortcut-listen="true">
-<div class="container lightblue-bg">
-    <div class="row clearfix" class="lightblue-bg">
+<body style="margin:0px; background-image: url('/abcbg.jpg');" cz-shortcut-listen="true">
+<div class="container" style="background-color:#ececec;">
+    <div class="row clearfix lightblue-bg">
          <h2 class="text-center hidden-xs tnptitle">{{$sitename}}</h2>
          <h2 class="text-center visible-xs tnpsmtitle">CETB-TNP</h2>
     </div>
     <div class="row clearfix white-bg">
           <br>
-          <div class="col-lg-offset-1 img-responsive text-xs-center text-md-center" style="margin-left: 10%;" >
-               <img class="clearfix site-logo" src="/images/140cet.jpg"> 
+          <div class="col-md-12 col-lg-offset-1">
+              <div class="col-lg-2">
+                  <div class="img-responsive text-xs-center text-md-center" >
+                       <img class="clearfix site-logo" src="/images/140cet.jpg"> 
+                  </div>
+              </div>
+              <div class="col-lg-8 visible-lg">
+                  <h2 class="clg-name"><b>COLLEGE OF ENGINEERING &amp; TECHNOLOGY</b>  </h2>
+                  <h2 class="clg-address">Techno-Campus, Kalinga Nagar, Ghatikia, Bhubaneswar </h2>
+            </div>
           </div>
-          <div class="col-lg-offset-3 visible-lg">
-                <h2 class="clg-name"><b>COLLEGE OF ENGINEERING &amp; TECHNOLOGY</b>  </h2>
-                <h2 class="clg-address">Techno-Campus, Kalinga Nagar, Ghatikia, Bhubaneswar </h2>
-          </div>
+          
     </div>
-    <div class="row col-lg-offset-1">
-          <nav class="navbar navbar-default navbar-left" role="navigation">
+    <div class="row lightblue-bg">
+          <nav class="navbar navbar-default navbar-fixed-top col-lg-offset-1" role="navigation">
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                   <span class="sr-only">Toggle navigation</span>
@@ -75,23 +80,12 @@
                   <ul class="nav navbar-nav white-color">
                     <li class="{{Request::is('/')? "active" : ""}}">
                       <a href="/">Home</a>
-                    </li>     
-                    <li class="dropdown {{Request::is('message/*')? "active" : ""}}">
-                      <a class="dropdown-toggle" data-toggle="dropdown">Message&nbsp;&nbsp;<span class="caret"></span></a>
+                    </li>
 
-                      <ul class="dropdown-menu" >
-                        <li class="nav-subitem">
+                    <li class="{{Request::is('whycet/*')? "active" : ""}}">
+                      <a href="/whycet">Why Recruit ?</a>
+                    </li>
 
-                            <a href="/message/principal">Principal Message</a>
-
-                        </li>
-                        <li class="nav-subitem">
-                              
-                              <a href="/message/pic">PIC's Message</a>
-
-                        </li>
-                      </ul>
-                    </li> 
                     <li class="dropdown {{Request::is('procedure/*')? "active" : ""}}">
                         <a class="dropdown-toggle" data-toggle="dropdown">Procedure&nbsp;&nbsp;<span class="caret"></span>
                         </a>
@@ -100,14 +94,29 @@
                           <li class="nav-subitem"><a href="/procedure/students">Students</a></li>
                         </ul>
                     </li>        
-                    <li class="dropdown {{Request::is('academics/*')? "active" : ""}}"><a class="dropdown-toggle" data-toggle="dropdown">Academics&nbsp;&nbsp;<span class="caret"></span></a>
+               <!--     <li class="dropdown {{Request::is('academics/*')? "active" : ""}}"><a class="dropdown-toggle" data-toggle="dropdown">Academics&nbsp;&nbsp;<span class="caret"></span></a>
                       <ul class="dropdown-menu" >
                           <li class="nav-subitem"><a href="/academics/programmes">Programmes</a></li>
                           <li class="nav-subitem"><a href="/academics/faculty">Faculty</a></li>
                       </ul>
+                    </li> -->
+                       
+                    <li class="dropdown {{Request::is('contact/*')? "active" : ""}}">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Contact Us&nbsp;&nbsp;<span class="caret"></span> </a>  
+                        <ul class="dropdown-menu" >
+                          <li class="nav-subitem">
+                              <a href="/contact/office">Placement Office</a>
+                          </li>
+                          <li class="nav-subitem">
+                              <a href="/contact/location">Location</a>
+                          </li>
+                        </ul>        
+                    </li>  
+                    <li>
+                      <a href="/our-allumini">Our Allumini</a>
                     </li>
-                    <li class="{{Request::is('whycet/*')? "active" : ""}}">
-                      <a href="/whycet">Why Recruit ?</a>
+                    <li>
+                      <a href="/events">Events</a>
                     </li>
 
                     <li>
@@ -119,17 +128,6 @@
                         <a href="/user/dashboard"><i class="fa fa-btn fa-sign-in"></i> Dashboard</a>
                       
                       @endif
-                    </li>     
-                    <li class="dropdown {{Request::is('contact/*')? "active" : ""}}">
-                        <a class="dropdown-toggle" data-toggle="dropdown">Contact Us&nbsp;&nbsp;<span class="caret"></span> </a>  
-                        <ul class="dropdown-menu" >
-                          <li class="nav-subitem">
-                              <a href="/contact/office">Placement Office</a>
-                          </li>
-                          <li class="nav-subitem">
-                              <a href="/contact/location">Location</a>
-                          </li>
-                        </ul>        
                     </li>
                          
                   </ul>
@@ -152,7 +150,7 @@
     @yield('content')
 
 </div>
-<div class="container-fluid">
+<div class="container">
     <div class="row footer" style="background-color:#08387f;">
         <div class="col-lg-3 col-lg-offset-1">
             <a href="http://cet.edu.in" style="color:#FFFFFF; font-size:64px;">C E T</a>
