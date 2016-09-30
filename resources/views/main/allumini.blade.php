@@ -21,7 +21,7 @@
 
 <!-- Team Members Row -->
         <div class="row">
-            <div class="col-lg-12 text-center" style="font-family: font1;padding: 10px;"t><h1><u>OUR ALLUMINI<u></h1></div>
+            <div class="col-lg-12 text-center" style="font-family: font1;padding: 10px;"t><h1><u>OUR ALLUMINI</u></h1></div>
             <div class="border" style=""></div>
             <div class="col-lg-4 col-sm-6 text-center">
                 <img class="img-circle img-responsive img-center" src="/images/allumini/allumini7.jpg" alt="">
