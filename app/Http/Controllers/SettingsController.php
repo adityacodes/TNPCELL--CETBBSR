@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Auth, Session;
+use App\Companies;
 
 class SettingsController extends Controller
 {
