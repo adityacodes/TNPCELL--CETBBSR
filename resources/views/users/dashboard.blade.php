@@ -50,8 +50,8 @@
                             <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
                         </div>
                     </div>
-                    <div class="panel-body">
-                    <marquee direction="up" scrollamount="3">
+                    <div class="panel-body" >
+                    <marquee direction="up" behavior="scroll" style="height: 100px;">
                         <ul> 
                                 <li>
                                         <a href="/">Hello</a>

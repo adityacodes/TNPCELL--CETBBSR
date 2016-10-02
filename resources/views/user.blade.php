@@ -5,7 +5,7 @@
 
 		@yield('stylesheets')
 	</head>
-	<body>
+	<body style="background-image: url('/abcbg.jpg');">
 		@include('partials._usernav')
 
 		<div class="page-content container-fluid">
