@@ -114,11 +114,11 @@
                     <li class="{{ Request::is('our-alumni')? "active" : ""}}">
                       <a href="/our-alumni">Our Alumni</a>
                     </li>
-                    <li>
+                    <li class="{{ Request::is('events')? "active" : ""}}">
                       <a href="/events">Events</a>
                     </li>
 
-                    <li>
+                    <li class="{{ Request::is('login')? "active" : ""}}">
                       @if (Auth::guest())
                        
                         <a href="/login"><i class="fa fa-btn fa-sign-in"></i> Login</a>

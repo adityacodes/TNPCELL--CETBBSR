@@ -15,7 +15,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       src:url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype');
 }
 /* start footer */
-.footer_bg{
+
+.footer-things{
+  font-size:20px; 
+  margin-left:40px;
+}
+.footer-menu-item{
+  text-decoration:none;
+  color:#fff;
+}
+
+.footer-clgtext{
+  font-size:16px;color:#fff; 
+  font:Arial, Helvetica, sans-serif;
 }
 .footer{
 	padding: 4%;
@@ -38,9 +50,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	text-decoration: none;
 }
 body {
-	overflow-x: hidden;
-    overflow-y: scroll;
 	background:#ffffff;
+	overflow-x: hidden;
 	min-height:500px;
 }
 
@@ -120,6 +131,35 @@ body {
 			}
 
 }
+
+.nav-subitem{
+  border-bottom-style: solid;
+  border-bottom-color: #08387f;
+  border-bottom-width:thin;
+  font-family: &#39,Open Sans, sans-serif;
+  font-size:16px;
+}
+
+.dropdown:hover .dropdown-menu {
+display: block;
+background-color: #08387f;
+        
+}
+
+.dropdown-menu > li > a{
+color:#fff;
+}   
+
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-image:none !important;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color:#fff;
+    color:#08387f;
+    
+} 
+
 
 
 /* start soc_icons */
