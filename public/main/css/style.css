@@ -57,48 +57,71 @@ body {
 	padding: 0;
 	background: #0fa5d9;
 }
+
+
 .navbar {
 	position: relative;
-	min-height: 60px;
 	margin-bottom: 0px;
 	border: none;
     
 }
+
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
 	background: #0fa5d9;
-    <!-- #3b3b3b-->
-	color: #ffffff;
-	padding: 0;
-    
+	color: #fff;
 }
+
 .navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover{
 	background: #08387f;
 	color: #ffffff;
     
 }
+
 .navbar-default .navbar-nav > li > a {
 	color: #fff;
-	-webkit-transition: all 0.3s ease-in-out;
+/*	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
-    
+ */   
 }
+
+
+
+
 .nav > li {
 	border-right: 1px solid #fff ;
-    <!--rgb(39, 37, 37)-->
-    
-    
+   
 }
+
 .nav .open, .nav .open .dropdown-menu{
 	background-color: #08387f;
+	color: #fff;
 }
 .nav > li > a {
-	font-size: 13px;
-	padding: 20px 30px;
-	text-transform: uppercase;
-    
+		font-size: 13px;
+		text-transform: uppercase;
+
 }
+
+@media (min-width: 768px){
+
+	
+		.navbar-nav > li > a {
+			    padding-top: 20px;
+			    padding-bottom: 20px;
+		  }
+
+		  .nav > li > a {
+					font-size: 13px;
+					padding: 20px 30px;
+					text-transform: uppercase;
+
+			}
+
+}
+
+
 /* start soc_icons */
 .soc_icons {
 

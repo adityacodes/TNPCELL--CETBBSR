@@ -81,7 +81,7 @@
                       <a href="/">Home</a>
                     </li>
 
-                    <li class="{{Request::is('whycet/*')? "active" : ""}}">
+                    <li class="{{Request::is('whycet')? "active" : ""}}">
                       <a href="/whycet">Why Recruit ?</a>
                     </li>
 
@@ -111,7 +111,7 @@
                           </li>
                         </ul>        
                     </li>  
-                    <li>
+                    <li class="{{ Request::is('our-alumni')? "active" : ""}}">
                       <a href="/our-alumni">Our Alumni</a>
                     </li>
                     <li>

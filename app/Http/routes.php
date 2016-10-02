@@ -11,6 +11,7 @@
 |
 */
 
+
 //Main Website Routes
 Route::get('/', [ 'as' => 'main.index', 'uses'=>'MainController@getMainIndex']  );
 
