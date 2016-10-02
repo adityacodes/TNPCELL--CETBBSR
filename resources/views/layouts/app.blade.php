@@ -23,7 +23,6 @@
     <link href="/main/css/style.css" rel="stylesheet" type="text/css" media="all">
     <!--font-Awesome-->
     <link rel="stylesheet" href="/css/font-awesome.min.css">
-
 @yield('stylesheets')
     
     <script type="application/x-javascript"> 
@@ -44,7 +43,7 @@
 
 </head>
     
-<body style="margin:0px; background-image: url('/abcbg.jpg');" cz-shortcut-listen="true">
+<body style="background-image: url('/abcbg.jpg');" cz-shortcut-listen="true">
 <div class="container" style="background-color:#ececec;">
     <div class="row clearfix lightblue-bg">
          <h2 class="text-center hidden-xs tnptitle">{{$sitename}}</h2>
@@ -113,7 +112,7 @@
                         </ul>        
                     </li>  
                     <li>
-                      <a href="/our-allumini">Our Allumini</a>
+                      <a href="/our-alumni">Our Alumni</a>
                     </li>
                     <li>
                       <a href="/events">Events</a>
@@ -149,8 +148,7 @@
 
     @yield('content')
 
-</div>
-<div class="container">
+
     <div class="row footer" style="background-color:#08387f;">
         <div class="col-lg-3 col-lg-offset-1">
             <a href="http://cet.edu.in" style="color:#FFFFFF; font-size:64px;">C E T</a>

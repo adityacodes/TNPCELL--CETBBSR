@@ -45,9 +45,9 @@ class MainController extends Controller
 		return view('main.events');
 
 	}
-	public function getMainAllumini(){
+	public function getMainAlumni(){
 
-		return view('main.allumini');
+		return view('main.alumni');
 
 	}
 	

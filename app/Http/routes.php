@@ -18,7 +18,7 @@ Route::get('procedure/companies', [ 'as' => 'main.companies', 'uses'=>'MainContr
 Route::get('procedure/students', [ 'as' => 'main.students', 'uses'=>'MainController@getMainStudents']  );
 
 Route::get('events', [ 'as' => 'main.events', 'uses'=>'MainController@getMainEvents']  );
-Route::get('our-allumini', [ 'as' => 'main.allumini', 'uses'=>'MainController@getMainAllumini']  );
+Route::get('our-alumni', [ 'as' => 'main.alumni', 'uses'=>'MainController@getMainAlumni']  );
 
 Route::get('contact/office', [ 'as' => 'main.office', 'uses'=>'MainController@getMainOffice']  ); // This is actually the contact section
 Route::get('contact/location', [ 'as' => 'main.location', 'uses'=>'MainController@getMainLocation']  );

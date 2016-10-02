@@ -38,10 +38,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	text-decoration: none;
 }
 body {
-	
+	overflow-x: hidden;
+    overflow-y: scroll;
 	background:#ffffff;
-	
-min-height:500px;
+	min-height:500px;
 }
 
 .sapecer1{
@@ -90,6 +90,9 @@ min-height:500px;
     
     
 }
+.nav .open, .nav .open .dropdown-menu{
+	background-color: #08387f;
+}
 .nav > li > a {
 	font-size: 13px;
 	padding: 20px 30px;
@@ -135,4 +138,39 @@ min-height:500px;
 }
 .slider{
 	padding: 4%;
+}
+
+
+.img-center {
+		margin: 0 auto;
+		width: 200px;
+		height: 200px;
+}
+p{
+	font-weight: bold;
+}
+
+.bg_box{
+    background-color: #fff;
+    padding: 10px;
+    transition: all .2s ease-in-out;
+}
+
+.bg_box:hover{
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari */
+    transform: scale(1.05); /* Standard syntax */
+}
+
+.bg_box a{
+    color: black;
+    text-decoration: none;
+}
+.bg_box a:hover{
+    text-decoration: none;
+
+}
+
+.spacing{
+    padding: 20px;
 }

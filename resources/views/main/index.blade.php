@@ -95,7 +95,7 @@
           <p><a class="btn btn-secondary" href="/message/principal" role="button">See more »</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-6">
-          <img class="img-circle" src="{{$settings['pic_message']}}" style="margin: 0px; border: 7px solid #fff" alt="Generic placeholder image" width="200" height="200">
+          <img class="img-circle" src="http://placehold.it/200x200" style="margin: 0px; border: 7px solid #fff" alt="Generic placeholder image" width="200" height="200">
           <h2>Prof. In Charge, T&amp;P Cell</h2>
           <p>{{ substr($settings['pic_message'],0,120)}}</p>
           <p><a class="btn btn-secondary" href="/message/pic" role="button">See more »</a></p>

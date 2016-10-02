@@ -5,8 +5,8 @@
 <style type="text/css">
 	.img-center {
 		margin: 0 auto;
-		width: 250px;
-		height: 250px;
+		width: 200px;
+		height: 200px;
 	}
 	p{
 		font-weight: bold;
