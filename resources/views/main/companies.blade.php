@@ -55,6 +55,16 @@
 		                </div>
 		            </div>
 
+		            <div class="col-lg-4 col-sm-6 text-center spacing">
+		                
+		                <div class="bg_box">
+		                    <a href="abc.jpg" target="_blank">
+		                        <img class="img-responsive img-center" src="/main/images/companies/microsoft.png" alt="">
+		                        <h3>MICROSOFT</h3>
+		                    </a>
+		                </div>
+		            </div>
+
         </div>
 
 

@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-<div class="row clearfix" style="background-color:#ececec;">
+<div class="row clearfix" style="background-color:#fff;">
 	<div class="col-lg-8" style="margin-top: 5px;">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		      <!-- Indicators -->
@@ -81,21 +81,21 @@
 	</div>
 </div>
 
-<div class="row" style="background-color:#ececec;">
+<div class="row" style="background-color:#fff;">
 	<div class="wells panel panel-default">
 			<h3 class="text-center tnpmoto">"To Emerge as a Global Leader in Technical Education"</h3>
 	</div>
 </div>
 
-<div class="row text-center" style="background-color:#ececec;">
+<div class="row text-center" style="background-color:#fff;">
         <div class="col-lg-6">
-          <img class="img-circle" style="margin: 0px; border: 7px solid #fff" src="{{$settings['principal_image']}}" alt="Generic placeholder image" width="200" height="200">
+          <img class="img-circle" style="margin: 0px; border: 7px solid #83b435" src="{{$settings['principal_image']}}" alt="Generic placeholder image" width="200" height="200">
           <h2>Principal</h2>
           <p>{{ substr($settings['principal_message'], 0,120) }}...</p>
           <p><a class="btn btn-secondary" href="/message/principal" role="button">See more »</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-6">
-          <img class="img-circle" src="http://placehold.it/200x200" style="margin: 0px; border: 7px solid #fff" alt="Generic placeholder image" width="200" height="200">
+          <img class="img-circle" src="http://placehold.it/200x200" style="margin: 0px; border: 7px solid #83b435" alt="Generic placeholder image" width="200" height="200">
           <h2>Prof. In Charge, T&amp;P Cell</h2>
           <p>{{ substr($settings['pic_message'],0,120)}}</p>
           <p><a class="btn btn-secondary" href="/message/pic" role="button">See more »</a></p>

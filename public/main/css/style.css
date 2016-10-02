@@ -146,8 +146,10 @@ body {
 		width: 200px;
 		height: 200px;
 }
-p{
+.bg_box p{
+	font-family: 'Dosis';
 	font-weight: bold;
+	font-size: 20px;
 }
 
 .bg_box{
