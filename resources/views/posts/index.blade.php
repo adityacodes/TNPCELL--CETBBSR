@@ -9,9 +9,11 @@
     <div class="col-lg-10">
         
             <div class="content-box-header">
-	                <div class="text-muted bootstrap-admin-box-title">All Notices</div>
-	                <div class="panel-options"><a href="{{ route('admin.post.create') }}" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> NEW POST</a></div>	
+	                <div class="text-muted bootstrap-admin-box-title"><strong>All Notices</strong><div class="pull-right"><a href="{{ route('admin.post.create') }}" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> NEW POST</a></div></div>
+	                
+
 	                <div ><b>Total Notices:</b><span class="badge label-success">{{$posts->total()}}</span></div>
+	                 <div class="clearfix"></div>	
                 
             </div>
             <div class="content-box-large box-with-header">

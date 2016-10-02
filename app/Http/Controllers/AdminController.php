@@ -149,12 +149,16 @@ class AdminController extends Controller
 
         return redirect()->route('admin.administrators');
     }
+
+    public function addUser(){
+      return view('admin.adduser');
+    }
     public function checktnpuser(Request $request){
 
       //add value to a cookie. check via javascript if cookie is set the only allow to proceed.
 
     }
-    public function addtnpuser(Request $request){
+    public function addTnpUser(Request $request){
         //check existence has been passed ... ready to add to database
         $this->validate($request, array(
         'title' => 'required|max:255',
