@@ -22,12 +22,15 @@
                             <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
                         </div>
                     </div>
-                    <div class="content-box-large box-with-header">
-                        
-                        {{ substr($post->body,0,250) }}{{ strlen($post->body) > 50 ? "..." : ""}}
+                    <div class="content-box-large box-with-header panel-body">
+                        <div class="col-md-12">
+                            <div class="col-md-3 clearfix"><img src="http://placehold.it/100x100"></div>
+                            <div class="col-md-9">{{ substr($post->body,0,250) }}{{ strlen($post->body) > 50 ? "..." : ""}}</div>
+                            
 
-                        <div class="clearfix">
-                            <a class="action" href="/notice/{{$post->slug}}"><button type="button" class="btn btn-sm btn-primary pull-right" >See More »</button></a>
+                            <div class="clearfix"><br>
+                                <a class="action" href="/notice/{{$post->slug}}"><button type="button" class="btn btn-sm btn-primary pull-right" >See More »</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>
