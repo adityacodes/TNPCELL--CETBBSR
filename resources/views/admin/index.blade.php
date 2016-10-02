@@ -1,4 +1,7 @@
+
 @extends('user')
+
+@section('title',' Dashboard')
 
 @section('stylesheets')
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -52,7 +55,7 @@
 @endsection
 
 @section('content')
-<div class="row">
+<div class="row" style="min-height: 500px;">
             <div class="col-lg-12">
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
@@ -63,7 +66,7 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">26</div>
-                                    <div>New Comments!</div>
+                                    <div>New Notices!</div>
                                 </div>
                             </div>
                         </div>
