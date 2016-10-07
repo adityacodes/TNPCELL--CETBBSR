@@ -18,30 +18,19 @@
             <div class="border" style=""></div>
             
 
-
+        @foreach($alumnis as $alumni)
             <div class="col-lg-3 col-sm-6 text-center spacing">  
                 <div class="bg_box">
-                    <a href="abc.jpg" target="_blank">
-                        <img class="img-circle img-responsive img-center" src="/main/images/alumni/allumini7.jpg" alt="">
-                        <h3>Sidharth Nanda</h3>
-                        <strong>Digital Media Manager</strong>
+                    <a href="{{$alumni->alumni_website}}" target="_blank">
+                        <img class="img-circle img-responsive img-center" src="{{$alumni->alumni_image}}" alt="">
+                        <h3>{{$alumni->alumni_name}}</h3>
+                        <strong>{{$alumni->alumni_desig}}</strong>
                         
-                        <p>Google</p>
+                        <p>{{$alumni->alumni_company}}</p>
                     </a>
                 </div> 
             </div>
-            
-            <div class="col-lg-3 col-sm-6 text-center spacing">
-                <div class="bg_box">
-                    <img class="img-circle img-responsive img-center" src="/main/images/alumni/allumini7.jpg" alt="">
-                    <h3>Sidharth Nanda</h3>
-                    <strong>Digital Media Manager</strong>
-                    
-                    <p>Google</p>
-
-                </div>
-                
-            </div>
+        @endforeach
             
             
         </div>

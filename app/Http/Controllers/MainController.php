@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Settings;
+
+use App\Alumni;
+use App\Companies;
+
+use DB;
+
 class MainController extends Controller
 {
     /**
@@ -33,7 +39,9 @@ class MainController extends Controller
 
 	public function getMainCompanies(){
 
-		return view('main.companies');
+		$companies =  DB::table('companies')->inRandomOrder()->get();
+		return view('main.companies')->withCompanies($companies);
+
 	}
 	public function getMainStudents(){
 
@@ -41,13 +49,14 @@ class MainController extends Controller
 
 	}
 	public function getMainEvents(){
-
+		
 		return view('main.events');
 
 	}
 	public function getMainAlumni(){
 
-		return view('main.alumni');
+		$alumnis = DB::table('alumnis')->inRandomOrder()->get();
+		return view('main.alumni')->withAlumnis($alumnis);
 
 	}
 	

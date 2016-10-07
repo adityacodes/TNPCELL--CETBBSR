@@ -16,7 +16,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $sitename = Settings::where('metaname','=','sitename')->value('metavalue');
-        View::share('sitename', $sitename);
+        if(isset($sitename)){
+            View::share('sitename', $sitename);
+        }
     }
 
     /**

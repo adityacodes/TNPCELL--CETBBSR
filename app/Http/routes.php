@@ -94,3 +94,7 @@ Route::get('email/verify',function(){
 //Send Email
 	Route::get('admin/sendgroupemail', ['as' => 'admin.sendgroupemail', 'uses' => 'AdminController@getsendMail']);
 	Route::post('admin/sendgroupemail', 'AdminController@sendMail');
+
+
+//Settings
+	Route::get('admin/settings/options-general', ['as' => 'admin.settings', 'uses' => 'SettingsController@getSettingsIndex']);

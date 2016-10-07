@@ -11,59 +11,35 @@
             <div class="border" style=""></div>
 
             <div class="text-center"><strong style="font-size: 40px;">MASS RECRUITERS</strong></div>
-            <div class="col-lg-6 col-sm-6 text-center spacing">
-                
-                <div class="bg_box">
-                    <a href="abc.jpg" target="_blank">
-                        <img class="img-responsive img-center" src="/main/images/companies/tata.png" alt="">
-                        <h3>TCS</h3>
-                    </a>
-                </div>
-            </div>
+        <div class="col-lg-12"> 
+            @foreach($companies as $company)
+            	@if($company->company_massrecruiter == 1)
+	            <div class="col-lg-6 col-sm-6 text-center spacing">
+	                
+	                <div class="bg_box">
+	                    <a href="{{ $company->company_website }}" target="_blank">
+	                        <img class="img-responsive img-center" src="{{ $company->company_image }}" alt="">
+	                    </a>
+	                </div>
+	            </div>
+	            @endif
 
-            <div class="col-lg-6 col-sm-6 text-center spacing">
-                
-                <div class="bg_box">
-                    <a href="abc.jpg" target="_blank">
-                        <img class="img-responsive img-center" src="/main/images/companies/accenture.png" alt="">
-                        <h3>ACCENTURE</h3>
-                    </a>
-                </div>
-            </div>
-
-
+            @endforeach
+        </div>
 
 
             <div class="text-center"><strong style="font-size: 40px;">RECRUITERS</strong></div>
 
-		            <div class="col-lg-4 col-sm-6 text-center spacing">
-		                
+           <div id="{{ shuffle($companies)}}"></div> 
+            	@foreach($companies as $company)
+		            <div class="col-lg-2 col-sm-6 text-center spacing">  
 		                <div class="bg_box">
-		                    <a href="abc.jpg" target="_blank">
-		                        <img class="img-responsive img-center" src="/main/images/companies/tata.png" alt="">
-		                        <h3>TCS</h3>
+		                    <a href="{{ $company->company_website }}" target="_blank">
+		                        <img class="img-responsive img-center" src="{{ $company->company_image }}" alt="">
 		                    </a>
 		                </div>
 		            </div>
-		            <div class="col-lg-4 col-sm-6 text-center spacing">
-		                
-		                <div class="bg_box">
-		                    <a href="abc.jpg" target="_blank">
-		                        <img class="img-responsive img-center" src="/main/images/companies/accenture.png" alt="">
-		                        <h3>ACCENTURE</h3>
-		                    </a>
-		                </div>
-		            </div>
-
-		            <div class="col-lg-4 col-sm-6 text-center spacing">
-		                
-		                <div class="bg_box">
-		                    <a href="abc.jpg" target="_blank">
-		                        <img class="img-responsive img-center" src="/main/images/companies/microsoft.png" alt="">
-		                        <h3>MICROSOFT</h3>
-		                    </a>
-		                </div>
-		            </div>
+		        @endforeach
 
         </div>
 

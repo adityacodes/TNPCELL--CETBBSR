@@ -16,9 +16,16 @@
 		        </div>
 		        <div class="collapse navbar-collapse">
 		            <ul class="nav navbar-nav hidden-md hidden-lg">
-		                <li class="{{Request::is('user/dashboard')? "active" : ""}}"><a href="/user/dashboard">Dashboard</a></li>
-		                <li class="{{Request::is('user/profile')? "active" : ""}}"><a href="/user/profile">User Profile</a></li>
-		                <li class="{{Request::is('user/contact')? "active" : ""}}"><a href="/user/contact">Contact Admin</a></li>
+		            	@if(Request::is('user/*'))
+			                <li class="{{Request::is('user/dashboard')? "active" : ""}}"><a href="/user/dashboard">Dashboard</a></li>
+			                <li class="{{Request::is('user/profile')? "active" : ""}}"><a href="/user/profile">User Profile</a></li>
+			                <li class="{{Request::is('user/contact')? "active" : ""}}"><a href="/user/contact">Contact Admin</a></li>
+			            @else
+			            	<li class="{{Request::is('admin/post')? "active" : ""}}"><a href="/admin/post">Posts</a></li>
+			                <li class="{{Request::is('admin/applicants')? "active" : ""}}"><a href="/admin/applicants">Applicants</a></li>
+			                <li class="{{Request::is('admin/standalone')? "active" : ""}}"><a href="/admin/standalone">Standalone</a></li>
+
+			            @endif 
 		                 <li class="dropdown">
 		                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">DropDown
 		                    <span class="caret"></span>
@@ -26,7 +33,8 @@
 		                    <ul class="dropdown-menu">
 		                        <li><a href="#">Link 2</a></li>
 		                    </ul>
-		                 </li>              
+		                 </li>
+
 		             </ul>
 		            <ul class="nav navbar-nav navbar-right" >
 		                <li class="dropdown">

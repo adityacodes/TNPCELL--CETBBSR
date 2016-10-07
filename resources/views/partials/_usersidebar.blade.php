@@ -58,6 +58,9 @@
             <li class="{{Request::is('admin/sendgroupemail')? "current" : ""}}">
                 <a href="/admin/sendgroupemail"><i class="glyphicon glyphicon-send"></i> Send Bulk Mail</a>
             </li>
+            <li class="{{Request::is('admin/settings')? "current" : ""}}">
+                <a href="/admin/settings"><i class="glyphicon glyphicon-cog"></i>Site Settings</a>
+            </li>
             
         </ul>
     </div>

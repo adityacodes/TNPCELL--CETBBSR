@@ -46,7 +46,7 @@
 <body style="background-image: url('/abcbg.jpg');" cz-shortcut-listen="true">
 <div class="container" style="background-color:#ececec;">
     <div class="row clearfix lightblue-bg">
-         <h2 class="text-center hidden-xs tnptitle">{{$sitename}}</h2>
+         <h2 class="text-center hidden-xs tnptitle">{{isset($sitename)? $sitename : ""}}</h2>
          <h2 class="text-center visible-xs tnpsmtitle">CETB-TNP</h2>
     </div>
     <div class="row clearfix white-bg">
@@ -54,7 +54,7 @@
           <div class="col-md-12 col-lg-offset-1">
               <div class="col-lg-2">
                   <div class="img-responsive text-xs-center text-md-center" >
-                       <img class="clearfix site-logo" src="/images/140cet.jpg"> 
+                       <a href="/"><img class="clearfix site-logo" src="/images/140cet.jpg"></a> 
                   </div>
               </div>
               <div class="col-lg-8 visible-lg">
