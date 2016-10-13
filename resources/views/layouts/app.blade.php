@@ -43,7 +43,7 @@
 
 </head>
     
-<body style="background-image: url('/abcbg.jpg');" cz-shortcut-listen="true">
+<body cz-shortcut-listen="true">
 <div class="container" style="background-color:#ececec;">
     <div class="row clearfix lightblue-bg">
          <h2 class="text-center hidden-xs tnptitle">{{isset($sitename)? $sitename : ""}}</h2>

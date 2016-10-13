@@ -1,6 +1,6 @@
 <div class="row" style="height:60px; margin: 0px;">
 		<div style="background-color:#0fa5d9;padding: 10px;" class="navbar  {{Request::is('admin/*')? "navbar-inverse" : "navbar-default"}}  navbar-fixed-top" role="navigation">
-		    <div class="container"> 
+		    <div class="container-fluid"> 
 		        <div class="navbar-header">
 		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		                <span class="icon-bar"></span>

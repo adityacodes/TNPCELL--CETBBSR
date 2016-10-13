@@ -4,7 +4,7 @@
 
 
 <!-- Team Members Row -->
-        <div class="row">
+        <div class="row mainbody">
             <div class="col-lg-12 col-xs-12 text-center" style="font-family: font1;padding: 10px; ">
             	<h1><strong style="font-size: 50px;">COMPANIES</strong></h1>
            	</div>

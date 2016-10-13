@@ -13,7 +13,7 @@
 
 
 <!-- Team Members Row -->
-        <div class="row">
+        <div class="row mainbody">
             <div class="col-lg-12 text-center" style="font-family: font1;padding: 10px;"t><h1><u>{{strtoupper(Request::path() )}}</u></h1></div>
             <div class="border" style=""></div>
             
