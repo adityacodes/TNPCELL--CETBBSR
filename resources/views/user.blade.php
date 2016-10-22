@@ -5,30 +5,29 @@
 
 		@yield('stylesheets')
 	</head>
-	<body style="background-image: url('/abcbg.jpg');">
-		@include('partials._usernav')
+	<body>
 
-		<div class="page-content container-fluid">
-	    	<div class="row">
+    	<div class="wrapper">
 
-	    	@if(Request::is('admin'))
+    		@include('partials._usersidebar')
 
+    			<div class="main-panel">
+    		
+    				@include('partials._usernav')
 
-	    	@else
-	    		@include('partials._usersidebar')
-
-	    	@endif
-	    		
-
-	    		@include('partials._usermessages')
-
-	    		@yield('content')
+    				<div class="content">
+    					<div class="container-fluid">
+		    				@yield('content')
+		    			</div>
+		    		</div>
 
 
-	    	</div>
-    	</div>
+    	
 
-    	@include('partials._userfooter')
+					@include('partials._userfooter')
+
+				</div>
+		</div>
 
     	@yield('scripts')
 	</body>

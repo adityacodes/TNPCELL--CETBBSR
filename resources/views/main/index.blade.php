@@ -2,19 +2,14 @@
 
 @section('stylesheets')
 
-<link rel="stylesheet" type="text/css" href="main/css/carousel.css">
-<style type="text/css">
-	.carousel-inner > .item > img{
-		width: 100%;
-	}
-</style>
+<link rel="stylesheet" type="text/css" href="/main/css/carousel.css">
 
 @endsection
 
 @section('content')
-<div class="row clearfix" style="background-color:#fff;">
-	<div class="col-lg-8" style="margin-top: 5px;">
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div class="row">
+
+			<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
 		      <!-- Indicators -->
 			      <ol class="carousel-indicators">
 			        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
@@ -22,11 +17,11 @@
 			        <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
 			      </ol>
 			      <div class="carousel-inner" role="listbox">
-				        <div class="item active">
-				          <img class="first-slide" style="height: 100%; width: 100%; object-fit: contain;" src="/images/carousel/carousel_1.jpg" alt="First slide">
+				        <div class="item">
+				          <img class="first-slide" src="/images/carousel/carousel_1.jpg" alt="First slide">
 				          
 				        </div>
-				        <div class="item">
+				        <div class="item active">
 				          <img class="second-slide" src="/images/carousel/carousel_2.jpg" alt="Second slide">
 				          
 				        </div>
@@ -35,75 +30,89 @@
 				        </div>  
 			      </div>
 			      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-			        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			        <span class="glyphicon glyphicon-triangle-left " aria-hidden="true"></span>
 			        <span class="sr-only">Previous</span>
 			      </a>
 			      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-			        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			        <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 			        <span class="sr-only">Next</span>
 			      </a>
 			</div>
-	</div>
-	<div class="col-lg-4 hidden-xs">
-		<!-- Sidebar -->
-		<div class="list-group" style="margin-top: 5px;">
-			    <a href="#" class="list-group-item active">
-			        <span class="glyphicon glyphicon-" style="font-size: 14px;"></span> USEFUL LINKS
-			    </a>
-			    <a href="/user/dashboard" class="list-group-item">
-			        <span class="glyphicon glyphicon-user" style="font-size: 12px;"></span> STUDENTS PORTAL
-			    </a>
-			    <a href="http://cet.edu.in/facilities.php" class="list-group-item">
-			        <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px;"></span> FACILITIES
-			    </a>
-			    <a href="http://cet.edu.in/academics.php" class="list-group-item">
-			        <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px;"></span> ACADEMICS
-			    </a>
-			    <a href="http://cet.edu.in/addmission.php" class="list-group-item">
-			        <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px;"></span> ADDMISSION
-			    </a>
-			    <a href="http://cet.edu.in/notice.php" class="list-group-item">
-			        <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px;"></span> NOTICE BOARD
-			    </a>
-			    <a href="http://cet.edu.in/upcoming_event.php" class="list-group-item">
-			        <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px;"></span> UPCOMING EVENTS
-			    </a>
-		</div>
+	
 
-		<div class="panel panel-default">
-			<div class="panel-heading white-bg">
-				NOTICES <img src="/users/img/new-star.gif" width="40" height="40">
-			</div>
-			<div class="panel-body">
-				<marquee direction="up" scrollamount="1" scrolldelay="60">HELLO </marquee>
-			</div>
-		</div>
-	</div>
 </div>
 
-<div class="row" style="background-color:#fff;">
-	<div class="wells panel panel-default">
-			<h3 class="text-center tnpmoto">"To Emerge as a Global Leader in Technical Education"</h3>
-	</div>
+<div class="container white-bg">
+
+<div class="row">
+        <!--News Section Start-->
+        
+
+        <div class="col-lg-6 col-md-6 news_header">
+    <h3>News</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="demo1" style="overflow-y: hidden; height: 274px;">
+                        <li class="news-item"> <a href="faculty-members-in-news#5">#</a>
+                            <!--<span></span>-->
+                        </li>
+                        <li class="news-item"> <a href="faculty-members-in-news#4">#</a>
+                            <!--<span></span>-->
+                        </li>
+                        <li class="news-item"> <a href="news#3">#</a>
+                            <!--<span></span>-->
+                        </li>
+                        <li class="news-item"> <a href="student-news#2">#</a>
+                            <!--<span></span>-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer"><a href="/news" class="btn btn-primary">All News</a>
+            <ul class="pagination pull-right" style="margin: 0px;">
+                <li><a href="#" class="prev"><span class="glyphicon glyphicon-chevron-down"></span></a>
+                </li>
+                <li><a href="#" class="next"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--News Section End-->
+<!--Events Section Start-->
+<div class="col-lg-6 col-md-6 events_header">
+    <h3>Events</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="demo1" style="overflow-y: hidden; height: 274px;">
+                        <li class="news-item" style="display: list-item;"> <a target="_blank" href="/downloads/caas.pdf"> ####</a> <span> Dec 5 - 13 , 2016 </span> </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer"><a href="/events" class="btn btn-primary">All Events</a>
+            <ul class="pagination pull-right" style="margin: 0px;">
+                <li><a href="#" class="prev"><span class="glyphicon glyphicon-chevron-down"></span></a>
+                </li>
+                <li><a href="#" class="next"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--Events Section End-->
 </div>
 
-<div class="row text-center" style="background-color:#fff;">
-        <div class="col-lg-6">
-          <img class="img-circle" style="margin: 0px; border: 7px solid #83b435" src="{{$settings['principal_image']}}" alt="Generic placeholder image" width="200" height="200">
-          <h2>Principal</h2>
-          <p>{{ substr($settings['principal_message'], 0,120) }}...</p>
-          <p><a class="btn btn-secondary" href="/message/principal" role="button">See more »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-6">
-          <img class="img-circle" src="http://placehold.it/200x200" style="margin: 0px; border: 7px solid #83b435" alt="Generic placeholder image" width="200" height="200">
-          <h2>Prof. In Charge, T&amp;P Cell</h2>
-          <p>{{ substr($settings['pic_message'],0,120)}}</p>
-          <p><a class="btn btn-secondary" href="/message/pic" role="button">See more »</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div>
 
-
-
+</div>
 
 @endsection
 
@@ -115,12 +124,4 @@
                     this.start();
                 });
         </script>
-
-
-
 @endsection
-
-
-
-
-

@@ -5,54 +5,175 @@
 
 @section('content')
 
-<div class="col-md-10">
-    <div class="row">
-        
-
-        <div class="col-md-7">
-            <div class="content-box-large"><h3>TOP 4 NOTICES</h3></div>
-            @foreach ($posts as $post)
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="content-box-header">
-                        <div class="panel-title">{{strtoupper($post->title)}}</div>
-                        
-                        <div class="panel-options">
-                            <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-                            <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+    <div class="row hidden-xs">
+        <div class="col-lg-3 col-sm-6">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="icon-big icon-warning text-center">
+                                <i class="ti-server"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-7">
+                            <div class="numbers">
+                                <p>Capacity</p>
+                                105GB
+                            </div>
                         </div>
                     </div>
-                    <div class="content-box-large box-with-header panel-body">
-                        <div class="col-md-12">
-                            <div class="col-md-3 clearfix"><img src="http://placehold.it/100x100"></div>
-                            <div class="col-md-9">{{ substr($post->body,0,250) }}{{ strlen($post->body) > 50 ? "..." : ""}}</div>
-                            
-
-                            <div class="clearfix"><br>
-                                <a class="action" href="/notice/{{$post->slug}}"><button type="button" class="btn btn-sm btn-primary pull-right" >See More »</button></a>
-                            </div>
+                    <div class="footer">
+                        <hr />
+                        <div class="stats">
+                            <i class="ti-reload"></i> Updated now
                         </div>
                     </div>
                 </div>
             </div>
-            @endforeach
-            
         </div>
-
-        <div class="col-md-5 hidden-xs">
-                <div class="content-box-large">
-            
-                    <div class="panel-heading">
-                        <div class="panel-title">GUIDELINES AND NOTICES</div>
-                        
-                        <div class="panel-options">
-                            <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-                            <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+        <div class="col-lg-3 col-sm-6">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="icon-big icon-success text-center">
+                                <i class="ti-wallet"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-7">
+                            <div class="numbers">
+                                <p>Revenue</p>
+                                $1,345
+                            </div>
                         </div>
                     </div>
-                    <div class="panel-body" >
-                    <marquee direction="up" behavior="scroll" style="height: 100px;">
-                        <ul> 
+                    <div class="footer">
+                        <hr />
+                        <div class="stats">
+                            <i class="ti-calendar"></i> Last day
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="icon-big icon-danger text-center">
+                                <i class="ti-pulse"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-7">
+                            <div class="numbers">
+                                <p>Errors</p>
+                                23
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <hr />
+                        <div class="stats">
+                            <i class="ti-timer"></i> In the last hour
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="icon-big icon-info text-center">
+                                <i class="ti-twitter-alt"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-7">
+                            <div class="numbers">
+                                <p>Followers</p>
+                                +45
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <hr />
+                        <div class="stats">
+                            <i class="ti-reload"></i> Updated now
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            @foreach ($posts as $post)
+                <div class="card">
+
+                    <div class="header">
+                        <div class="icon-big icon-success col-md-2 col-xs-3">
+                                <i class="ti-wallet"></i>
+                                   
+                        </div>
+                        <h4 class="title" style="font-weight: bold;">{{strtoupper($post->title)}}</h4>
+                        <p class="category">Last Campaign Performance</p>
+                    </div>
+                    
+                    <div class="content">
+                        
+                        <h4><i style="font-weight: 400;" class="ti-pencil"></i>
+                            
+                                {{ substr($post->body,0,250) }}{{ strlen($post->body) > 50 ? "..." : ""}}
+                            </h4>                        
+
+                        <div class="footer">
+                          <!--  <div class="chart-legend">
+                                <i class="fa fa-circle text-info"></i> Open
+                                <i class="fa fa-circle text-danger"></i> Bounce
+                                <i class="fa fa-circle text-warning"></i> Unsubscribe
+                            </div>
+                        -->
+                            <div class="pull-right">
+                                <a class="action" href="/notice/{{$post->slug}}"><button type="button" class="btn btn-sm btn-primary clearfix" >See More »</button></a>
+                            </div>
+                            <hr>
+                            <div class="stats">
+                                <i class="ti-timer"></i> Campaign sent 2 days ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+
+                    <div class="header">
+                        <h4 class="title">GUIDELINES AND NOTICES</h4>
+                        <hr>
+                    </div>
+                    
+                    <div class="content" >
+                        <div id="nt-example1-container">
+                            <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
+                                <ul id="nt-example1" style="height: 240px; overflow: hidden;">
+                                   <li style="margin-top: 0px;">Etiam imperdiet volutpat libero eu tristique. Aenean, rutrum felis in. <a href="#">Read more...</a></li>
+                                   <li style="margin-top: 0px;">Curabitur porttitor ante eget hendrerit adipiscing. Maecenas at magna. <a href="#">Read more...</a></li>
+                                   <li style="margin-top: 0px;">Praesent ornare nisl lorem, ut condimentum lectus gravida ut. <a href="#">Read more...</a></li>
+                                   <li style="margin-top: 0px;">Nunc ultrices tortor eu massa placerat posuere. Vivamus viverra sagittis. <a href="#">Read more...</a></li>
+                                   <li style="margin-top: 0px;">Morbi sodales tellus sit amet leo congue bibendum. Ut non mauris eu neque. <a href="#">Read more...</a></li>
+                                   <li style="margin-top: 0px;">In pharetra suscipit orci sed viverra. Praesent at sollicitudin tortor, id. <a href="#">Read more...</a> </li>
+                                   <li style="margin-top: 0px;">Maecenas nec ligula sed est suscipit aliquet sed eget ipsum, suspendisse. <a href="#">Read more...</a></li>
+                                   <li style="margin-top: 0px;">Onec bibendum consectetur diam, nec euismod urna venenatis eget.. <a href="#">Read more...</a> </li>
+                                </ul>
+                                <i class="fa fa-arrow-down" id="nt-example1-next"></i>
+                        </div>
+                        
+                        <marquee  direction="up" behavior="scroll" style="height: 200px;">
+                            <ul> 
                                 <li>
                                         <a href="/">Hello</a>
                                     Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sed consectetur erat. Maecenas in elementum libero. Sed consequat pellentesque ultricies. Ut laoreet vehicula nisl sed placerat. Duis posuere lectus n, eros et hendrerit pellentesque, ante magna condimentum sapien, eget ultrices eros libero non orci. Etiam varius diam lectus.
@@ -60,85 +181,22 @@
                                 <li>
                                     Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sed consectetur erat. Maecenas in elementum libero. Sed consequat pellentesque ultricies. Ut laoreet vehicula nisl sed placerat. Duis posuere lectus n, eros et hendrerit pellentesque, ante magna condimentum sapien, eget ultrices eros libero non orci. Etiam varius diam lectus.
                                 </li>
-                        </ul>
-                    </marquee>
-                </div>
-                </div>
-            <div class="content-box-large">
-            
-                <div class="panel-heading">
-                    <div class="panel-title">PLACEMENT COORDINATORS</div>
-                    
-                    <div class="panel-options">
-                        <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-                        <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+                            </ul>
+                        </marquee>                       
+
+                        <div class="footer">
+                            <hr>
+                            <div class="stats">
+                                <i class="ti-timer"></i> Campaign sent 2 days ago
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="panel-body text-center">
-                        <div class="col-md-12">
-                                <div class="col-md-4">  
-                                        <img src="" width="100" height="100">
-                                        <p > BISWA BHAI</p>
-                                        <strong> EE</strong>
-                                 </div>
-                                <div class="col-md-4">  
-                                        <img src="" width="100" height="100">
-                                        <p > DEBA BHAI</p>
-                                        <strong> CE</strong>
-                                 </div>
-                                <div class="col-md-4">  
-                                        <img src="" width="100" height="100">
-                                        <p > AMRI BHAI</p>
-                                        <strong> IT</strong>
-                                 </div>
-                        </div>
-                        <div class="col-md-12 spacer3">
-                                <div class="col-md-4">  
-                                        <img src="" width="100" height="100">
-                                        <p> PRATEEK BHAI</p>
-                                        <strong> EE</strong>
-                                 </div>
-                                <div class="col-md-4">  
-                                        <img src="" width="100" height="100">
-                                        <p> ANKUSH BHAI</p>
-                                        <strong> IE</strong>
-                                 </div>
-                                <div class="col-md-4">  
-                                        <img src="" width="100" height="100">
-                                        <p> DIBYA BHAI </p><br>
-                                        <strong> BT</strong>
-                                 </div>
-                        </div>
-
-                        <div class="col-md-12 spacer3">
-                                <div class="col-md-4">  
-                                        <img src="" width="100" height="100">
-                                        <p> RISHI BHAI</p>
-                                        <strong>CSE</strong>
-                                 </div>
-                                <div class="col-md-4">  
-                                        <img src="" width="100" height="100">
-                                        <p> SAI BHAI</p>
-                                        <strong>ME</strong>
-                                 </div>
-                                <div class="col-md-4">  
-                                        <img src="" width="100" height="100">
-                                 </div>
-                        </div>
-                </div>
             </div>
-            
-            
         </div>
-
-
-
-
-
-
     </div>
 
-</div>
+
+
 @endsection
 
 @section('scripts')
@@ -148,6 +206,40 @@
                 }, function () {
                     this.start();
                 });
+        </script>
+
+        <script>
+            $('a[href*=#]').click(function(e) {
+                var href = $.attr(this, 'href');
+                if (href != "#") {
+                    $('html, body').animate({
+                        scrollTop: $(href).offset().top - 81
+                    }, 500);
+                }
+                else {
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 500);
+                }
+                return false;
+            });
+
+            $(window).load(function(){
+                $('code.language-javascript').mCustomScrollbar();
+            });
+            var nt_title = $('#nt-title').newsTicker({
+                row_height: 40,
+                max_rows: 1,
+                duration: 3000,
+                pauseOnHover: 0
+            });
+            var nt_example1 = $('#nt-example1').newsTicker({
+                row_height: 80,
+                max_rows: 3,
+                duration: 4000,
+                prevButton: $('#nt-example1-prev'),
+                nextButton: $('#nt-example1-next')
+            });
         </script>
 
 @endsection

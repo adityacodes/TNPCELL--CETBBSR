@@ -1,70 +1,127 @@
-@if(Request::is('user/*') || Request::is('notice/*'))
-<div class="col-md-2">
-	<div class="sidebar content-box hidden-sm hidden-xs" style="display: block;">
-        <ul class="nav clearfix">
-            <!-- Main menu -->
-            <li class="{{Request::is('user/dashboard')? "current" : ""}} ">
-                <a href="/user/dashboard"><i class="glyphicon glyphicon-home"></i> Dashboard<img src="/users/img/new-star.gif" width="30" height="30"></a>
+<div class="sidebar" data-background-color="white" data-active-color="danger">
+
+    <!--
+        Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+        Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+    -->
+
+    <div class="sidebar-wrapper">
+        <div class="logo">
+
+            
+                @if(Request::is('admin')|| Request::is('admin/*')) 
+                    
+                        <span class="simple-text">CETB-TNP</span>-<a href="/admin/post" class="simple-text">ADMIN PANEL</a>
+                    
+                @else
+                    <span class="simple-text">CETB-TNP</span>-<a href="/user/dashboard" class="simple-text">USER PANEL</a>
+                    
+                @endif
+            
+        </div>
+
+        @if(Request::is('user/*') || Request::is('notice/*'))
+        <ul class="nav">
+            <li class="{{Request::is('user/dashboard')? "active" : ""}}">
+                <a href="/user/dashboard">
+                    <i class="ti-panel"></i>
+                    <p>Dashboard</p>
+                </a>
             </li>
-            <li class="{{Request::is('notice/*')? "current" : ""}}">
-                <a href="/user/notices"><i class="glyphicon glyphicon-calendar"></i> All Notices</a>
+            <li class="{{Request::is('user/profile')? "active" : ""}}">
+                <a href="/user/profile">
+                    <i class="ti-user"></i>
+                    <p>User Profile</p>
+                </a>
             </li>
-            <li class="disabled">
-                <a href="#"><i class="glyphicon glyphicon-stats"></i> Statistics</a>
+            <li class="{{Request::is('notice/*')? "active" : ""}}">
+                <a href="/user/notices">
+                    <i class="ti-view-list-alt"></i>
+                    <p>All Notices</p>
+                </a>
             </li>
-            <li class="{{Request::is('user/profile')? "current" : ""}}">
-                <a href="/user/profile"><i class="glyphicon glyphicon-list"></i> User Profile</a>
+            <li class="{{Request::is('user/contact')? "active" : ""}}">
+                <a href="/user/contact">
+                    <i class="ti-text"></i>
+                    <p>Contact Admin</p>
+                </a>
             </li>
-            <li class="{{Request::is('user/contact')? "current" : ""}}">
-                <a href="/user/contact"><i class="glyphicon glyphicon-record"></i>Contact Admin</a>
+        </ul>
+
+        @else
+        <ul class="nav">
+            <li class="{{Request::is('admin/post')|| Request::is('admin/post/*')? "active" : ""}} ">
+                <a href="/admin/post">
+                    <i class="ti-panel"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li class="{{Request::is('admin/applicants')? "active" : ""}}">
+                <a href="/admin/applicants">
+                    <i class="ti-user"></i>
+                    <p>Applicants</p>
+                </a>
+            </li>
+            <li class="{{Request::is('admin/administrators')? "active" : ""}}">
+                <a href="/admin/administrators">
+                    <i class="ti-crown"></i>
+                    <p>Admins</p>
+                </a>
             </li>
             
+            <li class="{{Request::is('admin/add/user')? "active" : ""}}">
+                <a href="/admin/add/user">
+                    <i class="ti-user"></i>
+                    <p>Add TNP User</p>
+                </a>
+            </li>
+
+            <li class="{{Request::is('admin/delete/user')? "active" : ""}}">
+                <a href="/admin/delete/user">
+                    <i class="ti-user"></i>
+                    <p>Delete TNP User</p>
+                </a>
+            </li>
+
+            <li class="{{Request::is('notice/*')? "active" : ""}}">
+                <a href="/user/notices">
+                    <i class="ti-view-list-alt"></i>
+                    <p>All Notices</p>
+                </a>
+            </li>
+
+            <li class="{{Request::is('admin/import')? "current" : ""}}">
+                <a href="/admin/import">
+                    <i class="ti-import"></i> 
+                    <p>IMPORT</p>
+                </a>
+            </li>
+
+            <li class="{{Request::is('admin/standalone')? "current" : ""}}">
+                <a href="/admin/standalone">
+                    <i class="ti-bolt"></i> 
+                    <p>Standalone Mode</p>
+                </a>
+            </li>
+
+            <li class="{{Request::is('admin/sendgroupemail')? "current" : ""}}">
+                <a href="/admin/sendgroupemail">
+                    <i class="ti-email"></i> 
+                    <p>Send Bulk Mail</p>
+                </a>
+            </li>
+
+            <li class="active-pro {{Request::is('admin/settings')? "current" : ""}}">
+                <a href="/admin/settings">
+                    <i class="ti-settings"></i>
+                    <p>Site Settings</p>
+                </a>
+            </li>
+
         </ul>
-    </div>
-    <div class="text-center">
-        <img src="/images/140cet.jpg">
-        <p class="clg-name">CET, BBSR</p>
+        @endif
+
     </div>
 </div>
-@else
-    <div class="col-md-3">
-    <div class="sidebar content-box hidden-sm hidden-xs" style="display: block;">
-        <ul class="nav">
-            <!-- Main menu -->
-            <li class="{{Request::is('admin')? "current" : ""}}">
-                <a href="/admin"><i class="glyphicon glyphicon-home"></i> Dashboard </a>
-            </li>
-            <li class="{{Request::is('admin/post')|| Request::is('admin/post/*')? "current" : ""}} ">
-                <a href="/admin/post"><i class="glyphicon glyphicon-bullhorn"></i>Posts - Admin</a>
-            </li>
-            <li class="{{Request::is('admin/applicants')? "current" : ""}}">
-                <a href="/admin/applicants"><i class="glyphicon glyphicon-list"></i> Applicants</a>
-            </li>
-            <li class="{{Request::is('admin/administrators')? "current" : ""}}">
-                <a href="/admin/administrators"><i class="glyphicon glyphicon-tower"></i> Admins</a>
-            </li>
-            <li class="{{Request::is('admin/add/user')? "current" : ""}}">
-                <a href="/admin/add/user"><i class="glyphicon glyphicon-user"></i> Add TNP User</a>
-            </li>
-            <li class="{{Request::is('admin/delete/user')? "current" : ""}}">
-                <a href="/admin/delete/user"><i class="glyphicon glyphicon-user"></i> Delete User</a>
-            </li>
-            <li class="{{Request::is('admin/import')? "current" : ""}}">
-                <a href="/admin/import"><i class="glyphicon glyphicon-import"></i> IMPORT</a>
-            </li>
-            <li class="{{Request::is('admin/standalone')? "current" : ""}}">
-                <a href="/admin/standalone"><i class="glyphicon glyphicon-share"></i> Standalone Mode</a>
-            </li>
-            <li class="{{Request::is('admin/sendgroupemail')? "current" : ""}}">
-                <a href="/admin/sendgroupemail"><i class="glyphicon glyphicon-send"></i> Send Bulk Mail</a>
-            </li>
-            <li class="{{Request::is('admin/settings')? "current" : ""}}">
-                <a href="/admin/settings"><i class="glyphicon glyphicon-cog"></i>Site Settings</a>
-            </li>
-            
-        </ul>
-    </div>
-    </div>
-@endif
 
     

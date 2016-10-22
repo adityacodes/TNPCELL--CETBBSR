@@ -1,3 +1,83 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar bar1"></span>
+                <span class="icon-bar bar2"></span>
+                <span class="icon-bar bar3"></span>
+            </button>
+            <a class="navbar-brand" href="#">@yield('title')</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="ti-panel"></i>
+						<p>Stats</p>
+                    </a>
+                </li>
+                <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="ti-bell"></i>
+							<p>{{$user['regdno']}}</p>
+							<b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu">
+
+                        <li>
+	                        
+	                            <div class="col-lg-12">
+	                                
+	                                    <p class="text-center clearfix">
+	                                        <h1 class="text-center"><strong>{{ $user['name'][0]}}</strong></h1>
+	                                    </p>
+	                                
+	                                
+	                                <br>
+	                                    <p class="text-center p-a-4"><strong>{{$user['regdno']}}</strong></p>
+	                                    <p class="text-center small"><h5>{{$user['email']}}</h5></p>
+	                                    <p class="text-left">
+	                                     @if(Auth::user()->isAdmin())
+					                        <a href="/admin/post" class="btn btn-primary btn-block btn-sm"><i class="ti-back-right"></i> Goto Admin Panel</a>
+					                    @else
+					                    	<a href="/user/profile" class="btn btn-primary btn-block btn-sm"><i class="ti-user"></i> Profile</a>
+					                 
+					                    @endif
+
+					                    @if(Request::is('admin/*') || Request::is('admin'))
+					                    	<a href="/user/dashboard" class="btn btn-primary btn-block btn-sm"><i class="ti-back-right"></i> Goto USER Panel</a>
+					                    @endif
+	                                    </p>
+	                                
+	                            </div>
+	                        
+	                    </li>
+                      </ul>
+                </li>
+                @if(Auth::user()->isAdmin())
+				<li>
+                    <a href="/admin">
+						<i class="ti-back-right"></i>
+						<p>ADMIN PANEL</p>
+                    </a>
+                </li>
+                @else
+                	<li>
+	                    <a href="/user/profile">
+							<i class="ti-back-right"></i>
+							<p>PROFILE</p>
+	                    </a>
+                	</li>
+                @endif
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!--
+
 <div class="row" style="height:60px; margin: 0px;">
 		<div style="background-color:#0fa5d9;padding: 10px;" class="navbar  {{Request::is('admin/*')? "navbar-inverse" : "navbar-default"}}  navbar-fixed-top" role="navigation">
 		    <div class="container-fluid"> 
@@ -90,3 +170,4 @@
 		    </div>
 		</div>
 </div>
+-->

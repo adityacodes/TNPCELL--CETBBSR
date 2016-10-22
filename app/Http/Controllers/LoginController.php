@@ -29,6 +29,8 @@ class LoginController extends Controller
 	        Session::flash('warning', 'Username or password incorrect.');
 	        return Redirect::to('login');
 	      }
+	      Session::flash('success', 'You have successfully logged in.!');
 	      return redirect()->route('user.dashboard');
+
 	  }
 }

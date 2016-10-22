@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div class="row" style="background-color:#ececec;">
+<div class="container">x
+<div class="row">
           <br>
           <div class="col-lg-12">
               <h2 style="color:#08387f; word-wrap:wrap-text;">From The {{strtoupper($slug)}}'s Desk</h2>
@@ -26,5 +26,5 @@
           </div>
     </div>
 
-
+</div>
 @endsection
