@@ -49,7 +49,7 @@
 	                                </a>
 	                            @if($post->published == 0)
 	                                
-	                                	<a href="{{ route('admin.notice.publish', $post->id)}}">
+	                                	<a onclick="return confirm('Are you sure you want to publish this notice {{$post->title }}?');" href="{{ route('admin.notice.publish', $post->id)}}">
 										    <button class="btn btn-md btn-success">
 		                                        <h6><i class="ti-thumb-up"></i>
 		                                        Publish</h6>
@@ -57,7 +57,7 @@
 										</a>
 	                                
 	                            @else
-	                                <a href="{{ route('admin.notice.unpublish', $post->id)}}">
+	                                <a onclick="return confirm('Are you sure you want to publish this notice {{$post->title }}?');" href="{{ route('admin.notice.unpublish', $post->id)}}">
 	                                    <button class="btn btn-md btn-warning">
 	                                        <h6><i class="fa fa-eye-slash" aria-hidden="true"></i>
 	                                        UnPublish</h6>
@@ -79,76 +79,5 @@
         </div>
     </div>    
 
-<!--
-            <div class="content-box-header">
-	            <div class="text-muted bootstrap-admin-box-title"><strong></strong><div class="pull-right"></div></div>
-	                
-
-	                <div ><b>Total Notices:</b><span class="badge label-success">{{$posts->total()}}</span></div>
-	                 <div class="clearfix"></div>	
-                
-            </div>
-            <div class="content-box-large box-with-header">
-                <table class="table bootstrap-admin-table-with-actions">
-	                    <thead>
-	                        <tr>
-	                            <th>#</th>
-	                            <th>Title</th>
-	                            <th>Notice</th>
-	                            <th>Created At</th>
-	                            <th>Actions</th>
-	                        </tr>
-	                    </thead>
-                    <tbody>
-                    	@foreach ($posts as $post)
-	                        <tr>
-	                            <td>{{ $post->id }}</td>
-	                            <td>{{ substr($post->title,0,20) }}</td>
-	                            <td>{{ substr($post->body,0,20) }}{{ strlen($post->body) > 10 ? "..." : ""}}</td>
-	                            <td>{{ date('M j, Y H:i:s', strtotime($post->created_at)) }}</td>
-	                            <td class="actions">
-	                                <a href="{{ route('admin.post.show', $post->id)}}">
-	                                    <button class="btn btn-sm btn-primary">
-	                                        <i class="glyphicon glyphicon-eye-open"></i>
-	                                        View
-	                                    </button>
-	                                </a>
-	                                <a href="{{ route('admin.post.edit', $post->id) }}">
-	                                    <button class="btn btn-sm btn-warning">
-	                                        <i class="glyphicon glyphicon-pencil"></i>
-	                                        Edit
-	                                    </button>
-	                                </a>
-	                            @if($post->published == 0)
-	                                
-	                                	<a href="{{ route('admin.notice.publish', $post->id)}}">
-										    <button class="btn btn-sm btn-success">
-		                                        <i class="glyphicon glyphicon-thumbs-up"></i>
-		                                        Publish
-		                                    </button>
-										</a>
-	                                
-	                            @else
-	                                <a href="{{ route('admin.notice.unpublish', $post->id)}}">
-	                                    <button class="btn btn-sm btn-warning">
-	                                        <i class="glyphicon glyphicon-thumbs-down"></i>
-	                                        UnPublish
-	                                    </button>
-		                            </a>
-	                            @endif
-	                            </td>
-	                        </tr>
-	                    @endforeach
-                    </tbody>
-
-                </table>
-
-                <div class="text-center">
-                	{!! $posts->render() !!}
-                </div>
-
-            </div>
-        
-    </div>
--->
+</div>
 @endsection

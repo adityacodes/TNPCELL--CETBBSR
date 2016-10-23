@@ -25,7 +25,7 @@
                  
                 <div class="content">
                 <h4>
-			    	{!! Form::open(array('route' => 'admin.post.store', 'class' => 'form-horizontal')) !!}
+			    	{!! Form::open(array('route' => 'admin.post.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '')) !!}
 			                    <div class="form-group">
 			                    	<div class="col-md-2">
 						    			<label class="control-label pull-right" for="title">Notice Title:</label>

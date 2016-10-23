@@ -19,7 +19,7 @@
     <link href="{{URL::to('template/css/paper-dashboard.css')}}" rel="stylesheet"/>
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="{{URL::to('template/css/demo.css')}}" rel="stylesheet" />
+    <link href="{{URL::to('template/css/main.css')}}" rel="stylesheet" />
 
     <!--  Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">

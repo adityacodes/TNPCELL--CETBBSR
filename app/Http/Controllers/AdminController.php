@@ -24,7 +24,7 @@ class AdminController extends Controller
     {
         $this->middleware('admin');
         $this->middleware('ajax', ['only' => ['applicants']]);
-        $this->middleware('superadmin', ['only' => ['delUser','getImportDatabase','getAddBranch']]);
+        $this->middleware('superadmin', ['only' => ['addUser','delUser','getImportDatabase','getAddBranch']]);
 
         if(Auth::check()){
                 $user = TNP::where('regdno', '=', Auth::user()->name)->first();
@@ -96,28 +96,35 @@ class AdminController extends Controller
              $apps = Applied::join('users', 'users.id', '=', 'applieds.userid')
                         ->select('name')->where('postid', '=', $request->postid)->get();
 
-            foreach ($apps as $app) {
-                
-                $applicants[] = TNP::where('regdno', '=', $app->name)->first();
+            if(!($apps))
+            {
+                echo 'Sorry! No such users found!';
             }
 
-            static $x = 1;
-            if(count($applicants)<=10)
-            {  
-              for( $i=0; $i<count($applicants); $i++)
-              {
-                  echo '<tr><td>'.$x.'</td><td>'.$applicants[$i]->regdno.'</td><td>'.$applicants[$i]->name.'</td></tr>';
-                  $x++;
-              }
-            }
             else{
-                for( $i=0; $i<10; $i++)
-                  {
-                      echo '<tr><td>'.$x.'</td><td>'.$applicants[$i]->regdno.'</td><td>'.$applicants[$i]->name.'</td></tr>';
 
-                      $x++;
-                  }
-                  echo '<tr><td>'.$x.'</td><td>PLEASE EXPORT THE FILE</td><td>TO SEE MORE</td></tr>';
+              foreach ($apps as $app) {
+                  $applicants[] = TNP::where('regdno', '=', $app->name)->first();
+              }
+              static $x = 1;
+              if(count($applicants)<=5)
+              {  
+                for( $i=0; $i<count($applicants); $i++)
+                {
+                    echo '<tr><td>'.$x.'</td><td>'.$applicants[$i]->regdno.'</td><td>'.$applicants[$i]->name.'</td></tr>';
+                    $x++;
+                }
+              }
+              else{
+                  for( $i=0; $i<5; $i++)
+                    {
+                        echo '<tr><td>'.$x.'</td><td>'.$applicants[$i]->regdno.'</td><td>'.$applicants[$i]->name.'</td></tr>';
+
+                        $x++;
+                    }
+                    echo '<tr><td>'.$x.'</td><td>PLEASE EXPORT THE FILE</td><td>TO SEE MORE</td></tr>';
+              }
+
             }
         }
     }
@@ -137,8 +144,11 @@ class AdminController extends Controller
     public function admindelete($regdno){
 
         $regdno = User::where('name', '=' , $regdno)->first();
+        if(!$regdno){
+          Session::flash('warning', 'No such user found.');
+        }
 
-        if(Auth::user()->isSuperAdmin()){
+        if($regdno->superadmin == 1 ){
             Session::flash('warning', 'You cannot remove a superadmin.'); 
         }
         else{
@@ -353,7 +363,7 @@ class AdminController extends Controller
             }
             else{
               Session::flash('warning', 'No such user found.');
-              return redirect()->route('admin.post.index');
+              return redirect()->route('admin.delete.user');
             }
          }
     }

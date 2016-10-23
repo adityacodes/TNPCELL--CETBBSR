@@ -1,4 +1,4 @@
-<div class="sidebar" data-background-color="white" data-active-color="danger">
+<div class="sidebar" data-background-color="{{Request::is('admin/*')? "black" : "white"}}" data-active-color="danger">
 
     <!--
         Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
@@ -6,15 +6,19 @@
     -->
 
     <div class="sidebar-wrapper">
-        <div class="logo">
+
+            <li class="active-pro text-center" style="background-color: white;">
+                <a href="/"><img id="cetlogo" src="/users/img/logo.jpg"></a>
+            </li>
+        <div class="logo"> 
 
             
                 @if(Request::is('admin')|| Request::is('admin/*')) 
                     
-                        <span class="simple-text">CETB-TNP</span>-<a href="/admin/post" class="simple-text">ADMIN PANEL</a>
+                        <a href="/"><span class="simple-text">CETB-TNP</span></a>-<a href="/admin/post" class="simple-text">ADMIN PANEL</a>
                     
                 @else
-                    <span class="simple-text">CETB-TNP</span>-<a href="/user/dashboard" class="simple-text">USER PANEL</a>
+                    <a href=/""><span class="simple-text">CETB-TNP</span></a>-<a href="/user/dashboard" class="simple-text">USER PANEL</a>
                     
                 @endif
             
@@ -34,7 +38,7 @@
                     <p>User Profile</p>
                 </a>
             </li>
-            <li class="{{Request::is('notice/*')? "active" : ""}}">
+            <li class="{{Request::is('notice/*')||Request::is('user/notices')? "active" : ""}}">
                 <a href="/user/notices">
                     <i class="ti-view-list-alt"></i>
                     <p>All Notices</p>
@@ -53,7 +57,7 @@
             <li class="{{Request::is('admin/post')|| Request::is('admin/post/*')? "active" : ""}} ">
                 <a href="/admin/post">
                     <i class="ti-panel"></i>
-                    <p>Dashboard</p>
+                    <p>ALL NOTICES</p>
                 </a>
             </li>
             <li class="{{Request::is('admin/applicants')? "active" : ""}}">
@@ -83,36 +87,29 @@
                 </a>
             </li>
 
-            <li class="{{Request::is('notice/*')? "active" : ""}}">
-                <a href="/user/notices">
-                    <i class="ti-view-list-alt"></i>
-                    <p>All Notices</p>
-                </a>
-            </li>
-
-            <li class="{{Request::is('admin/import')? "current" : ""}}">
+            <li class="{{Request::is('admin/import')? "active" : ""}}">
                 <a href="/admin/import">
                     <i class="ti-import"></i> 
                     <p>IMPORT</p>
                 </a>
             </li>
 
-            <li class="{{Request::is('admin/standalone')? "current" : ""}}">
+            <li class="{{Request::is('admin/standalone')? "active" : ""}}">
                 <a href="/admin/standalone">
                     <i class="ti-bolt"></i> 
                     <p>Standalone Mode</p>
                 </a>
             </li>
 
-            <li class="{{Request::is('admin/sendgroupemail')? "current" : ""}}">
+            <li class="{{Request::is('admin/sendgroupemail')? "active" : ""}}">
                 <a href="/admin/sendgroupemail">
                     <i class="ti-email"></i> 
                     <p>Send Bulk Mail</p>
                 </a>
             </li>
 
-            <li class="active-pro {{Request::is('admin/settings')? "current" : ""}}">
-                <a href="/admin/settings">
+            <li class="active-pro {{Request::is('admin/settings')? "active" : ""}}">
+                <a href="/admin/settings/options-general">
                     <i class="ti-settings"></i>
                     <p>Site Settings</p>
                 </a>

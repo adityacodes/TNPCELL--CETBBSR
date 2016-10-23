@@ -1,27 +1,27 @@
 @extends('user')
 
-@section('title', 'Delete User')
+@section('title', 'Delete User From User Database')
 
 @section('content')
 
 <div class="col-md-9">
 	<div class="row">
-
-		<div class="col-md-12 panel-warning" style="padding:10px;">
-            <div class="content-box-header panel-heading">
-                <div class="panel-title ">DELETE USER</div>
-                
-                <div class="panel-options">
-                    <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-                    <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
-                </div>
-            </div>
-            <div class="content-box-large box-with-header">
-            	{!!Form::open(array('url' => 'admin/delete/user', 'method' => 'POST'))!!}
+		<div class="card">
+		    <div class="header">
+		    	<!-- Title here -->
+		        <h4 class="title">DELETE USER :</h4>
+		        <p class="alert-warning">
+		        	**Please note deleting a user from this table will delete him from the Users table but not from the TNP Database . To delete user from TNP table or to make changes to TNP Table please contact Super Admin.
+		        </p>
+		        <hr>
+		    </div>          
+		    <div class="content" >              
+		    	<!-- Content goes here -->
+		    	{!!Form::open(array('url' => 'admin/delete/user', 'method' => 'POST', 'onsubmit' => 'return confirm("Are you sure you want to delete the TNP User from User Database?");'))!!}
 	                <div class="form-group">
 	                    <label class="col-lg-3 control-label" for="focusedInput">Registration Number:</label>
 	                    <div class="col-lg-8">
-	                        <input name="singleuserregdno" class="form-control" id="focusedInput" type="text">
+	                        <input name="singleuserregdno" class="form-control border-input" id="focusedInput" type="text">
 	                    </div>
 	                </div><br><br>
 	                <div class="form-group">
@@ -31,9 +31,11 @@
 	                    </div>
 	                </div>
 	                <br><br>
-	            {!!Form::close()!!}<br><br>
-            </div>
-        </div>
+	            {!!Form::close()!!}
+
+				<div class="clearfix"></div>
+		    </div>
+		</div>
 
 
 

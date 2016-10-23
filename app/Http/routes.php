@@ -84,7 +84,7 @@ Route::get('email/verify',function(){
    return view("email.verify")->with('name' , 'Aditya Padhi')->with('confirmation_code', 'anything');
 });
 */
-//Adding Users
+//Adding TNP Users
 
 	Route::get('admin/add/user',['as' => 'admin.add.user','uses' => 'AdminController@addUser']);
 //Deleting Users

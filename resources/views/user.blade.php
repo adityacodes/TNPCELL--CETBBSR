@@ -29,6 +29,11 @@
 				</div>
 		</div>
 
+
+		@include('partials._userscripts')
+		
     	@yield('scripts')
+
+
 	</body>
 </html>

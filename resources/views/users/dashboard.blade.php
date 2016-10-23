@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <div class="row hidden-xs">
+    <div class="row">
         <div class="col-lg-3 col-sm-6">
             <div class="card">
                 <div class="content">
@@ -17,8 +17,7 @@
                         </div>
                         <div class="col-xs-7">
                             <div class="numbers">
-                                <p>Capacity</p>
-                                105GB
+                                <p>Server Load</p>
                             </div>
                         </div>
                     </div>
@@ -42,8 +41,8 @@
                         </div>
                         <div class="col-xs-7">
                             <div class="numbers">
-                                <p>Revenue</p>
-                                $1,345
+                                <p>Notices</p>
+                                {{$posts->total()}}
                             </div>
                         </div>
                     </div>
@@ -56,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-lg-3 col-sm-6 hidden-xs">
             <div class="card">
                 <div class="content">
                     <div class="row">
@@ -81,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-lg-3 col-sm-6 hidden-xs">
             <div class="card">
                 <div class="content">
                     <div class="row">
@@ -119,7 +118,7 @@
                                    
                         </div>
                         <h4 class="title" style="font-weight: bold;">{{strtoupper($post->title)}}</h4>
-                        <p class="category">Last Campaign Performance</p>
+                        <p class="category">Notice created at {{$post->created_at}}</p>
                     </div>
                     
                     <div class="content">
@@ -141,7 +140,7 @@
                             </div>
                             <hr>
                             <div class="stats">
-                                <i class="ti-timer"></i> Campaign sent 2 days ago
+                                <i class="ti-timer"></i> Notice updated at {{$post->updated_at}}
                             </div>
                         </div>
                     </div>
@@ -152,15 +151,22 @@
             <div class="card">
 
                     <div class="header">
-                        <h4 class="title">GUIDELINES AND NOTICES</h4>
+                        <h4 class="title text-center">GUIDELINES AND NOTICES</h4>
                         <hr>
                     </div>
                     
                     <div class="content" >
+
                         <div id="nt-example1-container">
                             <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
                                 <ul id="nt-example1" style="height: 240px; overflow: hidden;">
-                                   <li style="margin-top: 0px;">Etiam imperdiet volutpat libero eu tristique. Aenean, rutrum felis in. <a href="#">Read more...</a></li>
+                                   <li style="margin-top: 0px;">
+
+                                        Etiam imperdiet volutpat libero eu tristique. Aenean, rutrum felis in. 
+
+                                        <a href="#">Read more...</a>
+                                        <div class="clearfix"></div>
+                                    </li>
                                    <li style="margin-top: 0px;">Curabitur porttitor ante eget hendrerit adipiscing. Maecenas at magna. <a href="#">Read more...</a></li>
                                    <li style="margin-top: 0px;">Praesent ornare nisl lorem, ut condimentum lectus gravida ut. <a href="#">Read more...</a></li>
                                    <li style="margin-top: 0px;">Nunc ultrices tortor eu massa placerat posuere. Vivamus viverra sagittis. <a href="#">Read more...</a></li>
@@ -171,8 +177,9 @@
                                 </ul>
                                 <i class="fa fa-arrow-down" id="nt-example1-next"></i>
                         </div>
+
                         
-                        <marquee  direction="up" behavior="scroll" style="height: 200px;">
+             <!--           <marquee  direction="up" behavior="scroll" style="height: 200px;">
                             <ul> 
                                 <li>
                                         <a href="/">Hello</a>
@@ -183,7 +190,7 @@
                                 </li>
                             </ul>
                         </marquee>                       
-
+                -->
                         <div class="footer">
                             <hr>
                             <div class="stats">
@@ -209,24 +216,7 @@
         </script>
 
         <script>
-            $('a[href*=#]').click(function(e) {
-                var href = $.attr(this, 'href');
-                if (href != "#") {
-                    $('html, body').animate({
-                        scrollTop: $(href).offset().top - 81
-                    }, 500);
-                }
-                else {
-                    $('html, body').animate({
-                        scrollTop: 0
-                    }, 500);
-                }
-                return false;
-            });
 
-            $(window).load(function(){
-                $('code.language-javascript').mCustomScrollbar();
-            });
             var nt_title = $('#nt-title').newsTicker({
                 row_height: 40,
                 max_rows: 1,
@@ -236,7 +226,7 @@
             var nt_example1 = $('#nt-example1').newsTicker({
                 row_height: 80,
                 max_rows: 3,
-                duration: 4000,
+                duration: 3000,
                 prevButton: $('#nt-example1-prev'),
                 nextButton: $('#nt-example1-next')
             });

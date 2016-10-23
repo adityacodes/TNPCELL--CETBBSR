@@ -18,7 +18,7 @@ class SettingsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware('superadmin');
 
         if(Auth::check()){
                 $user = TNP::where('regdno', '=', Auth::user()->name)->first();
