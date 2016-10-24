@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row clearfix" style="background-color: #ececec">
+    <div class="row">
 
         @if(Session::has('success'))
     
@@ -19,16 +19,17 @@
         @endif
       </div>
 
-      <div class="row clearfix mainbody" style="background-color: #ececec">  
-        <div class="col-md-8 col-md-offset-2" style="margin-top: 20px;">
+      <div class="row mainbody">  
+        <div class="col-md-6 col-md-offset-3" style="margin-top: 20px;">
             <div class="panel panel-default">
-                <div class="panel-heading clearfix">
+                <div class="panel-heading">
 
                 <strong>Login</strong>
 
                 <a href="/register"><button class="btn btn-primary btn-md pull-right">
                         <i class="fa fa-btn fa-user"></i> Register
                     </button></a>
+                    <div class="clearfix"></div>
                 </div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">

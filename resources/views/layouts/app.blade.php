@@ -94,8 +94,8 @@
                         <a class="dropdown-toggle" data-toggle="dropdown">Procedure&nbsp;&nbsp;<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" >
-                          <li class="nav-subitem"><a href="/procedure/companies">Companies</a></li>
-                          <li class="nav-subitem"><a href="/procedure/students">Students</a></li>
+                          <li class="nav-subitem"><a href="/procedure/companies"><i class="fa fa-user"></i> Companies</a></li>
+                          <li class="nav-subitem"><a href="/procedure/students"><i class="fa fa-user"></i> Students</a></li>
                         </ul>
                     </li>
                        
@@ -134,10 +134,10 @@
         </div>
     </div> 
 
-
+    <div style="min-height: 500px;">
     @yield('content')
 
-
+    </div>
     <div class="row footer white-color" style="background-color: #000C2C; ">
         <div class="container" style="margin-top: 15px;">
             <div class="col-lg-6 col-md-12 col-sm-12">
