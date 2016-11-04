@@ -17,7 +17,8 @@
                         </div>
                         <div class="col-xs-7">
                             <div class="numbers">
-                                <p>Server Load</p>
+                                <p>Companies</p>
+                                20+
                             </div>
                         </div>
                     </div>
@@ -66,8 +67,8 @@
                         </div>
                         <div class="col-xs-7">
                             <div class="numbers">
-                                <p>Errors</p>
-                                23
+                                <p>Placement Percentage</p>
+                                90% +
                             </div>
                         </div>
                     </div>

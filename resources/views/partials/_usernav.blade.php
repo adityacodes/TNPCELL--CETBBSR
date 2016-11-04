@@ -51,7 +51,7 @@
                       </ul>
                 </li>
                 <li>
-                    @if(Auth::user()->isAdmin() && Request::is('user/*') )
+                    @if(Auth::user()->isAdmin() && (Request::is('user/*') || Request::is('notice/*') ) )
                         <a href="/admin/post" class="btn btn-primary btn-block btn-sm"><i class="ti-back-right"></i> Goto Admin Panel</a>
                     @else
                         <a href="/user/profile" class="btn btn-primary btn-block btn-sm"><i class="ti-user"></i> Profile</a>

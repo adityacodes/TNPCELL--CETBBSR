@@ -2,6 +2,15 @@
 
 @section('title',' Create New Post')
 
+@section('stylesheets')
+<style>
+	label{
+		font-weight: bold;
+	}
+</style>
+@endsection
+
+
 @section('content')
     <div class="row">
     	<div class="card">
