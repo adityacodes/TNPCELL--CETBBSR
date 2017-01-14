@@ -48,7 +48,7 @@
 
 
     	});
-	</script>
+	</script> 
 
     <script type="text/javascript">
         var unsaved = false;
@@ -62,6 +62,10 @@
                 return "You have unsaved changes on this page. Do you want to leave this page and discard your changes or stay on this page?";
             }
         }
+
+        $("#submit").click(function(){
+            unsaved = false;
+        });
 
         window.onbeforeunload = unloadPage;
     </script>

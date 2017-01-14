@@ -25,7 +25,7 @@
                  
                 <div class="content">
                 <h4>
-			    	{!! Form::open(array('route' => 'admin.alumni.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '')) !!}
+			    	{!! Form::open(array('route' => 'admin.alumni.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'enctype' => 'multipart/form-data', 'files' => 'true')) !!}
 			                    <div class="form-group">
 			                    	<div class="col-md-2">
 						    			<label class="control-label pull-right" for="title">Name:</label>
@@ -49,7 +49,7 @@
 						    	<div class="form-group">
 						    		<label class="col-lg-3 control-label" for="alumni_company">Alumni Company</label>
 						    		<div class="col-lg-4">
-						    			{!! Form::text('twelthyear', null, array('class' => 'form-control border-input', 'id' => 'alumni_company', 'placeholder' => 'Enter value here ', 'required' => '' )) !!}
+						    			{!! Form::text('alumni_company', null, array('class' => 'form-control border-input', 'id' => 'alumni_company', 'placeholder' => 'Enter value here ', 'required' => '' )) !!}
 						    		</div>
 						    	</div>
 						    	<div class="form-group">

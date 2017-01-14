@@ -20,7 +20,7 @@ class CreateAlumnisTable extends Migration
             $table->string('alumni_company');
             $table->string('alumni_website');
             $table->string('creator');
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 

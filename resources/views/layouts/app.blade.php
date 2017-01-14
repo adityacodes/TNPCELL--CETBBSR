@@ -55,8 +55,8 @@
 <body cz-shortcut-listen="true">
 <div class="container-fluid white-bg">
     <div class="row clearfix" style="background-color: #002147;">
-         <h2 class="text-center hidden-xs tnptitle">{{isset($sitename)? $sitename : ""}}</h2>
-         <h2 class="text-center visible-xs tnpsmtitle">CETB-TNP</h2>
+         <h2 class="text-center hidden-xs tnptitle">Training &amp; Placement Cell</h2>
+         <h2 class="text-center visible-xs tnpsmtitle">CETB</h2>
     </div>
 
     <div class="row clearfix" style="background-color: #002147;">

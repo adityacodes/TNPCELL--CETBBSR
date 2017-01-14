@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Settings;
-use View;
+use View, App;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,10 +15,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $sitename = Settings::where('metaname','=','sitename')->value('metavalue');
-        if(isset($sitename)){
-            View::share('sitename', $sitename);
+
+        if( !App::runningInConsole() ){
+            $sitename = Settings::where('metaname','=','sitename')->value('metavalue');
+            if(isset($sitename)){
+                View::share('sitename', $sitename);
+            }
         }
+         
     }
 
     /**

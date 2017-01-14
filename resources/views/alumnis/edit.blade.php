@@ -5,6 +5,7 @@
 @section('content')
 <div class="row">
     <div class="col-lg-12">
+
     	<div class="card">
 		    <div class="header">
 		    	<!-- Title here -->
@@ -14,7 +15,7 @@
 		    <div class="content" >              
 		    	<!-- Content goes here -->
 		    	<fieldset>
-    	{!! Form::model($alumni, ['route' => ['admin.alumni.update', $alumni->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '']) !!}
+    	{!! Form::model($alumni, ['route' => ['admin.alumni.update', $alumni->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '' , 'files' => 'true']) !!}
     	
 	    <div class="col-md-8">
 	        
@@ -47,7 +48,7 @@
 			    	<div class="form-group">
 			    		<label class="col-lg-3 control-label" for="alumni_company">Alumni Company</label>
 			    		<div class="col-lg-4">
-			    			{!! Form::text('twelthyear', null, array('class' => 'form-control border-input', 'id' => 'alumni_company', 'placeholder' => 'Enter value here ', 'required' => '' )) !!}
+			    			{!! Form::text('alumni_company', null, array('class' => 'form-control border-input', 'id' => 'alumni_company', 'placeholder' => 'Enter value here ', 'required' => '' )) !!}
 			    		</div>
 			    	</div>
 			    	<div class="form-group">

@@ -56,6 +56,12 @@ Route::get('/home', 'HomeController@index');
 
 //CREATE STORE UPDATE DELETE PUBLISH UNPUBLISH Routes
 	Route::resource('admin/post', 'PostController');
+	Route::resource('admin/mainnotices', 'MainNoticeController' );
+	Route::resource('admin/mainevents', 'MainEventController' );
+	Route::resource('admin/alumni', 'AlumniController');
+
+
+
 	Route::get('admin/notice/publish/{id}',['as'=>'admin.notice.publish','uses'=>'AdminController@publish']);
 	Route::get('admin/notice/unpublish/{id}',['as' => 'admin.notice.unpublish','uses'=>'AdminController@unpublish']);
 

@@ -1,6 +1,6 @@
-<div class="sidebar" data-background-color="{{Request::is('admin/*')? "black" : "white"}}" data-active-color="danger">
+<div class="sidebar" data-background-color="white" data-active-color="danger">
 
-    <!--
+    <!-- {{Request::is('admin/*')? "black" : "white"}}
         Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
         Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
     -->
@@ -18,7 +18,7 @@
                         <a href="/"><span class="simple-text">CETB-TNP</span></a>-<a href="/admin/post" class="simple-text">ADMIN PANEL</a>
                     
                 @else
-                    <a href=/""><span class="simple-text">CETB-TNP</span></a>-<a href="/user/dashboard" class="simple-text">USER PANEL</a>
+                    <a href="/"><span class="simple-text">CETB-TNP</span></a>-<a href="/user/dashboard" class="simple-text">USER PANEL</a>
                     
                 @endif
             

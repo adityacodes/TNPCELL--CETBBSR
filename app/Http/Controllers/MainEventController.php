@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Alumni;
+use App\Event;
 use Session, Auth, View;
 use App\TNP;
 
-class AlumniController extends Controller
+class MainEventController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -33,11 +33,11 @@ class AlumniController extends Controller
      */
     public function index()
     {
-        //create a variable and store all the blog posts in it
-        $alumnis = Alumni::orderBy('id', 'desc')->paginate(5);
+        //create a variable and store all the events in it
+        $events = Event::orderBy('id', 'desc')->paginate(5);
 
         //return a view and pass in the above variabe
-        return view('alumnis.index')->withAlumnis($alumnis);
+        return view('events.index')->withEvents($events);
     }
 
     /**
@@ -47,7 +47,7 @@ class AlumniController extends Controller
      */
     public function create()
     {
-        return view('alumnis.create');
+        return view('events.create');
     }
 
     /**
@@ -60,28 +60,21 @@ class AlumniController extends Controller
     {
         //1. validate the date
         $this->validate($request, array(
-                'alumni_name' => 'required|max:255',
-                'alumni_image'=> 'required',
-                'alumni_desig'=> 'required',
-                'alumni_company' => 'required',
-                'alumni_website'=> 'required',
+                'event_subject' => 'required|unique:events',
+                'event_message' => 'required',
             ));
         //2. Store in the DB
-        $alumni = new Alumni;
+        $event = new Event;
 
-        $alumni->alumni_name = $request->alumni_name;
-        $alumni->alumni_image = $request->alumni_image;
-        $alumni->alumni_desig = $request->alumni_desig;
-        $alumni->alumni_company = $request->alumni_company; 
-        $alumni->alumni_website = $request->alumni_website;
-        $alumni->creator = Auth::user()->name;
+        $event->event_subject = $request->event_subject;
+        $event->event_message = $request->event_message;
 
-        $alumni->save();
+        $event->save();
 
         //3. Redirect to another page
-        Session::flash('success', 'The alum was successfully saved.');
+        Session::flash('success', 'The event was successfully saved.');
 
-        return redirect()->route('admin.alumni.show', $alumni->id);
+        return redirect()->route('admin.mainevents.show', $event->id);
     }
 
     /**
@@ -92,8 +85,8 @@ class AlumniController extends Controller
      */
     public function show($id)
     {
-        $alumni = Alumni::find($id);
-        return view('alumnis.show')->withAlumni($alumni);
+        $event = event::find($id);
+        return view('events.show')->withEvent($event);
     }
 
     /**
@@ -105,9 +98,9 @@ class AlumniController extends Controller
     public function edit($id)
     {
         //find the post in the db ans save as a var
-        $alumni = Alumni::find($id);
+        $event = event::find($id);
         //return the view and pass in the var we previously created
-        return view('alumnis.edit')->withAlumni($alumni);
+        return view('events.edit')->withEvent($event);
     }
 
     /**
@@ -119,34 +112,27 @@ class AlumniController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $alumni = Alumni::find($id);
+        
+        $event = event::find($id);
 
         
         $this->validate($request, array(
-                'alumni_name' => 'required|max:255',
-                'alumni_image'=> 'required',
-                'alumni_desig'=> 'required',
-                'alumni_company' => 'required',
-                'alumni_website'=> 'required',
+            'event_subject' => 'required',
+            'event_message' => 'required',
         ));
         
 
         //save the data
+        $event->event_subject = $request->event_subject;
+        $event->event_message = $request->event_message;
 
-        $alumni->alumni_name = $request->alumni_name;
-        $alumni->alumni_image = $request->alumni_image;
-        $alumni->alumni_desig = $request->alumni_desig;
-        $alumni->alumni_company = $request->alumni_company; 
-        $alumni->alumni_website = $request->alumni_website;
-        $alumni->creator = Auth::user()->name;
-        
-        $alumni->save();
+        $event->save();
         // set flash meessage to be shown
 
-        Session::flash('success', 'The Alum was successfully updated');
+        Session::flash('success', 'The event was successfully updated');
         //redirect the users
 
-        return redirect()->route('admin.alumni.show', $alumni->id);
+        return redirect()->route('admin.mainevents.show', $event->id);
     }
 
     /**
@@ -157,12 +143,11 @@ class AlumniController extends Controller
      */
     public function destroy($id)
     {
-        
-        $alumni = Alumni::find($id);
-        $alumni->delete();
+        $event = event::find($id);
+        $event->delete();
 
-        Session::flash('Success', 'Alum Deleted Successfully');
+        Session::flash('Success', 'event Deleted Successfully');
 
-        return redirect()->route('admin.alumni.index');
+        return redirect()->route('admin.mainevents.index');
     }
 }

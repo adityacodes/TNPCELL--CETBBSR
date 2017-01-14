@@ -109,7 +109,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-7">
             @foreach ($posts as $post)
                 <div class="card">
 
@@ -148,7 +148,7 @@
                 </div>
             @endforeach
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="card">
 
                     <div class="header">

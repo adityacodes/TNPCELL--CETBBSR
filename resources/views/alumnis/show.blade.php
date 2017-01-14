@@ -9,21 +9,21 @@
 		    	<div class="col-md-8">
 			    	<div class="card">
 
-		                    <div class="header">
+		                    <!-- <div class="header">
 		                        <h4 class="title">TITLE :  {{strtoupper($alumni->alumni_name)}}</h4>
 		                        <h4>Details :</h4>
 		                        <hr>
-		                    </div>
+		                    </div> -->
 		                    
 		                    <div class="content" >
 		                        <h4 >
-									    	<h4><b>ELIGIBILTY CRITERIA :</b></h4>
+									    	<h4><b>ALUMNI INFO :</b></h4>
 									    	<table class="table table-hover table-bordered" >
 				                                <tbody>
 				                                	<tr>
-				                                		<th></th>
-				                                		<th></th>
-				                                		<th colspan="2"></th>	
+				                                		<th>Sl. No.</th>
+				                                		<th>Alumni Attributes</th>
+				                                		<th colspan="2">Alumni Values</th>	
 				                                	</tr>
 				                                    <tr>
 				                                        <td>1</td>
