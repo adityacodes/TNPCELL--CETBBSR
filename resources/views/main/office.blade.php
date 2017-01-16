@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-lg-12 text-center" style="font-family: font1;padding: 10px;"t><h1><u>OFFICE</u></h1></div>
             <div class="border" style=""></div>
-            <div class="col-lg-12 col-sm-12 text-center">
+            <!-- <div class="col-lg-12 col-sm-12 text-center">
                 <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
                 <h3>Dr. R.K. Das</h3>
                 <p>Coordinator</p>
@@ -35,7 +35,7 @@
                 <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
                 <h3>Dr. B.P. Das</h3>
                 <p>Member</p>
-            </div>
+            </div> -->
 		</div>
 
 
