@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGuidelinesTable extends Migration
+class CreateFestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,8 @@ class CreateGuidelinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('guidelines', function (Blueprint $table) {
+        Schema::create('fests', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('guideline', 500);
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ class CreateGuidelinesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('guidelines');
+        Schema::drop('fests');
     }
 }

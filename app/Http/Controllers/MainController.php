@@ -9,7 +9,8 @@ use App\Settings;
 
 use App\Alumni;
 use App\Companies;
-
+use App\Notice;
+use App\Event;
 use DB;
 
 class MainController extends Controller
@@ -33,8 +34,9 @@ class MainController extends Controller
 	public function getMainIndex()
 	{
 		$settings= Settings::where('metaname', 'LIKE', '%_%')->get()->pluck('metavalue', 'metaname');
-
-		return view('main.index')->withSettings($settings);
+		$events = Event::all();
+		$notices = Notice::all();
+		return view('main.index')->withSettings($settings)->withEvents($events)->withNotices($notices);
 	}
 
 	public function getMainCompanies(){

@@ -59,7 +59,10 @@ Route::get('/home', 'HomeController@index');
 	Route::resource('admin/mainnotices', 'MainNoticeController' );
 	Route::resource('admin/mainevents', 'MainEventController' );
 	Route::resource('admin/alumni', 'AlumniController');
-
+	Route::resource('admin/company', 'CompanyController');
+	Route::resource('admin/tnpuser', 'TnpUserController');
+	Route::resource('admin/branches', 'BranchController');
+	Route::resource('admin/officer', 'OfficerController');
 
 
 	Route::get('admin/notice/publish/{id}',['as'=>'admin.notice.publish','uses'=>'AdminController@publish']);
@@ -104,3 +107,4 @@ Route::get('email/verify',function(){
 
 //Settings
 	Route::get('admin/settings/options-general', ['as' => 'admin.settings', 'uses' => 'SettingsController@getSettingsIndex']);
+	Route::get('admin/tnpsettings/options', ['as' => 'admin.tnpsettings', 'uses' => 'TnpSettingsController@getIndex']);

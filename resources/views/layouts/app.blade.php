@@ -17,9 +17,10 @@
 
     <!-- Bootstrap -->
     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
-
+    <link href="{{URL::to('main/css/navbar.css')}}" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="/main/css/main1.css">
-    <link href="/main/css/css" rel="stylesheet" type="text/css">
+    
+    <!-- <link href="/main/css/css" rel="stylesheet" type="text/css"> -->
     <link href="/main/css/style.css" rel="stylesheet" type="text/css" media="all">
     <!--font-Awesome-->
     <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -53,9 +54,9 @@
 </head>
     
 <body cz-shortcut-listen="true">
-<div class="container-fluid white-bg">
+<div class="container-fluid {{Request::is('/')? "white-bg" : "aliceblue-bg"}}">
     <div class="row clearfix" style="background-color: #002147;">
-         <h2 class="text-center hidden-xs tnptitle">Training &amp; Placement Cell</h2>
+         <h3 class="text-center hidden-xs tnptitle">Training &amp; Placement Cell</h3>
          <h2 class="text-center visible-xs tnpsmtitle">CETB</h2>
     </div>
 
@@ -67,9 +68,9 @@
           </div>
           
     </div>
-    <div class="row blue-bg" style="border-top: 2px solid white;">
+    <div class="row blue-bg">
       <div class="container">
-          <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+          <nav class="navbar navbar-default navbar-fixed-top text-center" id="primary_nav_wrap" role="navigation">
               <div class="navbar-header blue-bg">
                 <button type="button" class="navbar-toggle pull-left white-color" data-toggle="collapse" data-target="#bs-navbar-collapse-1"><i class="fa fa-home" aria-hidden="true"></i> MENU</button>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
@@ -80,41 +81,32 @@
                 </button>
               </div>
 
-               <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">           
+               <div class="collapse navbar-collapse main-nav" id="bs-navbar-collapse-1">           
                   <ul class="nav navbar-nav white-color">
                     <li class="{{Request::is('/')? "active" : ""}}">
-                      <a href="/">Home</a>
+                      <a href="/"><i class="fa fa-btn fa-home"></i> Home</a>
                     </li>
 
                     <li class="{{Request::is('whycet')? "active" : ""}}">
-                      <a href="/whycet">Why Recruit ?</a>
+                      <a href="/whycet"> <i class="fa fa-btn fa-question-circle"></i> Why Recruit ?</a>
                     </li>
 
-                    <li class="dropdown {{Request::is('procedure/*')? "active" : ""}}">
-                        <a class="dropdown-toggle" data-toggle="dropdown">Procedure&nbsp;&nbsp;<span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" >
-                          <li class="nav-subitem"><a href="/procedure/companies"><i class="fa fa-user"></i> Companies</a></li>
-                          <li class="nav-subitem"><a href="/procedure/students"><i class="fa fa-user"></i> Students</a></li>
-                        </ul>
+                    <li class="{{Request::is('procedure/*')? "active" : ""}}">
+                        <a href="/procedure/companies"><i class="fa fa-suitcase"></i> Companies</a>
                     </li>
                        
-                    <li class="dropdown {{Request::is('contact/*')? "active" : ""}}">
-                        <a class="dropdown-toggle" data-toggle="dropdown">Contact Us&nbsp;&nbsp;<span class="caret"></span> </a>  
-                        <ul class="dropdown-menu" >
-                          <li class="nav-subitem">
-                              <a href="/contact/office">Placement Office</a>
-                          </li>
-                          <li class="nav-subitem">
-                              <a href="/contact/location">Location</a>
-                          </li>
-                        </ul>        
-                    </li>  
+                    <li class="{{Request::is('contact/office')? "active" : ""}}">
+                        <a href="/contact/office"><i class="fa fa-building"></i> Placement Office</a>         
+                    </li>
+
+                    <li class="{{Request::is('contact/location')? "active" : ""}}">
+                        <a href="/contact/location"><i class="fa fa-map-marker"></i> Location</a>        
+                    </li>
                     <li class="{{ Request::is('our-alumni')? "active" : ""}}">
-                      <a href="/our-alumni">Our Alumni</a>
+                      <a href="/our-alumni"><i class="fa fa-user"></i> Our Alumni</a>
                     </li>
                     <li class="{{ Request::is('events')? "active" : ""}}">
-                      <a href="/events">Events</a>
+                      <a href="/events"><i class="fa fa-bookmark fa-2"></i> Events</a>
                     </li>
 
                     <li class="{{ Request::is('login')? "active" : ""}}">
@@ -134,7 +126,7 @@
         </div>
     </div> 
 
-    <div style="min-height: 500px;">
+    <div style="min-height: 500px;" >
     @yield('content')
 
     </div>

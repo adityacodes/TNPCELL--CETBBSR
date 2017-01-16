@@ -19,7 +19,6 @@ class CreateCompaniesTable extends Migration
             $table->string('company_website');
             $table->string('company_description');
             $table->boolean('company_massrecruiter');
-            $table->string('creator');
             $table->timestamps();
         });
     }

@@ -14,8 +14,8 @@ class Foreignkeys extends Migration
     {
         Schema::table('users', function(Blueprint $table)
         {
-            $table->foreign('name')->references('regdno')->on('t_n_p_s');
-            $table->foreign('email')->references('email')->on('t_n_p_s');
+            $table->foreign('name')->references('regdno')->on('t_n_p_s')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('email')->references('email')->on('t_n_p_s')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

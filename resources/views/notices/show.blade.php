@@ -5,6 +5,8 @@
 @section('content')
 
 	<div class="row">
+        <div class="card">
+                @include('partials._settingsnav')
 		    <div class="col-lg-12">
 		    	<div class="col-md-8">
 			    	<div class="card">
@@ -71,5 +73,6 @@
 	            	</div>
 	            </div>
 			</div>
+		</div>
 	</div>
 @endsection

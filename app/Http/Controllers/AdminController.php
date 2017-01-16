@@ -141,7 +141,8 @@ class AdminController extends Controller
     }
 
 
-    public function admindelete($regdno){
+    public function admindelete($regdno)
+    {
 
         $regdno = User::where('name', '=' , $regdno)->first();
         if(!$regdno){
@@ -198,7 +199,7 @@ class AdminController extends Controller
         $tnpuser->cgpa = $request->cgpa;
         $tnpuser->backlog = $request->backlog;
         
-
+        $tnpuser->save();
 
     }
     public function edittnpuser(Request $request)

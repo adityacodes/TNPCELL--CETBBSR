@@ -18,8 +18,9 @@
 	                
 	                <div class="bg_box">
 	                    <a href="{{ $company->company_website }}" target="_blank">
-	                        <img class="img-responsive img-center" src="{{ $company->company_image }}" alt="">
+	                        <img class="img-responsive img-center" src="/uploads/company/{{ $company->company_image }}" alt="">
 	                    </a>
+	                    <p>{{ $company->company_name }}</p>
 	                </div>
 	            </div>
 	            @endif
@@ -35,8 +36,9 @@
 		            <div class="col-lg-2 col-sm-6 text-center spacing">  
 		                <div class="bg_box">
 		                    <a href="{{ $company->company_website }}" target="_blank">
-		                        <img class="img-responsive img-center" src="{{ $company->company_image }}" alt="">
+		                        <img class="img-responsive img-center" src="/uploads/company/{{ $company->company_image }}" alt="">
 		                    </a>
+		                    <p>{{ $company->company_name }}</p>
 		                </div>
 		            </div>
 		        @endforeach

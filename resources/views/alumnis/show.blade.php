@@ -4,7 +4,11 @@
 
 @section('content')
 
-	<div class="row">
+@section('content')
+
+    <div class="row">
+        <div class="card">
+                @include('partials._settingsnav')
 		    <div class="col-lg-12">
 		    	<div class="col-md-8">
 			    	<div class="card">
@@ -93,7 +97,7 @@
 				            			<button class="btn btn-danger btn-block"><i class="ti-close"></i> Delete</button>
 			            		{!! Form::close() !!}<br/>
 			            		<a class="action" href="{{ route('admin.alumni.index') }}">
-			            			<button style="margin-top:-15px;" class="btn btn-default btn-block"><i class="ti-book"></i> See all Notices</button>
+			            			<button style="margin-top:-15px;" class="btn btn-default btn-block"><i class="ti-book"></i> See all Alums</button>
 			            		</a>
 			            	</div>                  
 
@@ -107,5 +111,6 @@
 	            	</div>
 	            </div>
 			</div>
+		</div>
 	</div>
 @endsection

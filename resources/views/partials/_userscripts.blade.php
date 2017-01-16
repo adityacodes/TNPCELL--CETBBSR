@@ -41,6 +41,23 @@
                     });
                 @endif
 
+                @if (count($errors) > 0)
+                    @foreach ($errors->all() as $error)
+                        $.notify({
+                            icon: 'ti-bell',
+                            message: "<h5>{{$error}}</h5>"
+
+                        },{
+                            type: 'danger',
+                            timer: 4000,
+                            placement: {
+                                    from: 'top',
+                                    align: 'center'
+                                }
+                        });
+                    @endforeach
+                @endif
+
 
                 $('#cetlogo').bind('contextmenu', function(e){
                     return false;

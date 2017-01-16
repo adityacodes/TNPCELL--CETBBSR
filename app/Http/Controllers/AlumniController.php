@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Alumni;
-use Session, Auth, View;
+use Session, Auth, View, Validator;
+use App\Input;
 use App\TNP;
 
 class AlumniController extends Controller
@@ -59,18 +60,39 @@ class AlumniController extends Controller
     public function store(Request $request)
     {
         //1. validate the date
-        $this->validate($request, array(
+        $validator = Validator::make($request->all(), [
                 'alumni_name' => 'required|max:255',
-                'alumni_image'=> 'required',
+                'alumni_image'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'alumni_desig'=> 'required',
                 'alumni_company' => 'required',
                 'alumni_website'=> 'required',
-            ));
+            ]);
+
+        if ($validator->fails()) {
+            // send back to the page with the input data and errors
+            return redirect('admin/alumni/create')
+                        ->withErrors($validator)
+                        ->withInput();
+          }
+
+        if ($request->file('alumni_image')->isValid()) {
+
+            $imageName = time().'.'.$request->alumni_image->getClientOriginalExtension();
+            $request->alumni_image->move(public_path('uploads/alumni'), $imageName);
+              
+        }
+        else {
+          // sending back with error message.
+          Session::flash('warning', 'Uploaded file is not valid');
+          return redirect('admin/alumni/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
         //2. Store in the DB
         $alumni = new Alumni;
 
         $alumni->alumni_name = $request->alumni_name;
-        $alumni->alumni_image = $request->alumni_image;
+        $alumni->alumni_image = $imageName;
         $alumni->alumni_desig = $request->alumni_desig;
         $alumni->alumni_company = $request->alumni_company; 
         $alumni->alumni_website = $request->alumni_website;

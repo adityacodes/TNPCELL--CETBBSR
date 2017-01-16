@@ -2,7 +2,10 @@
 
 @section('stylesheets')
 
-<link rel="stylesheet" type="text/css" href="/main/css/carousel.css">
+
+<link rel="stylesheet" type="text/css" href="/main/css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="/main/css/owl.theme.css">
+<link rel="stylesheet" type="text/css" href="/main/css/owl.transitions.css">
 <link href="{{URL::to('template/css/main.css')}}" rel="stylesheet" />
 
 <style type="text/css">
@@ -17,6 +20,13 @@
     text-align: left;
     border-bottom: 1px dotted #2c8162;
 }
+
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+}
 </style>
 
 @endsection
@@ -24,40 +34,18 @@
 @section('content')
 <div class="row">
 
-			<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-		      <!-- Indicators -->
-			      <ol class="carousel-indicators">
-			        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-			        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-			        <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
-			      </ol>
-			      <div class="carousel-inner" role="listbox">
-				        <div class="item active">
-				          <img class="first-slide" src="/main/images/carousel/carousel_1.jpg" alt="First slide">
-				          
-				        </div>
-				        <div class="item">
-				          <img class="second-slide" src="/main/images/carousel/carousel_2.jpg" alt="Second slide">
-				          
-				        </div>
-				        <div class="item">
-				          <img class="third-slide" src="/main/images/carousel/carousel_3.jpg" alt="Third slide">
-				        </div>  
-			      </div>
-			      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-			        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			        <span class="sr-only">Previous</span>
-			      </a>
-			      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-			        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			        <span class="sr-only">Next</span>
-			      </a>
-			</div>
+        <div id="owl-demo" class="owl-carousel owl-theme">
+ 
+          <div class="item"><img src="/main/images/carousel/carousel_1.jpg" alt="The Last of us"></div>
+          
+          <div class="item"><img src="/main/images/carousel/carousel_2.jpg" alt="Mirror Edge"></div>
+         
+        </div>
 	
 
 </div>
 
-<div class="container white-bg">
+<div class="container">
 
 <div class="row">
         <!--News Section Start-->
@@ -69,20 +57,16 @@
             <div class="panel-body">
                     <div id="nt-example1-container">
                             <ul id="nt-example1" style="height: 240px; overflow: hidden;">
+
+                              @foreach($notices as $notice)
                                <li style="margin-top: 0px;">
 
-                                    Etiam imperdiet volutpat libero eu tristique. Aenean, rutrum felis in. 
+                                    {{$notice->notice_message}}
 
                                     <a href="#">Read more...</a>
                                     <div class="clearfix"></div>
                                 </li>
-                               <li style="margin-top: 0px;">Curabitur porttitor ante eget hendrerit adipiscing. Maecenas at magna. <a href="#">Read more...</a></li>
-                               <li style="margin-top: 0px;">Praesent ornare nisl lorem, ut condimentum lectus gravida ut. <a href="#">Read more...</a></li>
-                               <li style="margin-top: 0px;">Nunc ultrices tortor eu massa placerat posuere. Vivamus viverra sagittis. <a href="#">Read more...</a></li>
-                               <li style="margin-top: 0px;">Morbi sodales tellus sit amet leo congue bibendum. Ut non mauris eu neque. <a href="#">Read more...</a></li>
-                               <li style="margin-top: 0px;">In pharetra suscipit orci sed viverra. Praesent at sollicitudin tortor, id. <a href="#">Read more...</a> </li>
-                               <li style="margin-top: 0px;">Maecenas nec ligula sed est suscipit aliquet sed eget ipsum, suspendisse. <a href="#">Read more...</a></li>
-                               <li style="margin-top: 0px;">Onec bibendum consectetur diam, nec euismod urna venenatis eget.. <a href="#">Read more...</a> </li>
+                              @endforeach
                             </ul>
                             
                     </div>
@@ -105,20 +89,15 @@
             <div class="panel-body">
                     <div id="nt-example2-container">
                             <ul id="nt-example2" style="height: 240px; overflow: hidden;">
+                               @foreach($events as $event)
                                <li style="margin-top: 0px;">
 
-                                    Etiam imperdiet volutpat libero eu tristique. Aenean, rutrum felis in. 
+                                    {{$event->event_message}}
 
                                     <a href="#">Read more...</a>
                                     <div class="clearfix"></div>
                                 </li>
-                               <li style="margin-top: 0px;">Curabitur porttitor ante eget hendrerit adipiscing. Maecenas at magna. <a href="#">Read more...</a></li>
-                               <li style="margin-top: 0px;">Praesent ornare nisl lorem, ut condimentum lectus gravida ut. <a href="#">Read more...</a></li>
-                               <li style="margin-top: 0px;">Nunc ultrices tortor eu massa placerat posuere. Vivamus viverra sagittis. <a href="#">Read more...</a></li>
-                               <li style="margin-top: 0px;">Morbi sodales tellus sit amet leo congue bibendum. Ut non mauris eu neque. <a href="#">Read more...</a></li>
-                               <li style="margin-top: 0px;">In pharetra suscipit orci sed viverra. Praesent at sollicitudin tortor, id. <a href="#">Read more...</a> </li>
-                               <li style="margin-top: 0px;">Maecenas nec ligula sed est suscipit aliquet sed eget ipsum, suspendisse. <a href="#">Read more...</a></li>
-                               <li style="margin-top: 0px;">Onec bibendum consectetur diam, nec euismod urna venenatis eget.. <a href="#">Read more...</a> </li>
+                              @endforeach
                             </ul>
                             
                     </div>
@@ -172,8 +151,30 @@
                 nextButton: $('#nt-example2-next')
             });
 
+            $(document).ready(function() {
+             
+              $("#owl-demo").owlCarousel({
+                  transitionStyle : "fade",
+                  autoPlay: 3000,
+                  slideSpeed : 300,
+                  pagination: false,
+                  singleItem:true,
+                  dots: false,
+              });
+            var owl = $("#owl-demo");
+
+               // Custom Navigation Events
+              $(".next").click(function(){
+                owl.trigger('owl.next');
+              })
+              $(".prev").click(function(){
+                owl.trigger('owl.prev');
+              })
+             
+            });
 
         </script>
 
+    <script type="text/javascript" src="/main/js/owl.carousel.min.js"></script>
 
 @endsection

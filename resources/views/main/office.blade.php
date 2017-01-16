@@ -18,7 +18,7 @@
 @section('content')
 
 <!-- Team Members Row -->
-        <div class="row" style="background-color: #fff;">
+        <div class="row">
             <div class="col-lg-12 text-center" style="font-family: font1;padding: 10px;"t><h1><u>OFFICE</u></h1></div>
             <div class="border" style=""></div>
             <div class="col-lg-12 col-sm-12 text-center">

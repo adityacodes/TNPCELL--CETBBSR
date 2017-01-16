@@ -87,12 +87,14 @@ body {
 	color: #fff;
 }
 
-.navbar-nav>ul>a:hover{
-	display: none !important;
+
+
+.navbar-nav>ul>a:visited{
+  color: #fff;
 }
 
 
-.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover{
+.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:visited,.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover{
 	background: #0D3971;
 	color: #ffffff;
     
@@ -107,14 +109,6 @@ body {
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
  */   
-}
-
-
-
-
-.nav > li {
-	border-right: 1px solid #fff ;
-   
 }
 
 
@@ -171,9 +165,6 @@ body {
 
 }
 
-.navbar-toggle:active{
-	background-color: 
-}
 
 .nav-subitem{
 	text-align: left !important;

@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Post;
-use Session, Auth, View;
+use Session, Auth, View, Validator;
 use App\TNP;
 use App\Applied;
 
@@ -58,19 +58,27 @@ class PostController extends Controller {
 	public function store(Request $request)
 	{
 		//1. validate the date
-		$this->validate($request, array(
+		 $validator = Validator::make($request->all(), array(
 				'title' => 'required|max:255',
 				'slug'	=> 'required|alpha_dash|min:5|max:255|unique:posts,slug',
 				'body' => 'required',
-				'tenthyear' => 'required', 
+				'tenthyear' => 'required|min:4|max:4', 
 				'tenthpercent' => 'required',
-				'twelthyear' => 'required',
+				'twelthyear' => 'required|min:4|max:4',
 				'twelthpercent' => 'required',
-				'diplomayear'=> 'required',
+				'diplomayear'=> 'required|min:4|max:4',
 				'diplomapercent'=> 'required',
 				'cgpa'=> 'required',
 				'backlog'=> 'required',
 			));
+
+		  if ($validator->fails()) {
+            // send back to the page with the input data and errors
+            return redirect('admin/post/create')
+                        ->withErrors($validator)
+                        ->withInput();
+          }
+
 		//2. Store in the DB
 		$post = new Post;
 

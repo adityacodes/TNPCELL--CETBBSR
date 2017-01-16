@@ -14,7 +14,7 @@ class Foreignbranchrelation extends Migration
     {
         Schema::table('t_n_p_s', function(Blueprint $table)
         {
-            $table->foreign('branch')->references('name')->on('branches');
+            $table->foreign('branch')->references('name')->on('branches')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

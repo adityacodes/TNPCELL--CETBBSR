@@ -1,4 +1,4 @@
-<div class="sidebar" data-background-color="white" data-active-color="danger">
+<div class="sidebar" data-background-color="{{Request::is('admin/*')? "black" : "white"}}" data-active-color="danger">
 
     <!-- {{Request::is('admin/*')? "black" : "white"}}
         Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
@@ -20,8 +20,7 @@
                 @else
                     <a href="/"><span class="simple-text">CETB-TNP</span></a>-<a href="/user/dashboard" class="simple-text">USER PANEL</a>
                     
-                @endif
-            
+                @endif       
         </div>
 
         @if(Request::is('user/*') || Request::is('notice/*'))
@@ -66,40 +65,6 @@
                     <p>Applicants</p>
                 </a>
             </li>
-            <li class="{{Request::is('admin/administrators')? "active" : ""}}">
-                <a href="/admin/administrators">
-                    <i class="ti-crown"></i>
-                    <p>Admins</p>
-                </a>
-            </li>
-            
-            <li class="{{Request::is('admin/add/user')? "active" : ""}}">
-                <a href="/admin/add/user">
-                    <i class="ti-user"></i>
-                    <p>Add TNP User</p>
-                </a>
-            </li>
-
-            <li class="{{Request::is('admin/delete/user')? "active" : ""}}">
-                <a href="/admin/delete/user">
-                    <i class="ti-user"></i>
-                    <p>Delete TNP User</p>
-                </a>
-            </li>
-
-            <li class="{{Request::is('admin/import')? "active" : ""}}">
-                <a href="/admin/import">
-                    <i class="ti-import"></i> 
-                    <p>IMPORT</p>
-                </a>
-            </li>
-
-            <li class="{{Request::is('admin/standalone')? "active" : ""}}">
-                <a href="/admin/standalone">
-                    <i class="ti-bolt"></i> 
-                    <p>Standalone Mode</p>
-                </a>
-            </li>
 
             <li class="{{Request::is('admin/sendgroupemail')? "active" : ""}}">
                 <a href="/admin/sendgroupemail">
@@ -108,7 +73,30 @@
                 </a>
             </li>
 
-            <li class="active-pro {{Request::is('admin/settings')? "active" : ""}}">
+            <li class="
+                       {{Request::is('admin/tnpsettings/*')
+                         || Request::is('admin/add/*')
+                         || Request::is('admin/delete/*') 
+                         || Request::is('admin/administrators')
+                         || Request::is('admin/standalone')
+                         || Request::is('admin/import')
+                         || Request::is('admin/tnpuser')
+                         || Request::is('admin/tnpuser/*') ? "active" : ""}}">
+                <a href="/admin/tnpsettings/options">
+                    <i class="ti-settings"></i>
+                    <p>TNP Settings</p>
+                </a>
+            </li>
+
+            <li class="active-pro {{Request::is('admin/settings/*')
+                         || Request::is('admin/alumni')
+                         || Request::is('admin/alumni/*')
+                         || Request::is('admin/mainnotices')
+                         || Request::is('admin/mainnotices/*')
+                         || Request::is('admin/mainevents')
+                         || Request::is('admin/mainevents/*')
+                         || Request::is('admin/branches')
+                         || Request::is('admin/branches/*') ? "active" : ""}}">
                 <a href="/admin/settings/options-general">
                     <i class="ti-settings"></i>
                     <p>Site Settings</p>

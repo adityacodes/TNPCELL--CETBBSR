@@ -14,8 +14,8 @@ class ForeignKeyApplieds extends Migration
     {
         Schema::table('applieds', function(Blueprint $table)
         {
-            $table->foreign('userid')->references('id')->on('users');
-            $table->foreign('postid')->references('id')->on('posts');
+            $table->foreign('userid')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('postid')->references('id')->on('posts')->onDelete('cascade')->onUpdate('cascade');
 
         });
     }

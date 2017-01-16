@@ -5,16 +5,17 @@
 @section('content')
 
 	<div class="row">
+        <div class="card">
+                @include('partials._settingsnav')
 		    <div class="col-lg-12">
 		    	<div class="col-md-8">
 			    	<div class="card">
-
 		                    <div class="header">
-		                        <h4 class="title">{{ ucwords(strtolower('Event Subject :')) }}   {{strtoupper($event->event_subject)}}</h4>
-		                        <h4>{{ ucwords(strtolower('Event Message :')) }} </h4>
+		                        <h4 class="title">{{ ucwords(strtolower('Event Subject : -')) }} <strong>{{ucwords(strtolower($event->event_subject)) }}</strong></h4>
+		                        <h4>{{ ucwords(strtolower('Event Message :')) }}</h4>
 		                        <hr>
 		                    </div>
-		                    
+
 		                    <div class="content" >
 		                        <h4 >
 									    	<p>{{ $event->event_message}}</p>
@@ -71,5 +72,6 @@
 	            	</div>
 	            </div>
 			</div>
+		</div>
 	</div>
 @endsection
