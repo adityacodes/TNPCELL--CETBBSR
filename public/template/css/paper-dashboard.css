@@ -2769,6 +2769,7 @@ textarea.form-control {
     float: none;
     position: relative;
     display: block;
+    margin-bottom: 5px; 
   }
 
   .off-canvas-sidebar {

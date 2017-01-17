@@ -39,8 +39,9 @@
           <div class="item"><img src="/main/images/carousel/carousel_1.jpg" alt="The Last of us"></div>
           
           <div class="item"><img src="/main/images/carousel/carousel_2.jpg" alt="Mirror Edge"></div>
-         
+            
         </div>
+
 	
 
 </div>
