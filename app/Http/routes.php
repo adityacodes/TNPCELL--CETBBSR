@@ -65,6 +65,7 @@ Route::get('/home', 'HomeController@index');
 	Route::resource('admin/officer', 'OfficerController');
 	Route::resource('admin/slider', 'SliderController');
 	Route::resource('admin/link', 'LinkController');
+	Route::resource('admin/guideline', 'GuidelineController');
 
 	Route::get('admin/notice/publish/{id}',['as'=>'admin.notice.publish','uses'=>'AdminController@publish']);
 	Route::get('admin/notice/unpublish/{id}',['as' => 'admin.notice.unpublish','uses'=>'AdminController@unpublish']);
@@ -110,3 +111,5 @@ Route::get('email/verify',function(){
 	Route::get('admin/settings/options-general', ['as' => 'admin.settings', 'uses' => 'SettingsController@getSettingsIndex']);
 	Route::get('admin/tnpsettings/options', ['as' => 'admin.tnpsettings', 'uses' => 'TnpSettingsController@getIndex']);
 	Route::put('admin/settings', ['as' => 'admin.settings.update','uses' => 'SettingsController@updateSettings']);
+
+Route::put('admin/searchkeyword', ['as' => 'admin.searchkeyword','uses' => 'AdminController@searchkeyword'] );

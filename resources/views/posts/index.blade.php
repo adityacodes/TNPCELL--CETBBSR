@@ -57,7 +57,7 @@
 										</a>
 	                                
 	                            @else
-	                                <a onclick="return confirm('Are you sure you want to publish this notice {{$post->title }}?');" href="{{ route('admin.notice.unpublish', $post->id)}}">
+	                                <a onclick="return confirm('Are you sure you want to unpublish this notice {{$post->title }}?');" href="{{ route('admin.notice.unpublish', $post->id)}}">
 	                                    <button class="btn btn-md btn-warning">
 	                                        <h6><i class="fa fa-eye-slash" aria-hidden="true"></i>
 	                                        UnPublish</h6>

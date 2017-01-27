@@ -84,5 +84,9 @@
             unsaved = false;
         });
 
+        $('#search').change(function(){
+            unsaved = false;
+        });
+
         window.onbeforeunload = unloadPage;
     </script>

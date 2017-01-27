@@ -81,7 +81,9 @@
                          || Request::is('admin/standalone')
                          || Request::is('admin/import')
                          || Request::is('admin/tnpuser')
-                         || Request::is('admin/tnpuser/*') ? "active" : ""}}">
+                         || Request::is('admin/tnpuser/*')
+                         || Request::is('admin/guideline')
+                         || Request::is('admin/guideline/*') ? "active" : ""}}">
                 <a href="/admin/tnpsettings/options">
                     <i class="ti-settings"></i>
                     <p>TNP Settings</p>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Post;
+use App\Post, App\Guideline;
 use App\TNP;
 use App\Applied;
 use Auth, Session;
@@ -32,7 +32,8 @@ class UserController extends Controller{
 	public function getUserIndex()
 	{
 		$posts = Post::where('published', '=', '1')->orderBy('id', 'desc')->paginate(4);
-		return view('users.dashboard')->withPosts($posts);
+		$guidelines = Guideline::all();
+		return view('users.dashboard')->withPosts($posts)->withGuidelines($guidelines);
 	}
 
 	/**

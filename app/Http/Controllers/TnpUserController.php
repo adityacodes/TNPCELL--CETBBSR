@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\TNP;
+use App\TNP, App\Branch;
 use Auth, View, Session, Validator;
 
 class TnpUserController extends Controller
@@ -46,7 +46,8 @@ class TnpUserController extends Controller
      */
     public function create()
     {
-        return view('tnpuser.create');
+        $branches = Branch::lists('name', 'name');
+        return view('tnpuser.create')->withBranches($branches);
     }
 
     /**
@@ -59,16 +60,29 @@ class TnpUserController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-                'alumni_name' => 'required|max:25',
-                'alumni_image'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                'alumni_desig'=> 'required',
-                'alumni_company' => 'required',
-                'alumni_website'=> 'required',
+                'name'=> 'required',
+                'regdno'=> 'required',
+                'branch'=> 'required',
+                'dob'=> 'required',
+                'gender'=> 'required',
+                'tenthyear'=> 'required',
+                'tenthpercent'=> 'required',
+                'tenthboard'=> 'required',
+                'cgpa'=> 'required',
+                'backlog'=> 'required',
+                'paddress'=> 'required',
+                'praddress'=> 'required',
+                'fname'=> 'required',
+                'foccupation'=> 'required',
+                'mname'=> 'required',
+                'moccupation'=> 'required',
+                'rname'=> 'sometimes|required',
+                'roccupation'=> 'sometimes|required',
             ]);
 
         if ($validator->fails()) {
             // send back to the page with the input data and errors
-            return redirect('admin/alumni/create')
+            return back()
                         ->withErrors($validator)
                         ->withInput();
           }
@@ -104,21 +118,21 @@ class TnpUserController extends Controller
               }
               
               $tnp->cgpa = $request->cgpa;
-              $tnp->backlog = $request->active_backlog;
-              $tnp->paddress = $request->permanent_address;
-              $tnp->praddress = $request->present_address;
-              $tnp->fname = $request->father_name;
-              $tnp->foccupation =  $request->father_occupation;
-              $tnp->mname = $request->mother_name;
-              $tnp->moccupation  =  $request->mother_occupation;
+              $tnp->backlog = $request->backlog;
+              $tnp->paddress = $request->paddress;
+              $tnp->praddress = $request->praddress;
+              $tnp->fname = $request->fname;
+              $tnp->foccupation =  $request->foccupation;
+              $tnp->mname = $request->mname;
+              $tnp->moccupation  =  $request->moccupation;
 
-              if(empty($request->relative_name)){
+              if(empty($request->rname)){
                   $tnp->rname = " ";
                   $tnp->roccupation  = " ";
               }
               else{
-                $tnp->rname = $request->relative_name;
-                $tnp->roccupation  =   $request->relative_occupation;
+                $tnp->rname = $request->rname;
+                $tnp->roccupation  =   $request->roccupation;
               }
               $tnp->internships  = $request->internships;
               $tnp->email = $request->email;
@@ -153,8 +167,9 @@ class TnpUserController extends Controller
     {
         //find the post in the db ans save as a var
         $tnpuser = TNP::find($id);
+        $branches = Branch::lists('name', 'name');
         //return the view and pass in the var we previously created
-        return view('tnpuser.edit')->with('tnpuser',$tnpuser);
+        return view('tnpuser.edit')->with('tnpuser',$tnpuser)->withBranches($branches);
     }
 
     /**
@@ -169,16 +184,27 @@ class TnpUserController extends Controller
 
         $tnp = TNP::find($id);
          $validator = Validator::make($request->all(), [
-                'alumni_name' => 'required|max:25',
-                'alumni_image'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                'alumni_desig'=> 'required',
-                'alumni_company' => 'required',
-                'alumni_website'=> 'required',
+                'name'=> 'required',
+                'regdno'=> 'required',
+                'branch'=> 'required',
+                'dob'=> 'required',
+                'gender'=> 'required',
+                'tenthyear'=> 'required',
+                'tenthpercent'=> 'required',
+                'tenthboard'=> 'required',
+                'cgpa'=> 'required',
+                'backlog'=> 'required',
+                'paddress'=> 'required',
+                'praddress'=> 'required',
+                'fname'=> 'required',
+                'foccupation'=> 'required',
+                'mname'=> 'required',
+                'moccupation'=> 'required',
             ]);
 
         if ($validator->fails()) {
             // send back to the page with the input data and errors
-            return redirect('admin/alumni/create')
+            return back()
                         ->withErrors($validator)
                         ->withInput();
           }
@@ -189,15 +215,15 @@ class TnpUserController extends Controller
               $tnp->dob = $request->dob;
               $tnp->gender  = $request->gender;
 
-              $tnp->tenthyear = $request->tenth_year;
-              $tnp->tenthpercent = $request->tenth_percent;
-              $tnp->tenthboard  = $request->tenth_board;
+              $tnp->tenthyear = $request->tenthyear;
+              $tnp->tenthpercent = $request->tenthpercent;
+              $tnp->tenthboard  = $request->tenthboard;
 
               if(!empty($request->diploma_year)){
                 //Diploma request
-                    $tnp->diplomayear = $request->diploma_year;
-                    $tnp->diplomapercent = $request->diploma_percent;
-                    $tnp->diplomaboard = $request->diploma_board;
+                    $tnp->diplomayear = $request->diplomayear;
+                    $tnp->diplomapercent = $request->diplomapercent;
+                    $tnp->diplomaboard = $request->diplomaboard;
                     $tnp->twelthyear = " ";
                     $tnp->twelthpercent = " ";
                     $tnp->twelthboard = " ";
@@ -207,27 +233,27 @@ class TnpUserController extends Controller
                   $tnp->diplomayear = " ";
                   $tnp->diplomapercent = " ";
                   $tnp->diplomaboard = " ";
-                  $tnp->twelthyear = $request->twelth_year;
-                  $tnp->twelthpercent = $request->twelth_percent;
-                  $tnp->twelthboard = $request->twelth_board;
+                  $tnp->twelthyear = $request->twelthyear;
+                  $tnp->twelthpercent = $request->twelthpercent;
+                  $tnp->twelthboard = $request->twelthboard;
               }
               
               $tnp->cgpa = $request->cgpa;
-              $tnp->backlog = $request->active_backlog;
-              $tnp->paddress = $request->permanent_address;
-              $tnp->praddress = $request->present_address;
-              $tnp->fname = $request->father_name;
-              $tnp->foccupation =  $request->father_occupation;
-              $tnp->mname = $request->mother_name;
-              $tnp->moccupation  =  $request->mother_occupation;
+              $tnp->backlog = $request->backlog;
+              $tnp->paddress = $request->paddress;
+              $tnp->praddress = $request->praddress;
+              $tnp->fname = $request->fname;
+              $tnp->foccupation =  $request->foccupation;
+              $tnp->mname = $request->mname;
+              $tnp->moccupation  =  $request->moccupation;
 
               if(empty($request->relative_name)){
                   $tnp->rname = " ";
                   $tnp->roccupation  = " ";
               }
               else{
-                $tnp->rname = $request->relative_name;
-                $tnp->roccupation  =   $request->relative_occupation;
+                $tnp->rname = $request->rname;
+                $tnp->roccupation  =   $request->roccupation;
               }
               $tnp->internships  = $request->internships;
               $tnp->email = $request->email;

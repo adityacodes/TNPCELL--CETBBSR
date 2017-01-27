@@ -161,37 +161,16 @@
                         <div id="nt-example1-container">
                             <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
                                 <ul id="nt-example1" style="height: 240px; overflow: hidden;">
-                                   <li style="margin-top: 0px;">
+                                    @foreach($guidelines as $guideline)
+                                       <li style="margin-top: 0px;">
 
-                                        Etiam imperdiet volutpat libero eu tristique. Aenean, rutrum felis in. 
-
-                                        <a href="#">Read more...</a>
-                                        <div class="clearfix"></div>
-                                    </li>
-                                   <li style="margin-top: 0px;">Curabitur porttitor ante eget hendrerit adipiscing. Maecenas at magna. <a href="#">Read more...</a></li>
-                                   <li style="margin-top: 0px;">Praesent ornare nisl lorem, ut condimentum lectus gravida ut. <a href="#">Read more...</a></li>
-                                   <li style="margin-top: 0px;">Nunc ultrices tortor eu massa placerat posuere. Vivamus viverra sagittis. <a href="#">Read more...</a></li>
-                                   <li style="margin-top: 0px;">Morbi sodales tellus sit amet leo congue bibendum. Ut non mauris eu neque. <a href="#">Read more...</a></li>
-                                   <li style="margin-top: 0px;">In pharetra suscipit orci sed viverra. Praesent at sollicitudin tortor, id. <a href="#">Read more...</a> </li>
-                                   <li style="margin-top: 0px;">Maecenas nec ligula sed est suscipit aliquet sed eget ipsum, suspendisse. <a href="#">Read more...</a></li>
-                                   <li style="margin-top: 0px;">Onec bibendum consectetur diam, nec euismod urna venenatis eget.. <a href="#">Read more...</a> </li>
+                                            {{$guideline->guideline_message}}
+                                            <div class="clearfix"></div>
+                                        </li>
+                                    @endforeach
                                 </ul>
                                 <i class="fa fa-arrow-down" id="nt-example1-next"></i>
                         </div>
-
-                        
-             <!--           <marquee  direction="up" behavior="scroll" style="height: 200px;">
-                            <ul> 
-                                <li>
-                                        <a href="/">Hello</a>
-                                    Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sed consectetur erat. Maecenas in elementum libero. Sed consequat pellentesque ultricies. Ut laoreet vehicula nisl sed placerat. Duis posuere lectus n, eros et hendrerit pellentesque, ante magna condimentum sapien, eget ultrices eros libero non orci. Etiam varius diam lectus.
-                                </li>
-                                <li>
-                                    Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sed consectetur erat. Maecenas in elementum libero. Sed consequat pellentesque ultricies. Ut laoreet vehicula nisl sed placerat. Duis posuere lectus n, eros et hendrerit pellentesque, ante magna condimentum sapien, eget ultrices eros libero non orci. Etiam varius diam lectus.
-                                </li>
-                            </ul>
-                        </marquee>                       
-                -->
                         <div class="footer">
                             <hr>
                             <div class="stats">

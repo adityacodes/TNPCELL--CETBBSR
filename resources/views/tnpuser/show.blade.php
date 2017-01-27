@@ -49,31 +49,116 @@
 				                                    </tr>
 				                                    <tr>
 				                                        <td>4</td>
+				                                        <td>DOB.: </td>
+				                                        
+				                                        <td colspan="2">{{ $tnpuser->dob}}</td>
+				                                    </tr>
+				                                    <tr>
+				                                        <td>5</td>
 				                                        <td>Backlog: </td>
 				                                        <td colspan="2">{{ $tnpuser->backlog}}</td>
 				                                    </tr>
 				                                    <tr>
-				                                        <td>5</td>
+				                                        <td>6</td>
 				                                        <td>Image</td>
 				                                        <td colspan="2">{{ $tnpuser->gender}}</td>
 				                                    </tr>
 				                                    <tr>
-				                                        <td>6</td>
-				                                        <td>Tenth Year</td>
-				                                        <td colspan="2">{{ $tnpuser->tenth_year }}</td>
-				                                    </tr>
-				                                    <tr>
 				                                        <td>7</td>
-				                                        <td>Tenth Percentage</td>
-				                                        <td colspan="2">{{ $tnpuser->tenth_percent }}</td>
+				                                        <td>Tenth Year</td>
+				                                        <td colspan="2">{{ $tnpuser->tenthyear }}</td>
 				                                    </tr>
 				                                    <tr>
 				                                        <td>8</td>
+				                                        <td>Tenth Percentage</td>
+				                                        <td colspan="2">{{ $tnpuser->tenthpercent }}</td>
+				                                    </tr>
+				                                    <tr>
+				                                        <td>9</td>
 				                                        <td>10th Board</td>
-				                                        <td colspan="2">{{ $tnpuser->tenth_board }}</td>
+				                                        <td colspan="2">{{ $tnpuser->tenthboard }}</td>
+				                                    </tr>
+
+				                                    @if(!empty($tnpuser->twelthyear))
+				                                    <tr>
+				                                        <td>10</td>
+				                                        <td>12th Year</td>
+				                                        <td colspan="2">{{ $tnpuser->twelthyear }}</td>
+				                                    </tr>
+				                                    <tr>
+				                                        <td>11</td>
+				                                        <td>12th Percentage</td>
+				                                        <td colspan="2">{{ $tnpuser->twelthpercent }}</td>
+				                                    </tr>
+				                                    <tr>
+				                                        <td>12</td>
+				                                        <td>12th Board</td>
+				                                        <td colspan="2">{{ $tnpuser->twelthboard }}</td>
+				                                    </tr>
+				                                    @else
+
+				                                    <tr>
+				                                        <td>10</td>
+				                                        <td>Diploma Year</td>
+				                                        <td colspan="2">{{ $tnpuser->diplomayear }}</td>
+				                                    </tr>
+				                                    <tr>
+				                                        <td>11</td>
+				                                        <td>Diploma Percentage</td>
+				                                        <td colspan="2">{{ $tnpuser->diplomapercent }}</td>
+				                                    </tr>
+				                                    <tr>
+				                                        <td>12</td>
+				                                        <td>Diploma Board</td>
+				                                        <td colspan="2">{{ $tnpuser->diplomaboard }}</td>
 				                                    </tr>
 
 
+				                                    @endif
+
+				                                    <tr>
+				                                        <td>13</td>
+				                                        <td>Present Address</td>
+				                                        <td colspan="2">{{ $tnpuser->paddress }}</td>
+				                                    </tr>
+				                                    <tr>
+				                                        <td>14</td>
+				                                        <td>Permanent Address</td>
+				                                        <td colspan="2">{{ $tnpuser->praddress }}</td>
+				                                    </tr>
+				                                    <tr>
+				                                        <td>15</td>
+				                                        <td>Fathers Name :</td>
+				                                        <td colspan="2">{{ $tnpuser->fname }}</td>
+				                                    </tr>
+				                                    <tr>
+				                                        <td>16</td>
+				                                        <td>Fathers Occupation:</td>
+				                                        <td colspan="2">{{ $tnpuser->foccupation }}</td>
+				                                    </tr>
+				                                    <tr>
+				                                        <td>17</td>
+				                                        <td>Mothers Name :</td>
+				                                        <td colspan="2">{{ $tnpuser->mname }}</td>
+				                                    </tr>
+				                                    <tr>
+				                                        <td>18</td>
+				                                        <td>Mothers Occupation:</td>
+				                                        <td colspan="2">{{ $tnpuser->moccupation }}</td>
+				                                    </tr>
+				                                   @if(!empty($tnpuser->rname))
+				                                    <tr>
+				                                        <td>19</td>
+				                                        <td>Relatives Name :</td>
+				                                        <td colspan="2">{{ $tnpuser->rname }}</td>
+				                                    </tr>
+				                                    <tr>
+				                                        <td>20</td>
+				                                        <td>Relatives Occupation:</td>
+				                                        <td colspan="2">{{ $tnpuser->roccupation }}</td>
+				                                    </tr>
+
+				                                    @endif
               		                                    
 				                                </tbody>
 				                             </table>

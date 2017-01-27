@@ -23,7 +23,7 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->middleware('admin');
-        $this->middleware('ajax', ['only' => ['applicants']]);
+        $this->middleware('ajax', ['only' => ['applicants', 'searchkeyword']]);
         $this->middleware('superadmin', ['only' => ['addUser','delUser','getImportDatabase','getAddBranch']]);
 
         if(Auth::check()){
@@ -127,6 +127,42 @@ class AdminController extends Controller
 
             }
         }
+    }
+
+    public function searchkeyword(Request $request)
+    {
+        if(isset($request->keyword))
+        {
+          $users = TNP::SearchByKeyword($request->keyword)->get();
+          foreach($users as $user)
+          {
+              echo "<tr>
+              <td>".$user->id."</td>
+              <td>".$user->name."</td>
+              <td>".$user->regdno."</td>
+              <td>".$user->branch."</td>
+              <td>".$user->cgpa."</td>
+              <td>".$user->backlog."</td>
+
+              <td class='actions'>
+                  <a href=".route('admin.tnpuser.show', $user->id).">
+                      <button class='btn btn-md btn-primary'>
+                          <h6><i class='ti-eye' aria-hidden='true'></i>
+                          View</h6>
+                      </button>
+                  </a>
+                  <a href=".route('admin.tnpuser.edit', $user->id).">
+                      <button class='btn btn-md btn-warning'>
+                          <h6><i class='ti-pencil'></i>
+                          Edit</h6>
+                      </button>
+                  </a>
+              </td>
+          </tr>";
+          }
+          
+        }
+
     }
 
     public function administrators(){
