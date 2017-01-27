@@ -22,7 +22,7 @@
 
 		</div>
 		<div class="col-lg-6">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/SclBnR8jjIs?autoplay=1" frameborder="0" allowfullscreen></iframe>
+			<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/SclBnR8jjIs?autoplay=1" frameborder="0" allowfullscreen></iframe> -->
 		</div>
 		
 	</div>

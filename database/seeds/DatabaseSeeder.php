@@ -53,6 +53,41 @@ class DatabaseSeeder extends Seeder
                 'metaname' => 'pic_message',
                 'metavalue' => 'This is a message from Saroj Sir.',
             ]);
+        DB::table('settings')->insert([
+                'metaname' => 'tnp_email',
+                'metavalue' => 'admin@tnp.cet.edu.in',
+            ]);
+        DB::table('settings')->insert([
+                'metaname' => 'tnp_facebook',
+                'metavalue' => '',
+            ]);
+        DB::table('settings')->insert([
+                'metaname' => 'tnp_googleplus',
+                'metavalue' => '',
+            ]);
+
+        DB::table('settings')->insert([
+                'metaname' => 'tnp_youtube',
+                'metavalue' => '',
+            ]);
+        DB::table('settings')->insert([
+                'metaname' => 'tnp_instagram',
+                'metavalue' => '',
+            ]);
+        DB::table('settings')->insert([
+                'metaname' => 'tnp_twitter',
+                'metavalue' => '',
+            ]);
+        DB::table('settings')->insert([
+                'metaname' => 'tnp_linkedin',
+                'metavalue' => '',
+            ]);
+
+        DB::table('settings')->insert([
+                'metaname' => 'tnp_address',
+                'metavalue' => 'College Of Engineering And Technology, Ghatikia, Bhubaneswar',
+            ]);
+
 //Super Admins
         DB::table('t_n_p_s')->insert([
             'name' => 'DUMMY PERSON',

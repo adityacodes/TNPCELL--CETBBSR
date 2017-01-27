@@ -27,6 +27,8 @@
 #nt-example1 {
 	max-width: 620px;
 	margin: auto;
+	height: 240px; 
+	overflow: hidden;
 }
 
 #nt-example1-container {
@@ -49,18 +51,18 @@
 }
 
 #nt-example1 li {
-	color: black;
-	background: white;
-	overflow: hidden;
-	/* height: 80px; */
-	padding: 10px;
-	line-height: 30px;
-	list-style: none;
-	font-size: 18px;
-	text-align: left;
-	border-bottom: 1px dotted #2c8162;
-}
+        color: black;
+        background: white;
+        overflow: hidden;
+        padding:0;
+        line-height: 30px;
+        list-style: none;
+        font-size: 16px;
+        text-align: left;
+        border-bottom: 1px dotted #2c8162;
+    }
 
+    
 #nt-example1 li:hover {
 	background: #FFF;
 }
@@ -94,6 +96,8 @@
 #nt-example2 {
 	max-width: 620px;
 	margin: auto;
+	height: 240px; 
+	overflow: hidden;
 }
 
 #nt-example2-container {
@@ -130,4 +134,15 @@
 
 #nt-example2 li:hover {
 	background: #FFF;
+}
+
+#owl-demo .item img{
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 450px;
+}
+
+.input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:last-child > .dropdown-toggle, .input-group-btn:first-child > .btn:not(:first-child){
+    border-left: 1px solid #CCC5B9;
 }

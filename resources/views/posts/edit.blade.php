@@ -14,7 +14,7 @@
 		    <div class="content" >              
 		    	<!-- Content goes here -->
 		    	<fieldset>
-    	{!! Form::model($post, ['route' => ['admin.post.update', $post->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '']) !!}
+    	{!! Form::model($post, ['route' => ['admin.post.update', $post->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '', 'autocomplete' => 'off']) !!}
     	
 	    <div class="col-md-8">
 	        

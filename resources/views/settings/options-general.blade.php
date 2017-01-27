@@ -4,215 +4,134 @@
 
 
 
-
 @section('content')
 
     <div class="row">
         <div class="card">
                 @include('partials._settingsnav')
+                
+                     <div class="card tab-content">  
+                        <div class="header">
+                            <!-- Title here -->
+                            <h4 class="title">General Settings :</h4>
+                            <hr>
+                        </div>          
+                        <div class="content">
 
-                    <div class="header">
-                        <!-- Title here -->
-                        <h4 class="title">General Settings :</h4>
-                        <hr>
-                    </div>          
-                    <div class="content">
-
-                        <form>
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="form-group">
+                            {!! Form::open(array( 'method' => 'PUT', 'route' => 'admin.settings.update', 'data-parsley-validate' => '', 'enctype' => 'multipart/form-data', 'files' => 'true')) !!}
+                                <div class="row">
+                                    <div class="col-md-5">
                                         <label>Site Name:</label>
-                                        <input type="text" class="form-control border-input" disabled="" placeholder="Company" value="Training & Placement Cell">
+                                            <div class="input-group border-input">                           
+                                                <span class="input-group-addon">
+                                                    <i class="ti-palette"></i>
+                                                </span>
+                                                <input type="text" name="sitename" class="form-control border-input" placeholder="Website Name" value="{{$setting['sitename']}}">
+                                            </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                            <img class="pull-right" style="max-height: 100px;" src="/users/img/logo.jpg">
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Logo:</label><a class="pull-right" href="#changelogo"></a>
-                                        <input type="text" class="form-control border-input" placeholder="Username" value="michael23">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control border-input" placeholder="Email">
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>First Name</label>
-                                        <input type="text" class="form-control border-input" placeholder="Company" value="Chet">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email:</label>
+                                            <div class="input-group border-input">                           
+                                                <span class="input-group-addon">
+                                                    <i class="ti-comment-alt"></i>
+                                                </span>
+                                                <input type="text" name="tnp_email" class="form-control border-input" placeholder="Email Address" value="{{$setting['tnp_email']}}">
+                                            </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Last Name</label>
-                                        <input type="text" class="form-control border-input" placeholder="Last Name" value="Faker">
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Address</label>
-                                        <input type="text" class="form-control border-input" placeholder="Home Address" value="Melbourne, Australia">
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>City</label>
-                                        <input type="text" class="form-control border-input" placeholder="City" value="Melbourne">
+                                <div class="row">
+                                    
+                                    <div class="col-md-4">
+                                        <label>Facebook</label>
+                                            <div class="input-group border-input">                           
+                                                <span class="input-group-addon">
+                                                    <i class="ti-facebook"></i>
+                                                </span>
+                                                <input type="text" name="tnp_facebook" class="form-control border-input" placeholder="Facebook URL" value="{{$setting['tnp_facebook']}}">
+                                            </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        
+                                            <label>Twitter</label>
+                                            <div class="input-group border-input">                           
+                                                <span class="input-group-addon">
+                                                    <i class="ti-twitter"></i>
+                                                </span>
+                                                <input type="text" name="tnp_twitter" class="form-control border-input" placeholder="Twitter URL" value="{{$setting['tnp_twitter']}}">
+                                            </div>
+                                        
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>LinkedIn</label>
+                                            <div class="input-group border-input">                           
+                                                <span class="input-group-addon">
+                                                    <i class="ti-linkedin"></i>
+                                                </span>
+                                                <input type="text" name="tnp_linkedin" class="form-control border-input" placeholder="LinkedIn URL" value="{{$setting['tnp_linkedin']}}">
+                                            </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Country</label>
-                                        <input type="text" class="form-control border-input" placeholder="Country" value="Australia">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Postal Code</label>
-                                        <input type="number" class="form-control border-input" placeholder="ZIP Code">
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Address:</label>
-                                        <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" value="Mike">
-                                        College Of Engineering And Technology
-                                        Ghatikia, Bhubaneswar, India - 751003
-                                        Phone: +91-7381110897
-                                        FAX : I dont know
-                                        </textarea>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Youtube</label>
+                                            <div class="input-group border-input">                           
+                                                <span class="input-group-addon">
+                                                    <i class="ti-youtube"></i>
+                                                </span>
+                                                <input type="text" name="tnp_youtube" class="form-control border-input" placeholder="Youtube URL" value="{{$setting['tnp_youtube']}}">
+                                            </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Google Plus</label>
+                                            <div class="input-group border-input">                           
+                                                <span class="input-group-addon">
+                                                    <i class="ti-google"></i>
+                                                </span>
+                                                <input type="text" name="tnp_googleplus" class="form-control border-input" placeholder="Google+ URL" value="{{$setting['tnp_googleplus']}}">
+                                            </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Instagram</label>
+                                            <div class="input-group border-input">                           
+                                                <span class="input-group-addon">
+                                                    <i class="ti-instagram"></i>
+                                                </span>
+                                                <input type="text" name="tnp_instagram" class="form-control border-input" placeholder="Instagram URL" value="{{$setting['tnp_instagram']}}">
+                                            </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-info btn-fill btn-wd">Save Settings</button>
-                            </div>
-                            <div class="clearfix"></div>
-                        </form>
-                    </div>
 
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                                <label>Address:</label>
+                                        <div class="input-group border-input">                           
+                                                <span class="input-group-addon">
+                                                    <i class="ti-comment-alt"></i>
+                                                </span>
+                                                <textarea name="tnp_address" align="left" rows="5" class="form-control border-input" placeholder="Here can be your address">{{$setting['tnp_address']}}
+                                                </textarea>
+                                        </div>
+                                </div>
+                                <div class="text-center">
+                                    {!! Form::submit('Save Settings', array('class' => 'btn btn-info btn-fill btn-wd', 'id' => 'submit'  )) !!}
+                                </div>
+                                <div class="clearfix"></div>
+                            {!! Form::close() !!}
+                        </div>
+                     </div>
+                
         </div>
     </div>
-    <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <a href="{{ route('admin.alumni.index') }}">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-xs-5">
-                                            <div class="icon-big icon-warning text-center">
-                                                <i class="ti-user"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-7">
-                                            <div class="numbers">
-                                                Alumni Section
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="footer">
-                                        <hr>
-                                        <div class="stats">
-                                            <i class="ti-reload"></i> <em>Can be updated here</em>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <a href="{{ route('admin.mainnotices.index') }}">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-xs-5">
-                                            <div class="icon-big icon-success text-center">
-                                                <i class="ti-wallet"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-7">
-                                            <div class="numbers">
-                                                Notices Section
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="footer">
-                                        <hr>
-                                        <div class="stats">
-                                            <i class="ti-calendar"></i> <em>Can be updated here</em>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <a href="{{ route('admin.import') }}">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-xs-5">
-                                            <div class="icon-big icon-danger text-center">
-                                                <i class="ti-import"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-7">
-                                            <div class="numbers">
-                                                Import
-                                                Users
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="footer">
-                                        <hr>
-                                        <div class="stats">
-                                            <i class="ti-timer"></i> In the last hour
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-info text-center">
-                                            <i class="ti-twitter-alt"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Followers</p>
-                                            +45
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="ti-reload"></i> Updated now
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 	
 
 

@@ -122,6 +122,12 @@ body {
 
 }
 
+.navbar-nav{
+  
+    width: 100%;
+    text-align: center;
+}
+
 @media (min-width: 768px){
 
 		.navbar-nav{
@@ -211,4 +217,50 @@ body {
 
 .spacing{
     padding: 20px;
+}
+
+footer ul:last-child {
+  padding: 10px 13px;
+  margin: 0px;
+  float: left;
+}
+.footer h4{
+  color: #f8b003;
+}
+
+.darkblue-bg{
+  background-color: #000C2C;
+}
+
+.m-t-15{
+  margin-top: 15px;
+}
+
+.m-h-500{
+  min-height: 500px;
+}
+
+.m-b-5{
+  margin-bottom: 5px;
+}
+
+.greyishblue-bg{
+  background-color: #002147;
+}
+
+.w-100{
+  width:100%;
+  
+}
+
+.h-90{
+  height: 90px;
+}
+
+.m-t-0{
+  margin-top: 0px;
+}
+
+.m-0{
+  margin: 0px;
 }

@@ -96,7 +96,11 @@
                          || Request::is('admin/mainevents')
                          || Request::is('admin/mainevents/*')
                          || Request::is('admin/branches')
-                         || Request::is('admin/branches/*') ? "active" : ""}}">
+                         || Request::is('admin/branches/*')
+                         || Request::is('admin/slider')
+                         || Request::is('admin/slider/*')
+                         || Request::is('admin/link')
+                         || Request::is('admin/link/*') ? "active" : ""}}">
                 <a href="/admin/settings/options-general">
                     <i class="ti-settings"></i>
                     <p>Site Settings</p>
