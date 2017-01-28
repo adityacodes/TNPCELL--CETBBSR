@@ -12,7 +12,7 @@
     <div class="row">
         <div id="owl-demo" class="owl-carousel owl-theme">
             @foreach($sliders as $slider)
-                <div class="item"><img src="{{public_path('uploads/slider/'.$slider->slider_image)}}"></div>
+                <div class="item"><img src="{{url('uploads/slider/'.$slider->slider_image)}}"></div>
             @endforeach
         </div>
     </div>

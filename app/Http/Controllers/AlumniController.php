@@ -78,7 +78,7 @@ class AlumniController extends Controller
         if ($request->file('alumni_image')->isValid()) {
 
             $imageName = time().'.'.$request->file('alumni_image')->getClientOriginalExtension();
-            $request->file('alumni_image')->move(public_path('uploads/alumni'), $imageName);
+            $request->file('alumni_image')->move('uploads/alumni', $imageName);
               
         }
         else {
@@ -158,7 +158,7 @@ class AlumniController extends Controller
             {
                 File::delete('uploads/alumni/'.$alumni->alumni_image);
                 $imageName = time().'.'.$request->file('alumni_image')->getClientOriginalExtension();
-                $request->file('alumni_image')->move(public_path('uploads/alumni'), $imageName);
+                $request->file('alumni_image')->move('uploads/alumni', $imageName);
                 $alumni->alumni_image = $imageName;
             }
             else{     
