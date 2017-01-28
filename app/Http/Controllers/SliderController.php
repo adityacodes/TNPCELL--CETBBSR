@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Slider, File, Validator;
 use Auth, View, App\TNP, Session;
+use Storage;
 
 class SliderController extends Controller
 {
@@ -32,7 +33,6 @@ class SliderController extends Controller
      */
     public function index()
     {
-         
         //create a variable and store all the sliders in it
         $sliders = Slider::orderBy('id', 'desc')->paginate(5);
 

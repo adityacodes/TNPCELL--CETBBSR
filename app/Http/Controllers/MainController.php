@@ -10,7 +10,7 @@ use App\Alumni;
 use App\Companies;
 use App\Notice, App\Officer, App\Fest;
 use App\Event, App\Link, App\Slider;
-use DB;
+use DB, Storage;
 
 class MainController extends Controller
 {
