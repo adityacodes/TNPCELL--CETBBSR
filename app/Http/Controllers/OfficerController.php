@@ -76,7 +76,7 @@ class OfficerController extends Controller
         if ($request->file('officer_image')->isValid()) {
 
             $imageName = time().'.'.$request->officer_image->getClientOriginalExtension();
-            $request->officer_image->move(public_path('uploads/officer'), $imageName);
+            $request->officer_image->move('uploads/officer', $imageName);
               
         }
         else {
@@ -143,16 +143,16 @@ class OfficerController extends Controller
         
         $this->validate($request, array(
                 'officer_name' => 'required|max:255',
-                'officer_image'=> 'required',
+                'officer_image'=> 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'officer_desig'=> 'required',
                 'officer_website'=> 'required',
         ));
         
         if ($request->file('officer_image')->isValid()) {
-
+            File::delete('uploads/officer/'.$officer->officer_image);
             $imageName = time().'.'.$request->officer_image->getClientOriginalExtension();
-            $request->officer_image->move(public_path('uploads/officer'), $imageName);
-              
+            $request->officer_image->move('uploads/officer', $imageName);
+            $officer->officer_image = $imageName;  
         }
         else {
           // sending back with error message.
@@ -165,7 +165,7 @@ class OfficerController extends Controller
         //save the data
 
         $officer->officer_name = $request->officer_name;
-        $officer->officer_image = $imageName;
+        
         $officer->officer_desig = $request->officer_desig;
         $officer->officer_website = $request->officer_website;
         $officer->creator = Auth::user()->name;
@@ -189,8 +189,7 @@ class OfficerController extends Controller
     {
         
         $officer = Officer::find($id);
-        //var_dump($officer->officer_image);
-        var_dump(File::delete('uploads/officer/'.$officer->officer_image));
+        File::delete('uploads/officer/'.$officer->officer_image);
         $officer->delete();
 
         Session::flash('Success', 'Officer Deleted Successfully');
