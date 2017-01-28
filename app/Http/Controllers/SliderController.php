@@ -72,7 +72,7 @@ class SliderController extends Controller
         {
             // Image::make($request->slider_image->getRealPath())->resize(200, 200)->save($path);
             $imageName = time().'.'.$request->slider_image->getClientOriginalExtension();
-            $request->slider_image->move(public_path('uploads/slider'), $imageName);  
+            $request->file('slider_image')->move(public_path('uploads/slider'), $imageName);  
         }
         else {
               Session::flash('warning', 'Uploaded file is not valid');
@@ -139,7 +139,7 @@ class SliderController extends Controller
         {
             File::delete('uploads/slider/'.$slider->slider_image);
             $imageName = time().'.'.$request->slider_image->getClientOriginalExtension();
-            $request->slider_image->move(public_path('uploads/slider'), $imageName);
+            $request->file('slider_image')->move(public_path('uploads/slider'), $imageName);
               
         }
         else {

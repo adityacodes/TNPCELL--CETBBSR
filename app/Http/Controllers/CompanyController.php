@@ -75,8 +75,8 @@ class CompanyController extends Controller
           }
 
         if($request->file('company_image')->isValid()){
-            $imageName = time().'.'.$request->company_image->getClientOriginalExtension();
-            $request->company_image->move(public_path('uploads/company'), $imageName);
+            $imageName = time().'.'.$request->file('company_image')->getClientOriginalExtension();
+            $request->file('company_image')->move(public_path('uploads/company'), $imageName);
         }
         else {
           // sending back with error message.
@@ -154,8 +154,8 @@ class CompanyController extends Controller
         {
             if($request->file('company_image')->isValid()){
                 File::delete('uploads/company/'.$company->company_image);
-                $imageName = time().'.'.$request->company_image->getClientOriginalExtension();
-                $request->company_image->move(public_path('uploads/company'), $imageName);
+                $imageName = time().'.'.$request->file('company_image')->getClientOriginalExtension();
+                $request->file('company_image')->move(public_path('uploads/company'), $imageName);
                 $company->company_image = $imageName;
             }
             else{     
