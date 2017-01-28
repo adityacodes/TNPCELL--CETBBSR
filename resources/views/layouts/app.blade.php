@@ -29,7 +29,7 @@
 
   </head>
   <body cz-shortcut-listen="true">
-          <div class="container-fluid {{Request::is('/')? "white-bg" : "aliceblue-bg"}}">
+          <div class="container-fluid paper-bg">
              <div class="row clearfix greyishblue-bg">
              <h3 class="text-center hidden-xs tnptitle">Training &amp; Placement Cell</h3>
              <h2 class="text-center visible-xs tnpsmtitle">TNP-CETB</h2>
