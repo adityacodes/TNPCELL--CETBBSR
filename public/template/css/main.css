@@ -120,18 +120,18 @@
 }
 
 #nt-example2 li {
-	color: black;
-	background: white;
-	overflow: hidden;
-	/* height: 80px; */
-	padding: 10px;
-	line-height: 30px;
-	list-style: none;
-	font-size: 18px;
-	text-align: left;
-	border-bottom: 1px dotted #2c8162;
-}
+        color: black;
+        background: white;
+        overflow: hidden;
+        padding:0;
+        line-height: 30px;
+        list-style: none;
+        font-size: 16px;
+        text-align: left;
+        border-bottom: 1px dotted #2c8162;
+    }
 
+    
 #nt-example2 li:hover {
 	background: #FFF;
 }

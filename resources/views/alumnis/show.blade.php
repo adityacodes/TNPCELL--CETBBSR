@@ -55,7 +55,7 @@
 				                                    <tr>
 				                                        <td>5</td>
 				                                        <td>Alumni Image</td>
-				                                        <td colspan="2">BUTTON HERE</td>
+				                                        <td colspan="2"><img width="150" height="150" src="/uploads/alumni/{{ $alumni->alumni_image}}"></td>
 				                                    </tr>
 				                                    
 				                                </tbody>
@@ -91,13 +91,13 @@
 			            	<div>
 			            	
 			            		<a class="action" href="{{ route('admin.alumni.edit', $alumni->id) }}">
-			            			<button class="btn btn-primary btn-block"><i class="ti-pencil"></i> Edit</button>
+			            			<button class="btn btn-primary btn-block"><i class="ti-pencil"></i> EDIT</button>
 			            		</a><br/>
 			            		{!! Form::open(['route' => ['admin.alumni.destroy', $alumni->id], 'method' =>'DELETE', 'style' => 'margin-top: -15px;']) !!}
-				            			<button class="btn btn-danger btn-block"><i class="ti-close"></i> Delete</button>
+				            			<button class="btn btn-danger btn-block"><i class="ti-close"></i> DELETE</button>
 			            		{!! Form::close() !!}<br/>
 			            		<a class="action" href="{{ route('admin.alumni.index') }}">
-			            			<button style="margin-top:-15px;" class="btn btn-default btn-block"><i class="ti-book"></i> See all Alums</button>
+			            			<button style="margin-top:-15px;" class="btn btn-default btn-block"><i class="ti-book"></i> SEE ALL ALUMS</button>
 			            		</a>
 			            	</div>                  
 

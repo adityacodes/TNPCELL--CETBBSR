@@ -14,8 +14,14 @@
 
 				        <div class="header">
 					        <h4 class="title">All Main Sliders
-					            <a href="{{ route('admin.slider.create') }}" class="btn btn-success pull-right"><i class="glyphicon glyphicon-plus"></i> NEW Slider</a>
-					            <div ><b>Total Sliders:</b><span class="badge label-success">{{$sliders->total()}}</span></div>
+					            <a href="{{ route('admin.slider.create') }}" class="btn btn-success pull-right"><i class="glyphicon glyphicon-plus"></i> NEW SLIDER</a>
+					            <div >
+					            	<b>Total Sliders:</b>
+					            	<span class="badge label-success">{{$sliders->total()}}</span>
+					            	<br/><br/>
+			            				<b>URL:</b>
+			            				<a target="_blank" href="{{ url('/') }}">{{ url('/') }}</a>
+					            </div>
 				            </h4>
 				            <hr>
 				        </div>
@@ -26,9 +32,9 @@
 					                    <thead>
 					                        <tr>
 					                            <th>#</th>
-					                            <th>Title</th>
-					                            <th>Slider</th>
+					                            <th>Slider Image</th>
 					                            <th>Created At</th>
+					                            <th>Updated At</th>
 					                            <th>Actions</th>
 					                        </tr>
 					                    </thead>
@@ -36,9 +42,9 @@
 				                    	@foreach ($sliders as $slider)
 					                        <tr>
 					                            <td>{{ $slider->id }}</td>
-					                            <td>{{ substr($slider->Slider_subject,0,20) }}</td>
-					                            <td>{{ substr($slider->Slider_message,0,20) }}{{ strlen($slider->Slider_message) > 10 ? "..." : ""}}</td>
+					                            <td><img width="300" height="150" src="/uploads/slider/{{ $slider->slider_image }}"></td>
 					                            <td>{{ date('M j, Y H:i:s', strtotime($slider->created_at)) }}</td>
+					                            <td>{{ date('M j, Y H:i:s', strtotime($slider->updated_at)) }}</td>
 					                            <td class="actions">
 					                                <a href="{{ route('admin.slider.show', $slider->id)}}">
 					                                    <button class="btn btn-md btn-primary">

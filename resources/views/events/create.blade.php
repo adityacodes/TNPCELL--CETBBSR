@@ -14,9 +14,9 @@
 			                        <i class="ti-pencil"></i>
 			                           
 			                </div>
-			                <h4 class="title" style="font-weight: bold;">CREATE NEW Event</h4>
-			                <button type="button" class="btn btn-primary pull-right" onclick="window.location='{{ route("admin.mainevents.index") }}'">Cancel</button>
-			                <p class="category">----</p>
+			                <h4 class="title" style="font-weight: bold;">CREATE NEW EVENT</h4>
+			                <button type="button" class="btn btn-primary pull-right" onclick="window.location='{{ route("admin.mainevents.index") }}'">CANCEL</button>
+			                <p class="category">Items marked <sup class="required">*</sup> are required.</p>
 			            </div>
                  
 		                <div class="content">
@@ -32,11 +32,11 @@
 						            	<div class="form-group">
 								    		<label class="col-md-3 control-label" for="event_message">Event Message :</label>
 								    		<div class="col-lg-5">
-								    			{!! Form::text('event_message', null, array('class' => 'form-control border-input', 'id' => 'event_message', 'placeholder' => 'Enter event message here', 'required' => '')) !!}
+								    			{!! Form::textarea('event_message', null, array('class' => 'form-control border-input', 'id' => 'event_message', 'placeholder' => 'Enter event message here', 'required' => '')) !!}
 								    		</div>
 								    	</div>
 					                    <div class="form-group">
-						                    {!! Form::submit('Create event', array('class' => 'btn pull-down btn-success btn-lg col-lg-8 col-md-offset-2 col-xs-offset-3 text-center', 'id' => 'submit'  )) !!}
+						                    {!! Form::submit('Create Event', array('class' => 'btn pull-down btn-success btn-lg col-lg-8 col-md-offset-2 col-xs-offset-3 text-center', 'id' => 'submit'  )) !!}
 						                </div>
 							{!! Form::close() !!}
 							</h4>

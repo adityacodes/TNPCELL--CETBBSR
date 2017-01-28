@@ -11,7 +11,7 @@
                            
                 </div>
                 <h4 class="title" style="font-weight: bold;">CREATE NEW POST</h4>
-                <p class="category">----</p>
+                <p class="category">Items marked <sup class="required">*</sup> are required.</p>
             </div>
                  
                 <div class="content">

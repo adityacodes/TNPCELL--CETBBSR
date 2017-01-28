@@ -17,23 +17,23 @@
 			                <h4 class="title" style="font-weight: bold;">CREATE NEW notice
 								<button type="button" class="btn btn-primary pull-right" onclick="window.location='{{ route("admin.mainnotices.index") }}'">Cancel</button>
 			                </h4>
-			                <p class="category">----</p>
+			                <p class="category">Items marked <sup class="required">*</sup> are required.</p>
 			            </div>
                  
 		                <div class="content">
 		                	<h4>
 					    	{!! Form::open(array('route' => 'admin.mainnotices.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'autocomplete' => 'off')) !!}
 					                    <div class="form-group">
-								    		<label class="col-lg-4 control-label" for="notice_subject">Notice Subject :</label>
+								    		<label class="col-lg-4 control-label" for="notice_subject">Notice Subject : <sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
 								    			{!! Form::text('notice_subject', null, array('class' => 'form-control border-input', 'id' => 'notice_subject', 'placeholder' => 'Enter notice subject here', 'required' => '','minlength'=>'5','maxlength' => '255' )) !!}
 								    		</div>
 								    	</div>
 
 						            	<div class="form-group">
-								    		<label class="col-md-2 control-label" for="notice_message">Notice Message :</label>
-								    		<div class="col-lg-10">
-								    			{!! Form::text('notice_message', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter notice message here here', 'required' => '')) !!}
+								    		<label class="col-lg-4 control-label" for="notice_message">Notice Message :<sup class="required">*</sup></label>
+								    		<div class="col-lg-4">
+								    			{!! Form::textarea('notice_message', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter notice message here here', 'required' => '')) !!}
 								    		</div>
 								    	</div>
 					                    <div class="form-group">

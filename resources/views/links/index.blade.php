@@ -15,7 +15,13 @@
 				        <div class="header">
 					        <h4 class="title">All Main links
 					            <a href="{{ route('admin.link.create') }}" class="btn btn-success pull-right"><i class="glyphicon glyphicon-plus"></i> NEW link</a>
-					            <div ><b>Total links:</b><span class="badge label-success">{{$links->total()}}</span></div>
+					            <div >
+					            	<b>Total links:</b>
+					            	<span class="badge label-success">{{$links->total()}}</span>
+					            	<br/><br/>
+			            				<b>URL:</b>
+			            				<a target="_blank" href="{{ url('/') }}">{{ url('/') }}</a>
+					            </div>
 				            </h4>
 				            <hr>
 				        </div>

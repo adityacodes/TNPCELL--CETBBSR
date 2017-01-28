@@ -26,42 +26,42 @@
 			                <h4 class="title" style="font-weight: bold;">CREATE NEW COMPANY</h4>
 
 			                <button type="button" class="btn btn-primary pull-right" onclick="window.location='{{ route("admin.company.index") }}'">Cancel</button>
-			                <p class="category">----</p>
+			                <p class="category">Items marked <sup class="required">*</sup> are required.</p>
 			            </div>
 		                 
 		                <div class="content">
 		                <h4>
 					    	{!! Form::open(array('route' => 'admin.company.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'enctype' => 'multipart/form-data', 'files' => 'true')) !!}
 					                    <div class="form-group">
-					                    	<div class="col-md-2">
-								    			<label class="control-label pull-right" for="title">Name:</label>
+					                    	<div class="col-md-3">
+								    			<label class="control-label pull-right" for="title">Company Name:<sup class="required">*</sup></label>
 								    		</div>
-								    		<div class="col-md-6">
+								    		<div class="col-md-4">
 								    			{!! Form::text('company_name', null, array('class' => 'form-control border-input', 'id' => 'company_name', 'placeholder' => 'Enter name here','maxlength' => '255' )) !!}
 								    		</div>
 								    	</div>
 								    	<div class="form-group">
-								    		<label class="col-lg-3 control-label" for="company_image">company Image:</label>
+								    		<label class="col-lg-3 control-label" for="company_image">Company Image:<sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
 								    			{!! Form::file('company_image', null, array('class' => 'form-control border-input', 'id' => 'company_image', 'placeholder' => 'Enter value here', 'required' => '')) !!}
 								    		</div>
 								    	</div>
 								    	<div class="form-group">
-								    		<label class="col-lg-3 control-label" for="company_website">company Website:</label>
+								    		<label class="col-lg-3 control-label" for="company_website">Company Website URL:<sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
 								    			{!! Form::text('company_website', null, array('class' => 'form-control border-input', 'id' => 'company_website', 'placeholder' => 'Enter value here' )) !!}
 								    		</div>
 								    	</div>
 								    	<div class="form-group">
-								    		<label class="col-lg-3 control-label" for="company_description">Company description</label>
+								    		<label class="col-lg-3 control-label" for="company_description">Company Description:<sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
 								    			{!! Form::text('company_description', null, array('class' => 'form-control border-input', 'id' => 'company_description', 'placeholder' => 'Enter Company Description', 'required' => '' )) !!}
 								    		</div>
 								    	</div>
 								    	<div class="form-group">
-								    		<label class="col-lg-3 control-label" for="company_description">Company Massrecruiter</label>
+								    		<label class="col-lg-3 control-label" for="company_description">Is the Company Massrecruiter?<sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('company_massrecruiter', null, array('class' => 'form-control border-input', 'id' => 'company_description', 'placeholder' => 'Fill 1 for yes.', 'required' => '' )) !!}
+								    			{!! Form::select('company_massrecruiter',['0' => 'NO', '1' => 'YES'] ,'0', array('class' => 'form-control border-input', 'id' => 'company_description', 'placeholder' => 'Fill 1 for yes.', 'required' => '' )) !!}
 								    		</div>
 								    	</div>
 								    	

@@ -14,9 +14,16 @@
 
 
 				        <div class="header">
-					        <h4 class="title">All officers
-					            <a href="{{ route('admin.officer.create') }}" class="btn btn-success pull-right"><i class="ti-plus"></i> NEW officer</a>
-					            <div ><b>Total officers:</b><span class="badge label-success">{{$officers->total()}}</span></div>
+					        <h4 class="title">All Officers
+					            <a href="{{ route('admin.officer.create') }}" class="btn btn-success pull-right"><i class="ti-plus"></i> NEW OFFICER</a>
+					            <div >
+						            <b>Total Officers:</b>
+						            <span class="badge label-success">{{$officers->total()}}</span>
+					            	<br/><br/>
+			            				<b>URL:</b>
+			            				<a target="_blank" href="{{ url('/contact/office/') }}">{{ url('/contact/office/') }}</a>
+
+					            </div>
 				            </h4>
 				            <hr>
 				        </div>

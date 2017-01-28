@@ -2,6 +2,7 @@
 
 @section('content')
 
+<div class="container">
 
 <!-- Team Members Row -->
         <div class="row mainbody">
@@ -14,15 +15,19 @@
         <div class="col-lg-12"> 
             @foreach($companies as $company)
             	@if($company->company_massrecruiter == 1)
-	            <div class="col-lg-6 col-sm-6 text-center spacing">
-	                
-	                <div class="bg_box">
-	                    <a href="{{ $company->company_website }}" target="_blank">
-	                        <img class="img-responsive img-center" src="/uploads/company/{{ $company->company_image }}" alt="">
-	                    </a>
-	                    <p>{{ $company->company_name }}</p>
-	                </div>
-	            </div>
+                    <div class="col-lg-3 col-sm-6 text-center spacing">  
+                        <div class="card adityacard">
+                            <div class="content">
+                                <a href="{{ $company->company_website }}" target="_blank">
+                                    <img class="img-circle img-responsive img-center" src="/uploads/company/{{ $company->company_image }}" alt="">
+                                    <h3>{{ $company->company_name }}</h3>
+                                    <strong></strong>
+                                    
+                                </a>
+                            </div>
+                        </div> 
+                    </div>
+
 	            @endif
 
             @endforeach
@@ -33,17 +38,21 @@
 
            <div id="{{ shuffle($companies)}}"></div> 
             	@foreach($companies as $company)
-		            <div class="col-lg-2 col-sm-6 text-center spacing">  
-		                <div class="bg_box">
-		                    <a href="{{ $company->company_website }}" target="_blank">
-		                        <img class="img-responsive img-center" src="/uploads/company/{{ $company->company_image }}" alt="">
-		                    </a>
-		                    <p>{{ $company->company_name }}</p>
-		                </div>
-		            </div>
+		            <div class="col-lg-3 col-sm-6 text-center spacing">  
+                        <div class="card adityacard">
+                            <div class="content">
+                                <a href="{{ $company->company_website }}" target="_blank">
+                                    <img class="img-circle img-responsive img-center" src="/uploads/company/{{ $company->company_image }}" alt="">
+                                    <h3>{{ $company->company_name }}</h3>
+                                    <strong></strong>
+                                    
+                                </a>
+                            </div>
+                        </div> 
+                    </div>
 		        @endforeach
 
         </div>
 
-
+</div>
 @endsection

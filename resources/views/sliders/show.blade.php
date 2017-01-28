@@ -12,15 +12,31 @@
 			    	<div class="card">
 
 		                    <div class="header">
-		                        <h4 class="title">{{ ucwords(strtolower('Notice Subject : -')) }} <strong></strong></h4>
-		                        <h4>{{ ucwords(strtolower('Slider Image :')) }}</h4>
+		                        <h3 class="title"><strong>SLIDER DETAILS</strong></h3>
 		                        <hr>
 		                    </div>
 		                    
 		                    <div class="content" >
 		                        <h4 >
-									    	<p>{{ $slider->slider_image}}</p>
-									    	
+		                        	<table class="table table-hover table-bordered" >
+		                                <tbody>
+		                                	<tr>
+		                                		<th>Sl. No.</th>
+		                                		<th>Table Attributes</th>
+		                                		<th colspan="2">Table Values</th>	
+		                                	</tr>
+		                                    <tr>
+		                                        <td>1</td>
+		                                        <td>Slider ID: </td>
+		                                        <td colspan="2">{{ $slider->id }}</td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td>2</td>
+		                                        <td>Slider Image: </td>
+		                                        <td colspan="2"><img width="300" height="150" src="/uploads/slider/{{ $slider->slider_image }}"></td>
+		                                    </tr>
+						                </tbody>
+						            </table>
 								</h4>                     
 
 		                        <div class="footer">
@@ -37,13 +53,12 @@
 	            	<div class="card">
 
 	                    <div class="header">
-	                        <h4>{{ucwords(strtolower('Slider CHANGES :'))}}</h4>
+	                        <h4>SLIDER CHANGES:</h4>
 	                        <hr>
 	                    </div>
 	                    
 	                    <div class="content" >
 	                        <div class="well">
-			            		<p><b>URL:</b><a target="_blank" style="word-wrap: break-word;" href="/slider/{{ $slider->slug }}">{{ url('/main/notices/') }}</a></p><br/>
 			            		<p><b>Created at:</b>{{ date('M j, Y H:iA', strtotime($slider->created_at)) }}</p><br/>
 			            		<p><b>Updated at:</b>{{ date('M j, Y H:iA', strtotime($slider->updated_at)) }}</p><br/>
 
@@ -52,13 +67,13 @@
 			            	<div>
 			            	
 			            		<a class="action" href="{{ route('admin.slider.edit', $slider->id) }}">
-			            			<button class="btn btn-primary btn-block"><i class="ti-pencil"></i> Edit</button>
+			            			<button class="btn btn-primary btn-block"><i class="ti-pencil"></i> EDIT</button>
 			            		</a><br/>
 			            		{!! Form::open(['route' => ['admin.slider.destroy', $slider->id], 'method' =>'DELETE', 'style' => 'margin-top: -15px;']) !!}
-				            			<button class="btn btn-danger btn-block"><i class="ti-close"></i> Delete</button>
+				            			<button class="btn btn-danger btn-block"><i class="ti-close"></i> DELETE</button>
 			            		{!! Form::close() !!}<br/>
 			            		<a class="action" href="{{ route('admin.slider.index') }}">
-			            			<button style="margin-top:-15px;" class="btn btn-default btn-block"><i class="ti-book"></i> SEE ALL SLIDERs</button>
+			            			<button style="margin-top:-15px;" class="btn btn-default btn-block"><i class="ti-book"></i> SEE ALL SLIDERS</button>
 			            		</a>
 			            	</div>                  
 

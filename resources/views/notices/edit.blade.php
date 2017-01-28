@@ -31,9 +31,9 @@
 								    	</div>
 
 						            	<div class="form-group">
-								    		<label class="col-md-2 control-label" for="notice_message">Notice Message :</label>
-								    		<div class="col-lg-10">
-								    			{!! Form::text('notice_message', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter notice message here here', 'required' => '')) !!}
+								    		<label class="col-lg-4 control-label" for="notice_message">Notice Message :</label>
+								    		<div class="col-lg-6">
+								    			{!! Form::textarea('notice_message', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter notice message here here', 'required' => '')) !!}
 								    		</div>
 								    	</div>
 								    	

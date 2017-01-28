@@ -143,35 +143,36 @@ class CompanyController extends Controller
         //1. validate the date
         $validator = Validator::make($request->all(), [
                 'company_name' => 'required|max:25',
-                'company_image'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'company_image'=> 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'company_website'=> 'required',
                 'company_description' => 'required',
                 'company_massrecruiter'=> 'required',
             ]);
         
 
-        if ($request->hasFile('comapny_image')) {
+        if($request->hasfile('company_image'))
+        {
             if($request->file('company_image')->isValid()){
-
+                File::delete('uploads/company/'.$company->company_image);
                 $imageName = time().'.'.$request->company_image->getClientOriginalExtension();
                 $request->company_image->move(public_path('uploads/company'), $imageName);
-            } 
-        }
-        else {
-          // sending back with error message.
-          Session::flash('warning', 'Uploaded file is not valid');
-          return redirect('admin/company/create')
-                        ->withErrors($validator)
-                        ->withInput();
+                $company->company_image = $imageName;
+            }
+            else{     
+              // sending back with error message.
+              Session::flash('warning', 'Uploaded file is not valid');
+              return redirect('admin/company/create')
+                            ->withErrors($validator)
+                            ->withInput();
+            }
+
         }
         //2. Store in the DB
-
+        
         $company->company_name = $request->company_name;
-        $company->company_image = $imageName;
         $company->company_website = $request->company_website;
         $company->company_description = $request->company_description;
-        $company->company_massrecruiter = $request->company_company; 
-        $company->creator = Auth::user()->name;
+        $company->company_massrecruiter = $request->company_massrecruiter;
         
         $company->save();
         // set flash meessage to be shown
@@ -191,6 +192,7 @@ class CompanyController extends Controller
     public function destroy($id)
     {
         $company = Company::find($id);
+        File::delete('uploads/company/'.$company->company_image);
         $company->delete();
 
         Session::flash('Success', 'Alum Deleted Successfully');

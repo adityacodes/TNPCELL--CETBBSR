@@ -2,6 +2,9 @@
 .ct-blue {
   stroke: #7A9E9F !important;
 }
+.required{
+  color:red;
+}
 
 .ct-azure {
   stroke: #68B3C8 !important;

@@ -2,43 +2,34 @@
 
 @section('content')
 	
+<div class="container">
+    <div class="col-lg-12 m-t-15">
 
-	<div class="row clearfix">
-		<div class="text-center"><strong style="font-size: 40px;">EVENTS</strong></div>
+            @foreach($events as $event)
+                <div class="card">
+                    <div class="content">
+                        <a href="#{{$event->id}}" id="{{$event->id}}"><h4 class="title">{{$event->event_subject}}</h4></a>
+                        <p class="description">
+                            {{$event->event_message}}
+                        </p>
+                    </div>
+                </div>
+                <br/>
+            @endforeach
 
-		<div class="col-lg-3 col-sm-6 text-center spacing">
-            <div class="bg_box">
-                <a href="abc.jpg" target="_blank">
-                    <img class="img-responsive" src="http://placehold.it/300x300" alt="">
-                    <h3>PERCEPTION</h3>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6 text-center spacing">
-            <div class="bg_box">
-                <a href="abc.jpg" target="_blank">
-                    <img class="img-responsive" src="http://placehold.it/300x300" alt="">
-                    <h3>XTASY</h3>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6 text-center spacing">
-            <div class="bg_box">
-                <a href="abc.jpg" target="_blank">
-                    <img class="img-responsive" src="http://placehold.it/300x300" alt="">
-                    <h3>ENGINEERS CUP</h3>
-                </a>
-            </div>
-        </div>
 	</div>
-	
+</div>
 
+@endsection
 
+@section('scripts')
 
-
-
-
-
+<script type="text/javascript">
+    $('a').click(function(){
+        $('html, body').animate({
+            scrollTop: $( $(this).attr('href') ).offset().top
+        }, 500);
+        return false;
+    });
+</script>
 @endsection

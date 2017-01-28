@@ -12,15 +12,31 @@
 			    	<div class="card">
 
 		                    <div class="header">
-		                        <h4 class="title">{{ ucwords(strtolower('guideline Subject : -')) }} <strong>{{ucwords(strtolower($guideline->guideline_subject)) }}</strong></h4>
-		                        <h4>{{ ucwords(strtolower('guideline Message :')) }}</h4>
+		                        <h3 class="title"><strong>GUIDELINE DETAILS</strong></h3>
 		                        <hr>
 		                    </div>
 		                    
 		                    <div class="content" >
 		                        <h4 >
-									    	<p>{{ $guideline->guideline_message}}</p>
-									    	
+		                    	<table class="table table-hover table-bordered" >
+	                                <tbody>
+	                                	<tr>
+	                                		<th>Sl. No.</th>
+	                                		<th>Table Attributes</th>
+	                                		<th colspan="2">Table Values</th>	
+	                                	</tr>
+	                                    <tr>
+	                                        <td>1</td>
+	                                        <td>Guideline Subject: </td>
+	                                        <td colspan="2">{{ $guideline->guideline_subject }}</td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>2</td>
+	                                        <td>Guideline Message: </td>
+	                                        <td colspan="2">{{ $guideline->guideline_message }}</td>
+	                                    </tr>
+					                </tbody>
+					            </table>  	
 								</h4>                     
 
 		                        <div class="footer">
@@ -44,7 +60,6 @@
 	                    
 	                    <div class="content" >
 	                        <div class="well">
-			            		<p><b>URL:</b><a target="_blank" style="word-wrap: break-word;" href="/guideline/{{ $guideline->slug }}">{{ url('/main/guidelines/') }}</a></p><br/>
 			            		<p><b>Created at:</b>{{ date('M j, Y H:iA', strtotime($guideline->created_at)) }}</p><br/>
 			            		<p><b>Updated at:</b>{{ date('M j, Y H:iA', strtotime($guideline->updated_at)) }}</p><br/>
 
@@ -53,13 +68,13 @@
 			            	<div>
 			            	
 			            		<a class="action" href="{{ route('admin.guideline.edit', $guideline->id) }}">
-			            			<button class="btn btn-primary btn-block"><i class="ti-pencil"></i> Edit</button>
+			            			<button class="btn btn-primary btn-block"><i class="ti-pencil"></i> EDIT</button>
 			            		</a><br/>
 			            		{!! Form::open(['route' => ['admin.guideline.destroy', $guideline->id], 'method' =>'DELETE', 'style' => 'margin-top: -15px;']) !!}
-				            			<button class="btn btn-danger btn-block"><i class="ti-close"></i> Delete</button>
+				            			<button class="btn btn-danger btn-block"><i class="ti-close"></i> DELETE</button>
 			            		{!! Form::close() !!}<br/>
 			            		<a class="action" href="{{ route('admin.guideline.index') }}">
-			            			<button style="margin-top:-15px;" class="btn btn-default btn-block"><i class="ti-book"></i> See all guidelines</button>
+			            			<button style="margin-top:-15px;" class="btn btn-default btn-block"><i class="ti-book"></i> SEE ALL GUIDELINES</button>
 			            		</a>
 			            	</div>                  
 

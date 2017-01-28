@@ -26,7 +26,7 @@
 			                <h4 class="title" style="font-weight: bold;">CREATE NEW Tnp User</h4>
  
 			                <button type="button" class="btn btn-primary pull-right" onclick="window.location='{{ route("admin.tnpuser.index") }}'">Cancel</button>
-			                <p class="category">----</p>
+			                <p class="category">Items marked <sup class="required">*</sup> are required.</p>
 			            </div>
 		                 
 		                <div class="content">

@@ -1,12 +1,12 @@
  
     @font-face {
       font-family: 'font3';
-      src: url('/fonts/Simpleness.otf');
+      src: url('/main/fonts/Simpleness.otf');
     }
 
     @font-face {
       font-family: 'font4';
-      src: url('/fonts/Carten.otf');
+      src: url('/main/fonts/Carten.otf');
     }
 
 .tnpmoto{
@@ -124,12 +124,12 @@ display: block;
 }
 
    
-    @font-face {
-        font-family: font1;
-        src: url('/fonts/Metropolis-Regular.otf');
-    }
-    
-    @font-face {
-        font-family: font2;
-        src: url('main/fonts/dance.ttf');
-    }
+@font-face {
+    font-family: font1;
+    src: url('/fonts/Metropolis-Regular.otf');
+}
+
+@font-face {
+    font-family: font2;
+    src: url('main/fonts/dance.ttf');
+}

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Fest;
+use App\Fest, File, Validator;
+use Auth, View, App\TNP, Session;
 
 class FestController extends Controller
 {
@@ -23,7 +24,7 @@ class FestController extends Controller
                 View::share('user', $user);
         }
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -31,7 +32,9 @@ class FestController extends Controller
      */
     public function index()
     {
-        //
+
+        $fests = Fest::orderBy('id', 'desc')->paginate(5);
+        return view('fests.index')->withFests($fests); 
     }
 
     /**
@@ -41,7 +44,7 @@ class FestController extends Controller
      */
     public function create()
     {
-        //
+        return view('fests.create');
     }
 
     /**
@@ -52,7 +55,39 @@ class FestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), array(
+                'fest_name' => 'required',
+                'fest_website' => 'required',
+                'fest_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ));
+
+        if ($validator->fails()) {
+            return redirect('admin/fest/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        if ($request->file('fest_image')->isValid()) 
+        {
+            // Image::make($request->fest_image->getRealPath())->resize(200, 200)->save($path);
+            $imageName = time().'.'.$request->fest_image->getClientOriginalExtension();
+            $request->fest_image->move(public_path('uploads/fest'), $imageName);  
+        }
+        else {
+              Session::flash('warning', 'Uploaded file is not valid');
+              return back()->withErrors($validator)->withInput();
+        }
+
+        $fest = new Fest;
+        $fest->fest_name = $request->fest_name;
+        $fest->fest_website = $request->fest_website;
+        $fest->fest_image = $imageName;
+        $fest->save();
+
+        //3. Redirect to another page
+        Session::flash('success', 'The fest was successfully saved.');
+
+        return redirect()->route('admin.fest.show', $fest->id);
     }
 
     /**
@@ -63,7 +98,9 @@ class FestController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $fest = Fest::find($id);
+        return view('fests.show')->withfest($fest);
     }
 
     /**
@@ -74,7 +111,11 @@ class FestController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        //find the post in the db ans save as a var
+        $fest = Fest::find($id);
+        //return the view and pass in the var we previously created
+        return view('fests.edit')->withfest($fest);
     }
 
     /**
@@ -86,7 +127,42 @@ class FestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $fest = Fest::find($id);
+
+        
+        $this->validate($request, array(
+                'fest_name' => 'required',
+                'fest_website' => 'required',
+                'fest_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ));
+        
+
+        if ($request->file('fest_image')->isValid()) 
+        {
+            File::delete('uploads/fest/'.$fest->fest_image);
+            $imageName = time().'.'.$request->fest_image->getClientOriginalExtension();
+            $request->fest_image->move(public_path('uploads/fest'), $imageName);
+              
+        }
+        else {
+          // sending back with error message.
+          Session::flash('warning', 'Uploaded file is not valid');
+          return redirect('admin/fest/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        $fest->fest_name = $request->fest_name;
+        $fest->fest_website = $request->fest_website;
+        $fest->fest_image = $imageName;
+        $fest->save();
+        // set flash meessage to be shown
+
+        Session::flash('success', 'The fest was successfully updated');
+        //redirect the users
+
+        return redirect()->route('admin.fest.show', $fest->id);
     }
 
     /**
@@ -97,6 +173,13 @@ class FestController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $fest = Fest::find($id);
+        File::delete('uploads/fest/'.$fest->fest_image);
+        $fest->delete();
+
+        Session::flash('Success', 'fest Deleted Successfully');
+
+        return redirect()->route('admin.fest.index');
     }
 }

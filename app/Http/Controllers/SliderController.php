@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Slider;
+use App\Slider, File, Validator;
 use Auth, View, App\TNP, Session;
 
 class SliderController extends Controller
@@ -32,7 +32,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        
+         
         //create a variable and store all the sliders in it
         $sliders = Slider::orderBy('id', 'desc')->paginate(5);
 
@@ -58,16 +58,29 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        
-        //1. validate the date
-        // $this->validate($request, array(
-        //         'slider_image' => 'required',
-        //     ));
-        //2. Store in the DB
+        $validator = Validator::make($request->all(), array(
+                'slider_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ));
+
+        if ($validator->fails()) {
+            return redirect('admin/slider/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        if ($request->file('slider_image')->isValid()) 
+        {
+            // Image::make($request->slider_image->getRealPath())->resize(200, 200)->save($path);
+            $imageName = time().'.'.$request->slider_image->getClientOriginalExtension();
+            $request->slider_image->move(public_path('uploads/slider'), $imageName);  
+        }
+        else {
+              Session::flash('warning', 'Uploaded file is not valid');
+              return back()->withErrors($validator)->withInput();
+        }
+
         $slider = new Slider;
-
-        // $slider->slider_image = $request->slider_image;
-
+        $slider->slider_image = $imageName;
         $slider->save();
 
         //3. Redirect to another page
@@ -118,13 +131,26 @@ class SliderController extends Controller
 
         
         $this->validate($request, array(
-            'slider_image' => 'required',
+                'slider_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ));
         
 
-        //save the data
-        $slider->slider_image = $request->slider_image;
+        if ($request->file('slider_image')->isValid()) 
+        {
+            File::delete('uploads/slider/'.$slider->slider_image);
+            $imageName = time().'.'.$request->slider_image->getClientOriginalExtension();
+            $request->slider_image->move(public_path('uploads/slider'), $imageName);
+              
+        }
+        else {
+          // sending back with error message.
+          Session::flash('warning', 'Uploaded file is not valid');
+          return redirect('admin/slider/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
 
+        $slider->slider_image = $imageName;
         $slider->save();
         // set flash meessage to be shown
 
@@ -144,6 +170,7 @@ class SliderController extends Controller
     {
         
         $slider = Slider::find($id);
+        File::delete('uploads/slider/'.$slider->slider_image);
         $slider->delete();
 
         Session::flash('Success', 'Slider Deleted Successfully');

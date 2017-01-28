@@ -24,16 +24,16 @@
 
 						            <div class="content-box-large box-with-header">
 						            	<div class="form-group">
-								    		<label class="col-lg-4 control-label" for="guideline_subject">guideline Subject :</label>
+								    		<label class="col-lg-4 control-label" for="guideline_subject">Guideline Subject :</label>
 								    		<div class="col-lg-4">
 								    			{!! Form::text('guideline_subject', null, array('class' => 'form-control border-input', 'id' => 'guideline_subject', 'placeholder' => 'Enter guideline subject here', 'required' => '','minlength'=>'5','maxlength' => '255' )) !!}
 								    		</div>
 								    	</div>
 
 						            	<div class="form-group">
-								    		<label class="col-md-2 control-label" for="guideline_message">guideline Message :</label>
-								    		<div class="col-lg-10">
-								    			{!! Form::text('guideline_message', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter guideline message here here', 'required' => '')) !!}
+								    		<label class="col-lg-4 control-label" for="guideline_message">Guideline Message :</label>
+								    		<div class="col-lg-6">
+								    			{!! Form::textarea('guideline_message', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter guideline message here here', 'required' => '')) !!}
 								    		</div>
 								    	</div>
 								    	

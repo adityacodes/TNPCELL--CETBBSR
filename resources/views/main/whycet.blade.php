@@ -57,7 +57,7 @@ height: 100%;
             	</div>
             </div>
 
-            <div class="card">
+            <div class="card adityacard">
             	<div class="content">
             		<h4 class="title">Culture Of Alma Mater</h4>
             		<p class="description">
@@ -73,7 +73,7 @@ height: 100%;
 			
 			<div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/SclBnR8jjIs" frameborder="0" allowfullscreen></iframe></div>
 
-			<div class="card">
+			<div class="card adityacard">
             	<div class="content">
             		<h4 class="title">An Institute Of Excellence</h4>
             		<p class="description">
@@ -81,7 +81,7 @@ height: 100%;
             		</p>
             	</div>
             </div>
-            <div class="card">
+            <div class="card adityacard">
             	<div class="content">
             		<h4 class="title">Culture Of Alma Mater</h4>
             		<p class="description">

@@ -5,14 +5,15 @@
 <link rel="stylesheet" type="text/css" href="/main/css/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="/main/css/owl.theme.css">
 <link rel="stylesheet" type="text/css" href="/main/css/owl.transitions.css">
-<link href="{{URL::to('template/css/main.css')}}" rel="stylesheet" />
+<link href="{{URL::to('template/css/main.css')}}" rel="stylesheet" /> 
 @endsection
 
 @section('content')
     <div class="row">
         <div id="owl-demo" class="owl-carousel owl-theme">
-              <div class="item"><img src="/main/images/carousel/carousel_1.jpg" alt="The Last of us"></div>
-              <div class="item"><img src="/main/images/carousel/carousel_2.jpg" alt="Mirror Edge"></div>
+            @foreach($sliders as $slider)
+                <div class="item"><img src="/uploads/slider/{{$slider->slider_image}}"></div>
+            @endforeach
         </div>
     </div>
 
@@ -32,7 +33,7 @@
 
                                         {{$notice->notice_message}}
 
-                                        <a href="#">Read more...</a>
+                                        <a href="{{ url('/news#').$notice->id }}">Read more...</a>
                                         <div class="clearfix"></div>
                                     </li>
                                     @endforeach
@@ -64,7 +65,7 @@
 
                                         {{$event->event_message}}
 
-                                        <a href="#">Read more...</a>
+                                        <a href="{{ url('/events#').$event->id }}">Read more...</a>
                                         <div class="clearfix"></div>
                                     </li>
                                     @endforeach

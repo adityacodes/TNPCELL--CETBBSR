@@ -83,7 +83,9 @@
                          || Request::is('admin/tnpuser')
                          || Request::is('admin/tnpuser/*')
                          || Request::is('admin/guideline')
-                         || Request::is('admin/guideline/*') ? "active" : ""}}">
+                         || Request::is('admin/guideline/*')
+                         || Request::is('admin/company')
+                         || Request::is('admin/company/*') ? "active" : ""}}">
                 <a href="/admin/tnpsettings/options">
                     <i class="ti-settings"></i>
                     <p>TNP Settings</p>
@@ -102,7 +104,9 @@
                          || Request::is('admin/slider')
                          || Request::is('admin/slider/*')
                          || Request::is('admin/link')
-                         || Request::is('admin/link/*') ? "active" : ""}}">
+                         || Request::is('admin/link/*')
+                         || Request::is('admin/officer')
+                         || Request::is('admin/officer/*') ? "active" : ""}}">
                 <a href="/admin/settings/options-general">
                     <i class="ti-settings"></i>
                     <p>Site Settings</p>

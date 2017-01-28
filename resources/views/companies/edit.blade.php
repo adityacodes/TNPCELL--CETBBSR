@@ -57,7 +57,7 @@
 								    	<div class="form-group">
 								    		<label class="col-lg-3 control-label" for="company_massrecruiter">company Massrecruiter ?</label>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('company_massrecruiter', null, array('class' => 'form-control border-input', 'id' => 'company_company', 'placeholder' => 'Fill 1 if yes! ', 'required' => '' )) !!}
+								    			{!! Form::select('company_massrecruiter', ['0' => 'NO', '1' => 'YES'] , null, array('class' => 'form-control border-input', 'id' => 'company_company', 'placeholder' => 'Fill 1 if yes! ', 'required' => '' )) !!}
 								    		</div>
 								    	</div>
 						            </div>

@@ -30,7 +30,7 @@ class LoginController extends Controller
 	        return Redirect::to('login');
 	      }
 	      Session::flash('success', 'You have successfully logged in.!');
-	      return redirect()->route('user.dashboard');
+	      return redirect()->intended('user/dashboard');
 
 	  }
 }

@@ -14,8 +14,15 @@
 
 				        <div class="header">
 					        <h4 class="title">All Main Events
-					            <a href="{{ route('admin.mainevents.create') }}" class="btn btn-success pull-right"><i class="glyphicon glyphicon-plus"></i> NEW Event</a>
-					            <div ><b>Total events:</b><span class="badge label-success">{{$events->total()}}</span></div>
+					            <a href="{{ route('admin.mainevents.create') }}" class="btn btn-success pull-right"><i class="glyphicon glyphicon-plus"></i> NEW EVENT</a>
+					            <div >
+					            	<b>Total events:</b>
+					            	<span class="badge label-success">{{$events->total()}}</span>
+
+					            	<br/><br/>
+			            				<b>URL:</b>
+			            				<a target="_blank" href="{{ url('/events/') }}">{{ url('/events/') }}</a>
+					            </div>
 				            </h4>
 				            <hr>
 				        </div>
@@ -29,6 +36,7 @@
 					                            <th>Title</th>
 					                            <th>Event</th>
 					                            <th>Created At</th>
+					                            <th>Updated At</th>
 					                            <th>Actions</th>
 					                        </tr>
 					                    </thead>
@@ -37,8 +45,9 @@
 					                        <tr>
 					                            <td>{{ $event->id }}</td>
 					                            <td>{{ substr($event->event_subject,0,20) }}</td>
-					                            <td>{{ substr($event->event_message,0,20) }}{{ strlen($event->event_message) > 10 ? "..." : ""}}</td>
+					                            <td>{{ substr($event->event_message,0,30) }}{{ strlen($event->event_message) > 10 ? "..." : ""}}</td>
 					                            <td>{{ date('M j, Y H:i:s', strtotime($event->created_at)) }}</td>
+					                            <td>{{ date('M j, Y H:i:s', strtotime($event->updated_at)) }}</td>
 					                            <td class="actions">
 					                                <a href="{{ route('admin.mainevents.show', $event->id)}}">
 					                                    <button class="btn btn-md btn-primary">

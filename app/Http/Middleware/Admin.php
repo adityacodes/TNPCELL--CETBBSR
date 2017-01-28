@@ -20,6 +20,6 @@ class Admin
         {
             return $next($request);
         }
-        return redirect()->route('user.dashboard');
+        return redirect()->guest('login');
     }
 }

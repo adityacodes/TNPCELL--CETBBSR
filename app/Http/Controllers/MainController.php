@@ -8,7 +8,7 @@ use App\Http\Requests;
 
 use App\Alumni;
 use App\Companies;
-use App\Notice;
+use App\Notice, App\Officer, App\Fest;
 use App\Event, App\Link, App\Slider;
 use DB;
 
@@ -33,7 +33,7 @@ class MainController extends Controller
 	public function getMainIndex()
 	{
 		$events = Event::all();
-		$sliders = Slider::all();
+		$sliders = Slider::orderBy('id', 'desc')->paginate(5);
 		$notices = Notice::all();
 		return view('main.index')->withSliders($sliders)
 								->withEvents($events)
@@ -50,7 +50,20 @@ class MainController extends Controller
 	}
 	public function getMainEvents()
 	{
-		return view('main.events');
+		$events = Event::all();
+		return view('main.events')->withEvents($events);
+
+	}
+	public function getMainFests()
+	{
+		$fests = Fest::all();
+		return view('main.fests')->withFests($fests);
+
+	}
+	public function getMainNews()
+	{
+		$notices = Notice::all();
+		return view('main.news')->withNotices($notices);
 
 	}
 	public function getMainAlumni()
@@ -62,7 +75,8 @@ class MainController extends Controller
 	
 	public function getMainOffice()
 	{
-		return view('main.office');
+		$officers = Officer::all();
+		return view('main.office')->withOfficers($officers);
 
 	}
 	public function getMainLocation()

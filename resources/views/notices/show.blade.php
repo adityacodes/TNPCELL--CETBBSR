@@ -12,15 +12,31 @@
 			    	<div class="card">
 
 		                    <div class="header">
-		                        <h4 class="title">{{ ucwords(strtolower('Notice Subject : -')) }} <strong>{{ucwords(strtolower($notice->notice_subject)) }}</strong></h4>
-		                        <h4>{{ ucwords(strtolower('NOTICE Message :')) }}</h4>
+		                        <h3 class="title"><strong>NOTICE DETAILS</strong></h3>
 		                        <hr>
 		                    </div>
 		                    
 		                    <div class="content" >
-		                        <h4 >
-									    	<p>{{ $notice->notice_message}}</p>
-									    	
+		                    	<h4>
+			                    	<table class="table table-hover table-bordered" >
+		                                <tbody>
+		                                	<tr>
+		                                		<th>Sl. No.</th>
+		                                		<th>Table Attributes</th>
+		                                		<th colspan="2">Table Values</th>	
+		                                	</tr>
+		                                    <tr>
+		                                        <td>1</td>
+		                                        <td>Notice Subject: </td>
+		                                        <td colspan="2">{{ $notice->notice_subject }}</td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td>2</td>
+		                                        <td>Notice Message: </td>
+		                                        <td colspan="2">{{ $notice->notice_message }}</td>
+		                                    </tr>
+						                </tbody>
+						            </table>	
 								</h4>                     
 
 		                        <div class="footer">
@@ -44,9 +60,15 @@
 	                    
 	                    <div class="content" >
 	                        <div class="well">
-			            		<p><b>URL:</b><a target="_blank" style="word-wrap: break-word;" href="/notice/{{ $notice->slug }}">{{ url('/main/notices/') }}</a></p><br/>
-			            		<p><b>Created at:</b>{{ date('M j, Y H:iA', strtotime($notice->created_at)) }}</p><br/>
-			            		<p><b>Updated at:</b>{{ date('M j, Y H:iA', strtotime($notice->updated_at)) }}</p><br/>
+			            		<p>
+			            			<b>Created at:</b>
+			            			{{ date('M j, Y H:iA', strtotime($notice->created_at)) }}
+			            		</p>
+			            			<br/>
+			            		<p>
+			            			<b>Updated at:</b>
+			            				{{ date('M j, Y H:iA', strtotime($notice->updated_at)) }}
+			            		</p><br/>
 
 			            	</div>
 

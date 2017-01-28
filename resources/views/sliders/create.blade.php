@@ -15,19 +15,18 @@
 			                           
 			                </div>
 			                <h4 class="title" style="font-weight: bold;">CREATE NEW SLIDER
-								<button type="button" class="btn btn-primary pull-right" onclick="window.location='{{ route("admin.slider.index") }}'">Cancel</button>
+								<button type="button" class="btn btn-primary pull-right" onclick="window.location='{{ route("admin.slider.index") }}'">CANCEL</button>
 			                </h4>
-			                <p class="category">----</p>
+			                <p class="category">Items marked <sup class="required">*</sup> are required.</p>
 			            </div>
                  
 		                <div class="content">
 		                	<h4>
-					    	{!! Form::open(array('route' => 'admin.slider.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'autocomplete' => 'off')) !!}
-
-						            	<div class="form-group">
-								    		<label class="col-md-2 control-label" for="notice_message">Slider Image :</label>
-								    		<div class="col-lg-10">
-								    			{!! Form::file('slider_image', null, array('class' => 'form-control border-input', 'id' => 'slider_image', 'placeholder' => 'Enter value here', 'required' => '')) !!}
+					    	{!! Form::open(array('route' => 'admin.slider.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'enctype' => 'multipart/form-data', 'autocomplete' => 'off')) !!}
+								    	<div class="form-group">
+								    		<label class="col-lg-3 control-label" for="company_image">Slider Image:<sup class="required">*</sup></label>
+								    		<div class="col-lg-4">
+								    			{!! Form::file('slider_image', null, array('class' => 'form-control border-input', 'id' => 'slider_file', 'placeholder' => 'Enter value here', 'required' => '')) !!}
 								    		</div>
 								    	</div>
 					                    <div class="form-group">

@@ -14,6 +14,9 @@ class CreateFestsTable extends Migration
     {
         Schema::create('fests', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('fest_name');
+            $table->string('fest_website');
+            $table->string('fest_image');
             $table->timestamps();
         });
     }

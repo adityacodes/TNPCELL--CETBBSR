@@ -13,19 +13,19 @@
 				    <div class="content" >              
 				    	<!-- Content goes here -->
 				    	<fieldset>
-		    				{!! Form::model($slider, ['route' => ['admin.slider.update', $slider->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '']) !!}
+		    				{!! Form::model($slider, ['route' => ['admin.slider.update', $slider->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'enctype' => 'multipart/form-data', 'data-parsley-validate' => '']) !!}
 		    	
 						    <div class="col-md-8">
 						        
 
 						            <div class="content-box-header">
-								        <div class="panel-title"><h3><b>EDIT Slider</b></h3></div>
+								        <div class="panel-title"><h3><b>EDIT SLIDER</b></h3></div>
 								    </div>
 
 						            <div class="content-box-large box-with-header">
 
 						            	<div class="form-group">
-								    		<label class="col-md-2 control-label" for="slider_message">slider Message :</label>
+								    		<label class="col-md-2 control-label" for="slider_message">Slider Image :<sup class="required">*</sup></label>
 								    		<div class="col-lg-10">
 								    			{!! Form::file('slider_image', null, array('class' => 'form-control border-input', 'id' => 'slider_image', 'placeholder' => 'Enter value here', 'required' => '')) !!}
 								    		</div>

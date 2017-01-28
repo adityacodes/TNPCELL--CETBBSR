@@ -1,6 +1,6 @@
 @extends('user') 
 
-@section('title','Edit event')
+@section('title','Edit EVENT')
 
 @section('content')
 <div class="row">
@@ -19,21 +19,21 @@
 						        
 
 						            <div class="content-box-header">
-								        <div class="panel-title"><h3><b>MAIN PAGEevent BOARD | EDIT</b></h3></div>
+								        <div class="panel-title"><h3><b>MAIN PAGEEVENT BOARD | EDIT</b></h3></div>
 								    </div>
 
 						            <div class="content-box-large box-with-header">
 						            	<div class="form-group">
-								    		<label class="col-lg-4 control-label" for="event_subject">event Subject :</label>
+								    		<label class="col-lg-4 control-label" for="event_subject">Event Subject :</label>
 								    		<div class="col-lg-4">
 								    			{!! Form::text('event_subject', null, array('class' => 'form-control border-input', 'id' => 'event_subject', 'placeholder' => 'Enter event subject here', 'required' => '','minlength'=>'5','maxlength' => '255' )) !!}
 								    		</div>
 								    	</div>
 
 						            	<div class="form-group">
-								    		<label class="col-md-2 control-label" for="event_message">event Message :</label>
+								    		<label class="col-md-2 control-label" for="event_message">Event Message :</label>
 								    		<div class="col-lg-10">
-								    			{!! Form::text('event_message', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter event message here here', 'required' => '')) !!}
+								    			{!! Form::textarea('event_message', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter event message here here', 'required' => '')) !!}
 								    		</div>
 								    	</div>
 								    	

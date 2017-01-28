@@ -29,6 +29,9 @@
         <li class="{{Request::is('admin/link') || Request::is('admin/link/*') ? 'active' : '' }}">
             <a href="{{route('admin.link.index')}}"><i class="ti-layout-tab-v"></i> Links</a>
         </li>
+        <li class="{{Request::is('admin/fest') || Request::is('admin/fest/*') ? 'active' : '' }}">
+            <a href="{{route('admin.fest.index')}}"><i class="ti-pin-alt"></i> Fests</a>
+        </li>
     </ul>
     </div>
 </div>

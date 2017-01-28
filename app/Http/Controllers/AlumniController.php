@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Alumni;
 use Session, Auth, View, Validator;
 use App\Input;
-use App\TNP;
+use App\TNP, File;
 
 class AlumniController extends Controller
 {
@@ -146,17 +146,31 @@ class AlumniController extends Controller
         
         $this->validate($request, array(
                 'alumni_name' => 'required|max:255',
-                'alumni_image'=> 'required',
+                'alumni_image'=> 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'alumni_desig'=> 'required',
                 'alumni_company' => 'required',
                 'alumni_website'=> 'required',
         ));
         
+        if($request->hasfile('alumni_image'))
+        {
+            if($request->file('alumni_image')->isValid()){
+                File::delete('uploads/alumni/'.$alumni->alumni_image);
+                $imageName = time().'.'.$request->alumni_image->getClientOriginalExtension();
+                $request->alumni_image->move(public_path('uploads/alumni'), $imageName);
+                $alumni->alumni_image = $imageName;
+            }
+            else{     
+              // sending back with error message.
+              Session::flash('warning', 'Uploaded file is not valid');
+              return redirect('admin/alumni/create')
+                            ->withErrors($validator)
+                            ->withInput();
+            }
 
-        //save the data
+        }
 
         $alumni->alumni_name = $request->alumni_name;
-        $alumni->alumni_image = $request->alumni_image;
         $alumni->alumni_desig = $request->alumni_desig;
         $alumni->alumni_company = $request->alumni_company; 
         $alumni->alumni_website = $request->alumni_website;
@@ -181,6 +195,7 @@ class AlumniController extends Controller
     {
         
         $alumni = Alumni::find($id);
+        File::delete('uploads/alumni/'.$alumni->alumni_image);
         $alumni->delete();
 
         Session::flash('Success', 'Alum Deleted Successfully');

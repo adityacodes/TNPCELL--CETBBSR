@@ -15,8 +15,14 @@
 
 				        <div class="header">
 					        <h4 class="title">All Alumnis
-					            <a href="{{ route('admin.alumni.create') }}" class="btn btn-success pull-right"><i class="ti-plus"></i> NEW Alumni</a>
-					            <div ><b>Total Alumnis:</b><span class="badge label-success">{{$alumnis->total()}}</span></div>
+					            <a href="{{ route('admin.alumni.create') }}" class="btn btn-success pull-right"><i class="ti-plus"></i> NEW ALUMNI</a>
+					            <div >
+					            	<b>Total Alumnis:</b>
+					            	<span class="badge label-success">{{$alumnis->total()}}</span>
+					            	<br/><br/>
+			            				<b>URL:</b>
+			            				<a target="_blank" href="{{ url('/our-alumni') }}">{{ url('/our-alumni') }}</a>
+					            </div>
 				            </h4>
 				            <hr>
 				        </div>
@@ -31,6 +37,7 @@
 					                            <th>Name</th>
 					                            <th>Designation</th>
 					                            <th>Company</th>
+					                            <th>Alumni Image</th>
 					                            <th>Website</th>
 					                            <th>Actions</th>
 					                        </tr>
@@ -42,19 +49,20 @@
 						                            <td>{{ $alumni->alumni_name }}</td>
 						                            <td>{{ $alumni->alumni_desig }}</td>
 						                            <td>{{ $alumni->alumni_company }}</td>
+						                            <td><img width="100" height="100" src="/uploads/alumni/{{ $alumni->alumni_image}}"></td>
 						                            <td>{{ $alumni->alumni_website }}</td>
 
 						                            <td class="actions">
 						                                <a href="{{ route('admin.alumni.show', $alumni->id)}}">
 						                                    <button class="btn btn-md btn-primary">
 						                                        <h6><i class="ti-eye" aria-hidden="true"></i>
-						                                        View</h6>
+						                                        VIEW</h6>
 						                                    </button>
 						                                </a>
 						                                <a href="{{ route('admin.alumni.edit', $alumni->id) }}">
 						                                    <button class="btn btn-md btn-warning">
 						                                        <h6><i class="ti-pencil"></i>
-						                                        Edit</h6>
+						                                        EDIT</h6>
 						                                    </button>
 						                                </a>
 						                            </td>
