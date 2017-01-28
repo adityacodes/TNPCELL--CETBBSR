@@ -167,7 +167,10 @@
 			'as' => 'admin.delete.user',
 			'uses' => 'AdminController@delUser'
 		]);
-		Route::post('admin/delete/user','AdminController@deleteUser');
+		Route::get('admin/delete/user/{singleuserregdno}',[
+			'as' => 'admin.del.user',
+			'uses' => 'AdminController@deleteUser'
+		]);
 	//Send Email
 		Route::get('admin/sendgroupemail', [
 			'as' => 'admin.sendgroupemail', 
@@ -191,5 +194,10 @@
 		Route::put('admin/searchkeyword', [
 			'as' => 'admin.searchkeyword',
 			'uses' => 'AdminController@searchkeyword'
+		]);
+	// Search people in Users
+		Route::put('admin/searchuser', [
+			'as' => 'admin.searchuser',
+			'uses' => 'AdminController@searchuser'
 		]);
 /* SAY THANKS TO ADITYA */

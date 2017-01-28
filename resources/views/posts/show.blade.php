@@ -11,13 +11,12 @@
 
 		                    <div class="header">
 		                        <h4 class="title">TITLE :  {{strtoupper($post->title)}}</h4>
-		                        <h4>NOTICE TEXT :</h4>
+		                        <h4>NOTICE DETAILS :</h4>
 		                        <hr>
 		                    </div>
 		                    
 		                    <div class="content" >
 		                        <h4 >
-									    	<p>{{ $post->body}}</p>
 									    	<h4><b>ELIGIBILTY CRITERIA :</b></h4>
 									    	<table class="table table-hover table-bordered" >
 				                                <tbody>
@@ -69,9 +68,19 @@
 				                                        <td><</td>
 				                                        <td>{{ $post->backlog}}</td>
 				                                    </tr>
+				                                    <tr>
+				                                        <td>9</td>
+				                                        <td>Notice Image</td>
+				                                        <td><</td>
+				                                        <td>
+				                                        	<img width="150" height="100" src="/uploads/post/{{$post->image}}">
+				                                        </td>
+				                                    </tr>
 				                                </tbody>
 				                             </table>
-									    </h4>                     
+									    </h4>
+
+									    	<p>{{ $post->body}}</p>                     
 
 		                        <div class="footer">
 		                            <hr>

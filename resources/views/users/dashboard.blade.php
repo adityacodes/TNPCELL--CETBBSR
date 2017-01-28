@@ -115,7 +115,11 @@
 
                     <div class="header">
                         <div class="icon-big icon-success col-md-2 col-xs-3">
+                            @if(empty($post->image))
                                 <i class="ti-wallet"></i>
+                            @else
+                                <img height="50" width="50" src="/uploads/post/{{$post->image}}">
+                            @endif
                                    
                         </div>
                         <h4 class="title" style="font-weight: bold;">{{strtoupper($post->title)}}</h4>
@@ -123,10 +127,10 @@
                     </div>
                     
                     <div class="content">
-                        
+                        <img width="400" height="150" src="/uploads/post/{{$post->image}}">
                         <h4><i style="font-weight: 400;" class="ti-pencil"></i>
                             
-                                {{ substr($post->body,0,250) }}{{ strlen($post->body) > 50 ? "..." : ""}}
+                                {{ substr($post->body,0,50) }}{{ strlen($post->body) > 50 ? "..." : ""}}
                             </h4>                        
 
                         <div class="footer">

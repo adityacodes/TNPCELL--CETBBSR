@@ -16,9 +16,9 @@
                  
                 <div class="content">
                 <h4>
-			    	{!! Form::open(array('route' => 'admin.post.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'autocomplete' => 'off')) !!}
+			    	{!! Form::open(array('route' => 'admin.post.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'enctype' => 'multipart/form-data', 'autocomplete' => 'off')) !!}
 			                    <div class="form-group">
-			                    	<div class="col-md-2">
+			                    	<div class="col-md-3">
 						    			<label class="control-label pull-right" for="title">Notice Title:</label>
 						    		</div>
 						    		<div class="col-md-6">
@@ -31,6 +31,14 @@
 						    			{!! Form::text('slug', null, array('class' => 'form-control border-input', 'id' => 'slugbacklog', 'placeholder' => 'Enter slug here', 'required' => '','minlength'=>'5','maxlength' => '255' )) !!}
 						    		</div>
 						    	</div>
+
+						    	<div class="form-group">
+						    		<label class="col-lg-3 control-label" for="post_image">Notice Image :</label>
+						    		<div class="col-lg-3">
+						    			{!! Form::file('post_image', null, array('class' => 'form-control border-input', 'id' => 'post_image', 'placeholder' => 'Enter notice image here', 'required' => '' )) !!}
+						    		</div>
+						    	</div>
+
 						    	<div class="form-group">
 						    		<label class="col-lg-3 control-label" for="tyear">Tenth Year Must be > than:</label>
 						    		<div class="col-lg-4">

@@ -2,14 +2,36 @@
 
 @section('title', 'Delete User From User Database')
 
+@section('stylesheets')
+<style type="text/css">
+	#search {
+    width: 200px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-image: url('/template/search.png');
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#search:focus {
+    width: 100%;
+}
+</style>
+
+@endsection
+
 @section('content')
 
-<div class="col-md-12">
 	<div class="row">
 
 		<div class="card">
 			@include('partials._tnpsettingsnav')
-			<div class="col-lg-12">
 
 			<div class="card" id="my-tab-content" class="tab-content">
 				<div class="tab-pane active">
@@ -23,21 +45,27 @@
 				    </div>          
 				    <div class="content" >              
 				    	<!-- Content goes here -->
-				    	{!!Form::open(array('url' => 'admin/delete/user', 'method' => 'POST', 'onsubmit' => 'return confirm("Are you sure you want to delete the TNP User from User Database?");'))!!}
-			                <div class="form-group">
-			                    <label class="col-lg-3 control-label" for="focusedInput">Registration Number:</label>
-			                    <div class="col-lg-8">
-			                        <input name="singleuserregdno" class="form-control border-input" id="focusedInput" type="text">
-			                    </div>
-			                </div><br><br>
-			                <div class="form-group">
-			                    
-			                    <div class="col-lg-12 text-center">
-			                       <button type="submit" class="btn btn-danger btn-lg">DELETE USER</button>
-			                    </div>
-			                </div>
-			                <br><br>
-			            {!!Form::close()!!}
+				    	<input type="text" id="search" name="search" placeholder="Search..">
+				    	{{Form::token()}}
+
+				    		<div class="content table-responsive table-full-width">
+				        		<table class="table table-striped">
+					                    <thead>
+					                        <tr>
+					                            <th>#</th>				                            
+					                            <th>Name</th>
+					                            <th>Email.</th>
+					                            <th>Confirmed</th>
+					                            <th>Admin</th>
+					                            <th>SuperAdmin</th>
+					                            <th>Actions</th>
+					                        </tr>
+					                    </thead>
+					                    <tbody id="result">
+					                    </tbody>
+
+				                </table>
+				            </div>
 
 						<div class="clearfix"></div>
 				    </div>
@@ -46,7 +74,50 @@
 
 		    </div>
 	    </div>
+@endsection
 
-	</div>
-</div>
+@section('scripts')
+<script type="text/javascript">
+	$(document).ready(function() {
+		var token = $('input[name="_token"]').val();
+		function startsearching()
+		{
+			$.ajax({
+					url: '/admin/searchuser',
+					type: 'PUT',
+					data: "keyword=" + $("#search").val() + "&_token=" + token, 
+					success: function(result){
+							$('.fa-spin').remove();
+							$("#result").empty();
+        					$("#result").append(result);
+        				}
+				})
+		}
+			$("#search").keypress(function(){
+				if($("#search").val().length === 0){
+					$("#result").empty();
+				}
+				else{
+					startsearching();
+				}
+			});
+			$("#search").keyup(function(){
+				if($("#search").val().length === 0){
+					$("#result").empty();
+				}
+				else{
+					startsearching();
+				}
+			});
+			$("#search").keydown(function(){
+				if($("#search").val().length === 0){
+					$("#result").empty();
+				}
+				else{
+					startsearching();
+				}
+			});
+
+	});
+</script>
 @endsection

@@ -14,7 +14,7 @@
 		    <div class="content" >              
 		    	<!-- Content goes here -->
 		    	<fieldset>
-    	{!! Form::model($post, ['route' => ['admin.post.update', $post->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '', 'autocomplete' => 'off']) !!}
+    	{!! Form::model($post, ['route' => ['admin.post.update', $post->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '', 'enctype' => 'multipart/form-data', 'autocomplete' => 'off']) !!}
     	
 	    <div class="col-md-8">
 	        
@@ -36,6 +36,12 @@
 			    			{!! Form::text('slug', null, array('class' => 'form-control border-input', 'id' => 'slugbacklog', 'placeholder' => 'Enter slug here', 'required' => '','minlength'=>'5','maxlength' => '255' )) !!}
 			    		</div>
 			    	</div>
+			    	<div class="form-group">
+			    		<label class="col-lg-3 control-label" for="post_image">Notice Image :</label>
+			    		<div class="col-lg-3">
+			    			{!! Form::file('post_image', null, array('class' => 'form-control border-input', 'id' => 'post_image', 'placeholder' => 'Enter notice image here', 'required' => '' )) !!}
+			    		</div>
+			    	</div>    	
 			    	<div class="form-group">
 			    		<label class="col-lg-4 control-label" for="tyear">Tenth Year Must be > than:</label>
 			    		<div class="col-lg-4">

@@ -23,7 +23,7 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->middleware('admin');
-        $this->middleware('ajax', ['only' => ['applicants', 'searchkeyword']]);
+        $this->middleware('ajax', ['only' => ['applicants', 'searchkeyword', 'searchuser']]);
         $this->middleware('superadmin', ['only' => ['addUser','delUser','getImportDatabase','getAddBranch']]);
 
         if(Auth::check()){
@@ -159,6 +159,43 @@ class AdminController extends Controller
                   </a>
               </td>
           </tr>";
+          }
+          
+        }
+
+    }
+
+    public function searchuser(Request $request)
+    {
+        if(isset($request->keyword))
+        {
+          $users = User::SearchByKeyword($request->keyword)->get();
+          foreach($users as $user)
+          {
+              $part1 = "<tr>
+              <td>".$user->id."</td>
+              <td>".$user->name."</td>
+              <td>".$user->email."</td>
+              <td>".$user->confirmed."</td>
+              <td>".$user->admin."</td>
+              <td>".$user->superadmin."</td>";
+              $part2 = "<td class='actions'>
+                          <a href=".route('admin.del.user', $user->name).">
+                            <button onclick='return confirm(\"Are you sure you want to delete the user with registration number ".$user->name."?\")' class='btn btn-md btn-danger'>
+                                <h6><i class='ti-eye' aria-hidden='true'></i>
+                                DELETE</h6>
+                            </button>
+                          </a>
+                        </td>";
+
+              $part3 = "</tr>";
+
+              if($user->superadmin){
+                echo $part1."<td class='actions'></td>".$part3;
+              }
+              else{
+                echo $part1.$part2.$part3;
+              }
           }
           
         }
@@ -374,33 +411,30 @@ class AdminController extends Controller
             })->export('xlsx');
     }
 
-    public function delUser(){
+    public function delUser()
+    {
         return view('admin.deluser');
     }
 
-    public function deleteUser(Request $request)
+    public function deleteUser($singleuserregdno)
     {
       //Delete All Users
-         if(isset($request->delall))
+         if(isset($a))
          {
             //Delete in a chunk of hundred after truncating the applieds table.
          } 
 
         //Delete single user
-         if(isset($request->singleuserregdno))
+         if(isset($singleuserregdno))
          {
-            $user = User::where('name', '=', $request->singleuserregdno)->first();
+            $user = User::where('name', '=', $singleuserregdno)->first();
 
             if(!empty($user)){
               $applied = Applied::where('userid', '=', $user->id)->delete();
 
                 $user->delete();
                 Session::flash('success', 'Deleted the user successfully.');
-                return redirect()->route('admin.post.index');
-            }
-            else{
-              Session::flash('warning', 'No such user found.');
-              return redirect()->route('admin.delete.user');
+                return redirect()->route('admin.delete.user');
             }
          }
     }

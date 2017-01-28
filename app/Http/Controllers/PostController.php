@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Post;
-use Session, Auth, View, Validator;
+use Session, Auth, View, Validator, File;
 use App\TNP;
 use App\Applied;
 
@@ -61,6 +61,7 @@ class PostController extends Controller {
 		 $validator = Validator::make($request->all(), array(
 				'title' => 'required|max:255',
 				'slug'	=> 'required|alpha_dash|min:5|max:255|unique:posts,slug',
+                'post_image'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 				'body' => 'required',
 				'tenthyear' => 'required|min:4|max:4', 
 				'tenthpercent' => 'required',
@@ -79,9 +80,21 @@ class PostController extends Controller {
                         ->withInput();
           }
 
+          	if ($request->file('post_image')->isValid()) {
+	            $imageName = time().'.'.$request->file('post_image')->getClientOriginalExtension();
+	            $request->file('post_image')->move('uploads/post', $imageName);
+        	}
+	        else {
+	          // sending back with error message.
+	          Session::flash('warning', 'Uploaded file is not valid');
+	          return redirect('admin/post/create')
+	                        ->withErrors($validator)
+	                        ->withInput();
+	        }
+
 		//2. Store in the DB
 		$post = new Post;
-
+		$post->image = $imageName;
 		$post->title = $request->title;
 		$post->tenthyear = $request->tenthyear;
 		$post->tenthpercent = $request->tenthpercent;
@@ -145,6 +158,7 @@ class PostController extends Controller {
 			$this->validate($request, array(
 				'title' => 'required|max:255',
 				'body' => 'required',
+                'post_image'=> 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 				'tenthyear' => 'required', 
 				'tenthpercent' => 'required',
 				'twelthyear' => 'required',
@@ -160,6 +174,7 @@ class PostController extends Controller {
 			$this->validate($request, array(
 				'title' => 'required|max:255',
 				'slug'	=> 'required|alpha_dash|min:5|max:255|unique:posts,slug',
+                'post_image'=> 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 				'body' => 'required',
 				'tenthyear' => 'required', 
 				'tenthpercent' => 'required',
@@ -172,6 +187,23 @@ class PostController extends Controller {
 			));
 		}
 		
+		if($request->hasfile('post_image'))
+        {
+            if($request->file('post_image')->isValid())
+            {
+                File::delete('uploads/post/'.$post->image);
+                $imageName = time().'.'.$request->file('post_image')->getClientOriginalExtension();
+                $request->file('post_image')->move('uploads/post', $imageName);
+                $post->image = $imageName;
+            }
+            else{     
+              // sending back with error message.
+              Session::flash('warning', 'Uploaded file is not valid');
+              return back()->withErrors($validator)
+                            ->withInput();
+            }
+
+        }
 
 		//save the data
 		$post->title = $request->title;
@@ -208,6 +240,7 @@ class PostController extends Controller {
 		$applieds = Applied::where('postid', '=', $id)->delete();
 
 		$post = Post::find($id);
+		File::delete('uploads/post/'.$post->image);
 		$post->delete();
 
 		Session::flash('Success', 'Post Deleted Successfully');

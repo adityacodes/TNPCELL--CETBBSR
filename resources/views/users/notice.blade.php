@@ -15,7 +15,7 @@
 	                <p class="category">24 Hours performance</p>
 	            </div>
 	            <div class="content">
-	            	<img src="{{$post->image}}" style="max-width: 100%;height: auto;" class="clearfix">
+	            	<img width="500" height="500" src="/uploads/post/{{$post->image}}" style="max-width: 100%;height: auto;" class="clearfix">
 	                <h5>{{$post->body}}</h5>
 
 	                <div class="footer">
@@ -34,7 +34,6 @@
 	                <p class="category"></p>
 	            </div>
 	            <div class="content">
-	            		<img src="{{$post->image}}" style="max-width: 100%;height: auto;" class="clearfix">
 	                	<h4><table class="table table-hover">
 				              <thead>
 				                <tr>

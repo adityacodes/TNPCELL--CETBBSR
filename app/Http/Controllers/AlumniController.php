@@ -164,8 +164,7 @@ class AlumniController extends Controller
             else{     
               // sending back with error message.
               Session::flash('warning', 'Uploaded file is not valid');
-              return redirect('admin/alumni/create')
-                            ->withErrors($validator)
+              return back()->withErrors($validator)
                             ->withInput();
             }
 
