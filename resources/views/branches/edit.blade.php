@@ -19,7 +19,7 @@
 						        
 
 						            <div class="content-box-header">
-								        <div class="panel-title"><h3><b>EDIT branch</b></h3></div>
+								        <div class="panel-title"><h3><b>EDIT BRANCH</b></h3></div>
 								    </div>
 
 						            <div class="content-box-large box-with-header">
@@ -38,7 +38,7 @@
 								    	</div>
 								    	
 								    	<div class="form-group">
-								    		<label class="col-md-4 control-label" for="branch_name">Branch NAME :</label>
+								    		<label class="col-md-4 control-label" for="branch_name">Branch Full Name :</label>
 								    		<div class="col-lg-4">
 								    			{!! Form::text('fullname', null, array('class' => 'form-control border-input', 'id' => 'fullname', 'placeholder' => 'Enter branch fullname here', 'required' => '')) !!}
 								    		</div>

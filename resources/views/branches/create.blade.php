@@ -25,20 +25,20 @@
 					    	{!! Form::open(array('route' => 'admin.branches.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'autocomplete' => 'off')) !!}
 					                    <div class="form-group">
 								    		<label class="col-lg-4 control-label" for="branch_subject">Branch ID :</label>
-								    		<div class="col-lg-4">
+								    		<div class="col-lg-6">
 								    			{!! Form::text('id', null, array('class' => 'form-control border-input', 'id' => 'branch_id', 'placeholder' => 'Enter branch ID here', 'required' => '','maxlength' => '255' )) !!}
 								    		</div>
 								    	</div>
 
 						            	<div class="form-group">
-								    		<label class="col-md-2 control-label" for="branch_name">Branch NAME :</label>
-								    		<div class="col-lg-10">
+								    		<label class="col-md-4 control-label" for="branch_name">Branch Name :</label>
+								    		<div class="col-lg-6">
 								    			{!! Form::text('name', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter branch name here', 'required' => '')) !!}
 								    		</div>
 								    	</div>
 								    	<div class="form-group">
-								    		<label class="col-md-2 control-label" for="branch_name">Branch NAME :</label>
-								    		<div class="col-lg-10">
+								    		<label class="col-md-4 control-label" for="branch_name">Branch Full Name :</label>
+								    		<div class="col-lg-6">
 								    			{!! Form::text('fullname', null, array('class' => 'form-control border-input', 'id' => 'fullname', 'placeholder' => 'Enter branch fullname here', 'required' => '')) !!}
 								    		</div>
 								    	</div>

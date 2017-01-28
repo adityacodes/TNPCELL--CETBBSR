@@ -75,7 +75,7 @@ class BranchController extends Controller
         //3. Redirect to another page
         Session::flash('success', 'The branch was successfully saved.');
 
-        return redirect()->route('admin.branchs.show', $branch->id);
+        return redirect()->route('admin.branches.show', $branch->id);
     }
 
     /**
