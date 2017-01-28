@@ -35,7 +35,7 @@ height: 100%;
                     	<div class="clearfix"></div>
                       <img src="/main/images/140cet.jpg" alt="...">
                       <h4 class="title">College Of Engineering And Technology, Bhubaneswar<br>
-                         <a href="#"><small>@cetbbsr</small></a>
+                         <a target="_blank" href="https://www.google.co.in/search?q=%40cetbbsr"><small>@cetbbsr</small></a>
                       </h4>
 
                     </div>
