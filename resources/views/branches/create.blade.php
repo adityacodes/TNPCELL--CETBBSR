@@ -36,6 +36,13 @@
 								    			{!! Form::text('name', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter branch name here', 'required' => '')) !!}
 								    		</div>
 								    	</div>
+								    	<div class="form-group">
+								    		<label class="col-md-2 control-label" for="branch_name">Branch NAME :</label>
+								    		<div class="col-lg-10">
+								    			{!! Form::text('fullname', null, array('class' => 'form-control border-input', 'id' => 'fullname', 'placeholder' => 'Enter branch fullname here', 'required' => '')) !!}
+								    		</div>
+								    	</div>
+
 					                    <div class="form-group">
 						                    {!! Form::submit('Create Branch', array('class' => 'btn pull-down btn-success btn-lg col-lg-8 col-md-offset-2 col-xs-offset-3 text-center', 'id' => 'submit'  )) !!}
 						                </div>

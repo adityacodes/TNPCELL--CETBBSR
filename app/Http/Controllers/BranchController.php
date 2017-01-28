@@ -62,13 +62,14 @@ class BranchController extends Controller
         $this->validate($request, array(
                 'id' => 'required|unique:branches',
                 'name' => 'required',
+                'fullname' => 'required',
             ));
         //2. Store in the DB
         $branch = new Branch;
 
         $branch->id = $request->id;
         $branch->name = $request->name;
-
+        $branch->fullname = $request->fullname;
         $branch->save();
 
         //3. Redirect to another page
@@ -120,12 +121,14 @@ class BranchController extends Controller
         $this->validate($request, array(
                 'id' => 'required',
                 'name' => 'required',
+                'fullname' => 'required',
             ));
         
 
         //save the data
         $branch->id = $request->id;
         $branch->name = $request->name;
+        $branch->fullname = $request->fullname;
         $branch->timestamps = false;
         $branch->save();
         // set flash meessage to be shown

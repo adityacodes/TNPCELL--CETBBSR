@@ -1,6 +1,6 @@
 @extends('user')
 
-@section('title',' All branches')
+@section('title',' All Branches')
 
 @section('content')
 
@@ -13,8 +13,8 @@
 
 
 				        <div class="header">
-					        <h4 class="title">All Main branches
-					            <a href="{{ route('admin.branches.create') }}" class="btn btn-success pull-right"><i class="glyphicon glyphicon-plus"></i> NEW branch</a>
+					        <h4 class="title">All Main Branches
+					            <a href="{{ route('admin.branches.create') }}" class="btn btn-success pull-right"><i class="glyphicon glyphicon-plus"></i> NEW BRANCH</a>
 					            <div ><b>Total branches:</b><span class="badge label-success">{{$branches->total()}}</span></div>
 				            </h4>
 				            <hr>
@@ -27,6 +27,7 @@
 					                        <tr>
 					                            <th>#</th>
 					                            <th>Branch</th>
+					                            <th>Branch Full Name</th>
 					                            <th>Created At</th>
 					                            <th>Actions</th>
 					                        </tr>
@@ -36,6 +37,7 @@
 					                        <tr>
 					                            <td>{{ $branch->id }}</td>
 					                            <td>{{ $branch->name }}</td>
+					                            <td>{{ $branch->fullname }}</td>
 					                            <td>{{ date('M j, Y H:i:s', strtotime($branch->created_at)) }}</td>
 					                            <td class="actions">
 					                                <a href="{{ route('admin.branches.show', $branch->id)}}">
