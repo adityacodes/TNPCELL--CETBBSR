@@ -45,7 +45,7 @@
 					                        <tr>
 					                            <td>{{ $fest->id }}</td>
 					                            <td>{{ $fest->fest_name}}</td>
-					                            <td><img width="300" height="150" src="/uploads/fest/{{ $fest->fest_image }}"></td>
+					                            <td><img width="150" height="100" src="/uploads/fest/{{ $fest->fest_image }}"></td>
 					                            <td>
 					                            <a target="_blank" href="{{ url($fest->fest_website) }}">{{ $fest->fest_website }}</a>
 					                            </td>
