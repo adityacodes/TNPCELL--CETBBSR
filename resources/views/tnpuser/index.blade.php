@@ -23,6 +23,7 @@
     width: 100%;
 }
 </style>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 @endsection
 
@@ -44,7 +45,6 @@
 				            <input type="text" id="search" name="search" placeholder="Search..">
 				            <hr>
 				        </div>
-				        {{Form::token()}}
 				        <div class="content" >
 				        	<h5>
 				        	<div class="content table-responsive table-full-width"></div>
@@ -108,7 +108,12 @@
 @section('scripts')
 <script type="text/javascript">
 	$(document).ready(function() {
-		var token = $('input[name="_token"]').val();
+		var token = $('meta[name="csrf-token"]').val();
+		$.ajaxSetup({
+			  headers: {
+			    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			  }
+		});
 		function startsearching()
 		{
 			$.ajax({
