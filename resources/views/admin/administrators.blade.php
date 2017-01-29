@@ -23,7 +23,7 @@
 									<div class="col-sm-10">
 										{!!Form::open(array('route' => 'administrators.make', 'method' => 'POST'))!!}
 											<input class="form-control border-input" name="regdno" placeholder="Enter the registration Number to continue"><br/>
-											<button class=" btn btn-md btn-success text-center">
+											<button type="submit" id="submit" class=" btn btn-md btn-success text-center">
 							                       <i class="ti-thumb-up"></i>
 							                                        Make Admin
 							                </button>

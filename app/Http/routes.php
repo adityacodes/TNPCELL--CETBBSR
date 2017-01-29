@@ -156,7 +156,10 @@
 		'uses' => 'AdminController@makeadmin'
 	]);
 	//Standalone Routes
-	Route::get('admin/standalone',['as' => 'admin.standalone','uses' => 'AdminController@showstandalone']);
+	Route::get('admin/standalone',[
+		'as' => 'admin.standalone',
+		'uses' => 'AdminController@showstandalone'
+	]);
 	Route::post('admin/standalone',['uses' => 'AdminController@standalone']);
 	//Adding and Deleting Users from Users Table
 		Route::get('admin/add/user',[
@@ -200,4 +203,13 @@
 			'as' => 'admin.searchuser',
 			'uses' => 'AdminController@searchuser'
 		]);
+	//Branchwise Users 
+		Route::get('admin/branchwise',[
+			'as' => 'admin.branchwise',
+			'uses' => 'AdminController@showbranchwise'
+		]);
+		Route::put('admin/branchwise', [
+			'uses' => 'AdminController@putbranchwise'
+		]);
+		
 /* SAY THANKS TO ADITYA */

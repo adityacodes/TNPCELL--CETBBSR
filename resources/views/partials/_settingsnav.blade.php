@@ -10,7 +10,7 @@
         </li>
 
         <li class="{{Request::is('admin/mainnotices') || Request::is('admin/mainnotices/*') ? 'active' : '' }}">
-            <a href="{{route('admin.mainnotices.index')}}"><i class="ti-pencil-alt"></i> Main Notices</a>
+            <a href="{{route('admin.mainnotices.index')}}"><i class="ti-pencil-alt"></i> Main News/ Notices</a>
         </li>
         <li class="{{Request::is('admin/mainevents') || Request::is('admin/mainevents/*') ? 'active' : '' }}">
             <a href="{{route('admin.mainevents.index')}}"><i class="ti-pin-alt"></i> Main Events</a>

@@ -31,7 +31,7 @@
 		                 
 		                <div class="content">
 		                <h4>
-					    	{!! Form::open(array('route' => 'admin.company.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'enctype' => 'multipart/form-data', 'files' => 'true')) !!}
+					    	{!! Form::open(array('route' => 'admin.company.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'enctype' => 'multipart/form-data', 'files' => 'true', 'autocomplete' => 'off')) !!}
 					                    <div class="form-group">
 					                    	<div class="col-md-3">
 								    			<label class="control-label pull-right" for="title">Company Name:<sup class="required">*</sup></label>

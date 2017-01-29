@@ -31,37 +31,67 @@
 		                 
 		                <div class="content">
 		                <h4>
-					    	{!! Form::open(array('route' => 'admin.alumni.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'enctype' => 'multipart/form-data', 'files' => 'true')) !!}
+					    	{!! Form::open(array('route' => 'admin.alumni.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'enctype' => 'multipart/form-data', 'files' => 'true', 'autocomplete' => 'off')) !!}
 					                    <div class="form-group">
 					                    	<div class="col-md-3">
 								    			<label class="control-label pull-right" for="title">Alumni Name<sup class="required">*</sup>:</label>
 								    		</div>
 								    		<div class="col-md-4">
-								    			{!! Form::text('alumni_name', null, array('class' => 'form-control border-input', 'id' => 'alumni_name', 'placeholder' => 'Enter name here','maxlength' => '255' )) !!}
+
+	                                            <div class="input-group border-input">                           
+	                                                <span class="input-group-addon">
+	                                                    <i class="ti-comment-alt"></i>
+	                                                </span>
+								    				{!! Form::text('alumni_name', null, array('class' => 'form-control border-input', 'id' => 'alumni_name', 'placeholder' => 'Enter name here','maxlength' => '255' )) !!}
+								    			</div>
 								    		</div>
 								    	</div>
 								    	<div class="form-group">
 								    		<label class="col-lg-3 control-label" for="alumni_image">Alumni Image:<sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
-								    			{!! Form::file('alumni_image', null, array('class' => 'form-control border-input', 'id' => 'alumni_image', 'placeholder' => 'Enter value here', 'required' => '')) !!}
+
+	                                            <div class="input-group border-input">                           
+	                                                <span class="input-group-addon">
+	                                                    <i class="ti-comment-alt"></i>
+	                                                </span>
+								    				{!! Form::file('alumni_image', null, array('class' => 'form-control border-input', 'id' => 'alumni_image', 'placeholder' => 'Enter value here', 'required' => '')) !!}
+								    			</div>
 								    		</div>
 								    	</div>
 								    	<div class="form-group">
 								    		<label class="col-lg-3 control-label" for="alumni_desig">Alumni Designation:<sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('alumni_desig', null, array('class' => 'form-control border-input', 'id' => 'alumni_desig', 'placeholder' => 'Enter tenth Percentage Requirement', 'required' => '' )) !!}
+
+	                                            <div class="input-group border-input">                           
+	                                                <span class="input-group-addon">
+	                                                    <i class="ti-comment-alt"></i>
+	                                                </span>
+								    				{!! Form::text('alumni_desig', null, array('class' => 'form-control border-input', 'id' => 'alumni_desig', 'placeholder' => 'Enter tenth Percentage Requirement', 'required' => '' )) !!}
+								    			</div>
 								    		</div>
 								    	</div>
 								    	<div class="form-group">
 								    		<label class="col-lg-3 control-label" for="alumni_company">Alumni Company:<sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('alumni_company', null, array('class' => 'form-control border-input', 'id' => 'alumni_company', 'placeholder' => 'Enter value here ', 'required' => '' )) !!}
+
+	                                            <div class="input-group border-input">                           
+	                                                <span class="input-group-addon">
+	                                                    <i class="ti-comment-alt"></i>
+	                                                </span>
+								    				{!! Form::text('alumni_company', null, array('class' => 'form-control border-input', 'id' => 'alumni_company', 'placeholder' => 'Enter value here ', 'required' => '' )) !!}
+								    			</div>
 								    		</div>
 								    	</div>
 								    	<div class="form-group">
 								    		<label class="col-lg-3 control-label" for="alumni_website">Alumni Website:<sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('alumni_website', null, array('class' => 'form-control border-input', 'id' => 'alumni_website', 'placeholder' => 'Enter value here' )) !!}
+
+	                                            <div class="input-group border-input">                           
+	                                                <span class="input-group-addon">
+	                                                    <i class="ti-comment-alt"></i>
+	                                                </span>
+								    				{!! Form::text('alumni_website', null, array('class' => 'form-control border-input', 'id' => 'alumni_website', 'placeholder' => 'Enter value here' )) !!}
+								    			</div>
 								    		</div>
 								    	</div>
 								    	

@@ -23,7 +23,7 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->middleware('admin');
-        $this->middleware('ajax', ['only' => ['applicants', 'searchkeyword', 'searchuser']]);
+        $this->middleware('ajax', ['only' => ['applicants', 'searchkeyword', 'searchuser', 'putbranchwise']]);
         $this->middleware('superadmin', ['only' => ['addUser','delUser','getImportDatabase','getAddBranch']]);
 
         if(Auth::check()){
@@ -133,32 +133,65 @@ class AdminController extends Controller
     {
         if(isset($request->keyword))
         {
-          $users = TNP::SearchByKeyword($request->keyword)->get();
+          $users = TNP::SearchByKeyword($request->keyword)->limit(5)->get();
           foreach($users as $user)
           {
-              echo "<tr>
-              <td>".$user->id."</td>
-              <td>".$user->name."</td>
-              <td>".$user->regdno."</td>
-              <td>".$user->branch."</td>
-              <td>".$user->cgpa."</td>
-              <td>".$user->backlog."</td>
+            if(isset($request->branchname))
+            {
+                if($request->branchname == $user->branch)
+                {
+                  echo "<tr>
+                      <td>".$user->id."</td>
+                      <td>".$user->name."</td>
+                      <td>".$user->regdno."</td>
+                      <td>".$user->branch."</td>
+                      <td>".$user->cgpa."</td>
+                      <td>".$user->backlog."</td>
 
-              <td class='actions'>
-                  <a href=".route('admin.tnpuser.show', $user->id).">
-                      <button class='btn btn-md btn-primary'>
-                          <h6><i class='ti-eye' aria-hidden='true'></i>
-                          View</h6>
-                      </button>
-                  </a>
-                  <a href=".route('admin.tnpuser.edit', $user->id).">
-                      <button class='btn btn-md btn-warning'>
-                          <h6><i class='ti-pencil'></i>
-                          Edit</h6>
-                      </button>
-                  </a>
-              </td>
-          </tr>";
+                      <td class='actions'>
+                          <a href=".route('admin.tnpuser.show', $user->id).">
+                              <button class='btn btn-md btn-primary'>
+                                  <h6><i class='ti-eye' aria-hidden='true'></i>
+                                  View</h6>
+                              </button>
+                          </a>
+                          <a href=".route('admin.tnpuser.edit', $user->id).">
+                              <button class='btn btn-md btn-warning'>
+                                  <h6><i class='ti-pencil'></i>
+                                  Edit</h6>
+                              </button>
+                          </a>
+                      </td>
+                  </tr>";
+                }
+            }
+            else
+            {
+                echo "<tr>
+                  <td>".$user->id."</td>
+                  <td>".$user->name."</td>
+                  <td>".$user->regdno."</td>
+                  <td>".$user->branch."</td>
+                  <td>".$user->cgpa."</td>
+                  <td>".$user->backlog."</td>
+
+                  <td class='actions'>
+                      <a href=".route('admin.tnpuser.show', $user->id).">
+                          <button class='btn btn-md btn-primary'>
+                              <h6><i class='ti-eye' aria-hidden='true'></i>
+                              View</h6>
+                          </button>
+                      </a>
+                      <a href=".route('admin.tnpuser.edit', $user->id).">
+                          <button class='btn btn-md btn-warning'>
+                              <h6><i class='ti-pencil'></i>
+                              Edit</h6>
+                          </button>
+                      </a>
+                  </td>
+              </tr>";
+            }
+                
           }
           
         }
@@ -169,7 +202,7 @@ class AdminController extends Controller
     {
         if(isset($request->keyword))
         {
-          $users = User::SearchByKeyword($request->keyword)->get();
+          $users = User::SearchByKeyword($request->keyword)->limit(5)->get();
           foreach($users as $user)
           {
               $part1 = "<tr>
@@ -202,11 +235,12 @@ class AdminController extends Controller
 
     }
 
-    public function administrators(){
-        //$regdnos[] = DB::table('users')->where('admin', '=' , '1')->where('id','<>' ,Auth::user()->id)->value('name');
+    public function administrators()
+    {
         $regdnos = DB::table('users')->where('admin', '=' , '1')->get();
         $name = array();
-        foreach ($regdnos as $regdno) {
+        foreach ($regdnos as $regdno) 
+        {
             $name[] =  DB::table('t_n_p_s')->where('regdno', '=', $regdno->name)->first();
         }
         
@@ -218,14 +252,17 @@ class AdminController extends Controller
     {
 
         $regdno = User::where('name', '=' , $regdno)->first();
-        if(!$regdno){
+        if(!$regdno)
+        {
           Session::flash('warning', 'No such user found.');
         }
 
-        if($regdno->superadmin == 1 ){
+        if($regdno->superadmin == 1 )
+        {
             Session::flash('warning', 'You cannot remove a superadmin.'); 
         }
-        else{
+        else
+        {
             $regdno->admin = 0;
             $regdno->save();
             Session::flash('success', 'You have successfully removed an admin.');
@@ -237,51 +274,16 @@ class AdminController extends Controller
     public function addUser(){
       return view('admin.adduser');
     }
-    public function checktnpuser(Request $request){
+    public function checktnpuser(Request $request)
+    {
 
       //add value to a cookie. check via javascript if cookie is set the only allow to proceed.
 
     }
-    public function addTnpUser(Request $request){
-        //check existence has been passed ... ready to add to database
-        $this->validate($request, array(
-        'title' => 'required|max:255',
-
-        ));
-
-        $tnpuser = new TNP;
-        $tnpuser->name = $request->name;
-        $tnpuser->regdno = $request->regdno;
-        $tnpuser->branch = $request->branch;
-        $tnpuser->dob = $request->dob;
-        $tnpuser->gender = $request->gender;
-        $tnpuser->tenthyear = $request->tenthyear;
-        $tnpuser->tenthpercent = $request->tenthpercent;
-        $tnpuser->tenthboard = $request->tenthboard;
 
 
-        $tnpuser->twelthyear = $request->twelthyear;
-        $tnpuser->twelthpercent = $request->twelthpercent;
-        $tnpuser->twelthboard = $request->twelthboard;
-
-
-        $tnpuser->diplomayear = $request->diplomayear;
-        $tnpuser->diplomapercent = $request->diplomapercent;
-        $tnpuser->diplomaboard = $request->diplomaboard;
-
-        $tnpuser->cgpa = $request->cgpa;
-        $tnpuser->backlog = $request->backlog;
-        
-        $tnpuser->save();
-
-    }
-    public function edittnpuser(Request $request)
+    public function makeadmin(Request $request)
     {
-      $regdno = TNP::where('regdno', '=', $request->regdno);
-
-    }
-
-    public function makeadmin(Request $request){
 
         $regdno = User::where('name', '=' , $request->regdno)->first();
         if(!$regdno){
@@ -341,12 +343,10 @@ class AdminController extends Controller
                 });
 
             })->export('xlsx');
-
     }
 
     public function showstandalone()
     {
-      
       return view('admin.standalone');
     }
 
@@ -465,19 +465,26 @@ class AdminController extends Controller
         return view('admin.import');
     }
 
-    public function postImportDatabase(Request $request){
+    public function postImportDatabase(Request $request)
+    {
           $students = Excel::load($request->file)->all();
           $branches = Branch::select('name')->get();
           $x = [];
-          foreach ($branches as $branch) {
+          //Pushing all branches to this newely created array.
+          foreach ($branches as $branch) 
+          {
              array_push($x,$branch->name);
           }
 
-          foreach ($students as $student) {
-            if(in_array($student->branch, $x)){
+          //Foreach student first check if the branch is in array.
+          foreach ($students as $student) 
+          {
+            if(in_array($student->branch, $x))
+            {
                 continue;
             }
-            else{
+            else
+            {
               Session::flash('success', 'Student named -" '.$student->name.' " failed branch constraint restriction in the excel sheet . Please check the file again.');
               return redirect()->route('admin.import');
             }
@@ -490,7 +497,7 @@ class AdminController extends Controller
             if($tnpuser){
                 break;
             }
-      $tnp = new TNP;
+              $tnp = new TNP;
 
               $tnp->name  = $student->name;
               $tnp->regdno = $student->regdno;
@@ -530,11 +537,13 @@ class AdminController extends Controller
               $tnp->mname = $student->mother_name;
               $tnp->moccupation  =  $student->mother_occupation;
 
-              if(empty($student->relative_name)){
+              if(empty($student->relative_name))
+              {
                   $tnp->rname = " ";
                   $tnp->roccupation  = " ";
               }
-              else{
+              else
+              {
                 $tnp->rname = $student->relative_name;
                 $tnp->roccupation  =   $student->relative_occupation;
               }
@@ -549,19 +558,42 @@ class AdminController extends Controller
           return redirect()->route('admin.import');
     }
 
-    #add branches
-    #getaddbranch
-    #postaddbranch
-
-    public function getAddBranch(){
-
+    public function showbranchwise()
+    {
+      $branches = Branch::all();
+      return view('admin.branchwise')->withBranches($branches);
     }
 
-    public function postAddBranch(){
+    public function putbranchwise(Request $request)
+    {
+      $tnpusers = TNP::where('branch', '=', $request->branchname)->get();
+      var_dump($tnpusers);
+      foreach ($tnpusers as $tnpuser)
+      {
+          echo  "<tr>
+                  <td>".$tnpuser->id."</td>
+                  <td>".$tnpuser->name."</td>
+                  <td>".$tnpuser->regdno."</td>
+                  <td>".$tnpuser->branch."</td>
+                  <td>".$tnpuser->cgpa."</td>
+                  <td>".$tnpuser->backlog."</td>
 
+                  <td class=\"actions\">
+                    <a href=\" ".route('admin.tnpuser.show', $tnpuser->id)." \">
+                      <button class=\"btn btn-md btn-primary\">
+                        <h6><i class=\"ti-eye\" aria-hidden=\"true\"></i>
+                          View</h6>
+                        </button>
+                      </a>
+                      <a href=\" ".route('admin.tnpuser.edit', $tnpuser->id)."\">
+                        <button class=\"btn btn-md btn-warning\">
+                          <h6><i class=\"ti-pencil\"></i>
+                            Edit</h6>
+                          </button>
+                        </a>
+                      </td>
+                    </tr>";
+      }
     }
-
-
-
 
 }

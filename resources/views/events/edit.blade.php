@@ -13,7 +13,7 @@
 				    <div class="content" >              
 				    	<!-- Content goes here -->
 				    	<fieldset>
-		    				{!! Form::model($event, ['route' => ['admin.mainevents.update', $event->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '']) !!}
+		    				{!! Form::model($event, ['route' => ['admin.mainevents.update', $event->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '', 'autocomplete' => 'off',]) !!}
 		    	
 						    <div class="col-md-8">
 						        
@@ -26,14 +26,26 @@
 						            	<div class="form-group">
 								    		<label class="col-lg-4 control-label" for="event_subject">Event Subject :</label>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('event_subject', null, array('class' => 'form-control border-input', 'id' => 'event_subject', 'placeholder' => 'Enter event subject here', 'required' => '','minlength'=>'5','maxlength' => '255' )) !!}
+
+	                                            <div class="input-group border-input">                           
+	                                                <span class="input-group-addon">
+	                                                    <i class="ti-comment-alt"></i>
+	                                                </span>
+								    				{!! Form::text('event_subject', null, array('class' => 'form-control border-input', 'id' => 'event_subject', 'placeholder' => 'Enter event subject here', 'required' => '','minlength'=>'5','maxlength' => '255' )) !!}
+								    			</div>
 								    		</div>
 								    	</div>
 
 						            	<div class="form-group">
 								    		<label class="col-md-2 control-label" for="event_message">Event Message :</label>
 								    		<div class="col-lg-10">
-								    			{!! Form::textarea('event_message', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter event message here here', 'required' => '')) !!}
+
+	                                            <div class="input-group border-input">                           
+	                                                <span class="input-group-addon">
+	                                                    <i class="ti-comment-alt"></i>
+	                                                </span>
+								    				{!! Form::textarea('event_message', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter event message here here', 'required' => '')) !!}
+								    			</div>
 								    		</div>
 								    	</div>
 								    	

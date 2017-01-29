@@ -13,7 +13,7 @@
 				    <div class="content" >              
 				    	<!-- Content goes here -->
 				    	<fieldset>
-		    				{!! Form::model($notice, ['route' => ['admin.mainnotices.update', $notice->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '']) !!}
+		    				{!! Form::model($notice, ['route' => ['admin.mainnotices.update', $notice->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '', 'autocomplete' => 'off']) !!}
 		    	
 						    <div class="col-md-8">
 						        
@@ -26,14 +26,26 @@
 						            	<div class="form-group">
 								    		<label class="col-lg-4 control-label" for="notice_subject">Notice Subject :</label>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('notice_subject', null, array('class' => 'form-control border-input', 'id' => 'notice_subject', 'placeholder' => 'Enter notice subject here', 'required' => '','minlength'=>'5','maxlength' => '255' )) !!}
+
+	                                            <div class="input-group border-input">                           
+	                                                <span class="input-group-addon">
+	                                                    <i class="ti-comment-alt"></i>
+	                                                </span>
+								    				{!! Form::text('notice_subject', null, array('class' => 'form-control border-input', 'id' => 'notice_subject', 'placeholder' => 'Enter notice subject here', 'required' => '','minlength'=>'5','maxlength' => '255' )) !!}
+								    			</div>
 								    		</div>
 								    	</div>
 
 						            	<div class="form-group">
 								    		<label class="col-lg-4 control-label" for="notice_message">Notice Message :</label>
 								    		<div class="col-lg-6">
-								    			{!! Form::textarea('notice_message', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter notice message here here', 'required' => '')) !!}
+
+	                                            <div class="input-group border-input">                           
+	                                                <span class="input-group-addon">
+	                                                    <i class="ti-comment-alt"></i>
+	                                                </span>
+								    				{!! Form::textarea('notice_message', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter notice message here here', 'required' => '')) !!}
+								    			</div>
 								    		</div>
 								    	</div>
 								    	

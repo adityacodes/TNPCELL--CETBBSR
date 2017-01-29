@@ -13,7 +13,7 @@
 				    <div class="content" >              
 				    	<!-- Content goes here -->
 				    	<fieldset>
-		    				{!! Form::model($officer, ['route' => ['admin.officer.update', $officer->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '' , 'files' => 'true']) !!}
+		    				{!! Form::model($officer, ['route' => ['admin.officer.update', $officer->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '' , 'files' => 'true', 'autocomplete' => 'off']) !!}
 		    	
 						    <div class="col-md-8">
 						        

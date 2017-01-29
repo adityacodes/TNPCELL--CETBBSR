@@ -13,7 +13,7 @@
 				    <div class="content" >              
 				    	<!-- Content goes here -->
 				    	<fieldset>
-		    				{!! Form::model($branch, ['route' => ['admin.branches.update', $branch->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '']) !!}
+		    				{!! Form::model($branch, ['route' => ['admin.branches.update', $branch->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '', 'autocomplete' => 'off']) !!}
 		    	
 						    <div class="col-md-8">
 						        

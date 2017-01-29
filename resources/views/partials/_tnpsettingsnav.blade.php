@@ -41,6 +41,12 @@
                     <i class="ti-pencil-alt"></i> Guidelines
                 </a>
             </li>
+
+            <li class="{{Request::is('admin/branchwise')? 'active' : '' }}">
+                <a href="{{route('admin.branchwise')}}">
+                    <i class="ti-bolt"></i>Branchwise
+                </a>
+            </li>
     </ul>
 </div>
 </div>

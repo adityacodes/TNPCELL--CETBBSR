@@ -1,6 +1,6 @@
 @extends('user')
 
-@section('title',' All events')
+@section('title',' All Events')
 
 @section('content')
 

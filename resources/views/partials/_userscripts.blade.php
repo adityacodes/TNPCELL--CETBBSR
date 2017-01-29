@@ -84,6 +84,10 @@
             unsaved = false;
         });
 
+        $('#branchname, #chosen').change(function(){
+             unsaved = false;
+        });
+
         $('#search').change(function(){
             unsaved = false;
         });

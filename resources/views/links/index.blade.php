@@ -1,6 +1,6 @@
 @extends('user')
 
-@section('title',' All links')
+@section('title',' All Links')
 
 @section('content')
 

@@ -13,7 +13,7 @@
 				    <div class="content" >              
 				    	<!-- Content goes here -->
 				    	<fieldset>
-		    				{!! Form::model($guideline, ['route' => ['admin.guideline.update', $guideline->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '']) !!}
+		    				{!! Form::model($guideline, ['route' => ['admin.guideline.update', $guideline->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '', 'autocomplete' => 'off']) !!}
 		    	
 						    <div class="col-md-8">
 						        
@@ -25,15 +25,27 @@
 						            <div class="content-box-large box-with-header">
 						            	<div class="form-group">
 								    		<label class="col-lg-4 control-label" for="guideline_subject">Guideline Subject :</label>
-								    		<div class="col-lg-4">
-								    			{!! Form::text('guideline_subject', null, array('class' => 'form-control border-input', 'id' => 'guideline_subject', 'placeholder' => 'Enter guideline subject here', 'required' => '','minlength'=>'5','maxlength' => '255' )) !!}
+								    		<div class="col-lg-5">
+
+								    			<div class="input-group border-input">                           
+	                                                <span class="input-group-addon">
+	                                                    <i class="ti-comment-alt"></i>
+	                                                </span>
+								    				{!! Form::text('guideline_subject', null, array('class' => 'form-control border-input', 'id' => 'guideline_subject', 'placeholder' => 'Enter guideline subject here', 'required' => '','minlength'=>'5','maxlength' => '255' )) !!}
+								    			</div>
 								    		</div>
 								    	</div>
 
 						            	<div class="form-group">
 								    		<label class="col-lg-4 control-label" for="guideline_message">Guideline Message :</label>
-								    		<div class="col-lg-6">
-								    			{!! Form::textarea('guideline_message', null, array('class' => 'form-control border-input', 'id' => 'title', 'placeholder' => 'Enter guideline message here here', 'required' => '')) !!}
+
+								    		<div class="col-lg-5">
+								    			<div class="input-group border-input">                           
+	                                                <span class="input-group-addon">
+	                                                    <i class="ti-comment-alt"></i>
+	                                                </span>
+								    				{!! Form::textarea('guideline_message', null, array('class' => 'form-control border-input', 'rows' => '5' ,'id' => 'title', 'placeholder' => 'Enter guideline message here here', 'required' => '')) !!}
+								    			</div>
 								    		</div>
 								    	</div>
 								    	
