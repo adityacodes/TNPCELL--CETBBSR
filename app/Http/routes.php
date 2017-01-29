@@ -92,7 +92,7 @@
 	Route::post('password/reset', 'Auth\PasswordController@reset');
 	 
 	// Registration routes...
-	Route::get('register', 'Auth\AuthController@getRegister');
+	Route::get('register', 'Auth\AuthController@getRegister')->middleware('registrationopen');
 	Route::post('register', 'RegistrationController@postRegister');
 	Route::get('register/verify/{confirmationCode}', 'RegistrationController@confirm');
 /* ALL ADMIN ROUTES STARTS FROM HERE ONWARDS */

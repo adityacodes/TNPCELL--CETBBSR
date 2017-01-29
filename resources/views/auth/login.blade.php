@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
     <div class="row">
 
         @if(Session::has('success'))
@@ -12,7 +13,7 @@
         @endif
         @if(Session::has('warning'))
     
-            <div class="alert alert-warning alert-dismissible spacer2" role="alert">
+            <div class="alert alert-danger alert-dismissible spacer2" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <strong>Warning:</strong> {{Session::get('warning')}}
             </div>
@@ -20,18 +21,21 @@
       </div>
 
       <div class="row mainbody">  
-        <div class="col-md-6 col-md-offset-3" style="margin-top: 20px;">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+        <div class="col-md-8 col-md-offset-2" style="margin-top: 20px;">
+            <div class="card">
+                <div class="header">
 
-                <strong>Login</strong>
+                    <strong class="login"><i class="fa fa-pencil"></i> Login Here</strong>
 
-                <a href="/register"><button class="btn btn-primary btn-md pull-right">
-                        <i class="fa fa-btn fa-user"></i> Register
-                    </button></a>
+                    <a href="/register">
+                        <button class="btn btn-primary btn-md pull-right">
+                            <i class="fa fa-btn fa-user"></i> Register
+                        </button>
+                    </a>
                     <div class="clearfix"></div>
+                    <hr>
                 </div>
-                <div class="panel-body">
+                <div class="content">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
@@ -39,7 +43,12 @@
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-envelope-o fa-fw"></i>
+                                    </span>
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                </div>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -53,7 +62,12 @@
                             <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-key fa-fw"></i>
+                                    </span>
+                                    <input id="password" type="password" class="form-control" name="password">
+                                </div>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -87,4 +101,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

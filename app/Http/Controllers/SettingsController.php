@@ -45,7 +45,15 @@ class SettingsController extends Controller
         $setting['tnp_linkedin'] = $request->tnp_linkedin;
         $setting['tnp_googleplus'] = $request->tnp_googleplus;
         $setting['tnp_address'] = $request->tnp_address;
-
+        if(isset($request->registrations_open)){
+            if($request->registrations_open == 'on'){
+                $setting['registrations_open'] = 1;
+            }
+        }else{
+            $setting['registrations_open'] = 0;
+        }
+        
+ 
         foreach ($setting as $key => $value) {
             $setting = Settings::where('metaname','=',$key)->first();
             $setting->metavalue = $value;

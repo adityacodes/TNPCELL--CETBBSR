@@ -84,7 +84,7 @@
             unsaved = false;
         });
 
-        $('#branchname, #chosen').change(function(){
+        $('#branchname, #chosen, #postid, #textarea-wysihtml5').change(function(){
              unsaved = false;
         });
 

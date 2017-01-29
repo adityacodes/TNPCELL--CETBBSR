@@ -9,7 +9,7 @@ use App\Post;
 use App\TNP, Auth, Session;
 use App\Applied;
 use View, Validator;
-use DB, Excel;
+use DB, Excel, Mail;
 use App\User;
 use App\Branch;
 
@@ -439,7 +439,8 @@ class AdminController extends Controller
          }
     }
 
-    public function getsendMail(){
+    public function getsendMail()
+    {
       $branches = Branch::all();
       return view('admin.sendemail')->withBranches($branches);
     }
@@ -448,16 +449,19 @@ class AdminController extends Controller
 
         //Collect a chunk of 100 and send them email
         $subject = $request->subject;
-
-        DB::table('t_n_p_s')->where('branch', '=', $request->branch)->chunk(100, function($students){
+        $body = $request->body;
+        DB::table('t_n_p_s')->where('branch', '=', $request->branch)
+                            ->chunk(100, function($students) use ($body, $subject){
 
             foreach ($students as $student) {
-              Mail::send('email.groupmail', ['body' => $body, 'regdno' => $student->regdno, 'name' => $student->name], function($message) use ($student, $subject) {
+              Mail::send('email.groupmail', array('body' => $body, 'regdno' => $student->regdno, 'name' => $student->name), function($message) use ($student, $subject) {
                     $message->from('admin@cetbtnp.com', 'CETB-TNP');
                     $message->to($student->email, $student->name)->subject($subject);
                 });   
             }
         });
+        Session::flash('success', 'Emails were successfully sent.');
+        return redirect()->route('admin.sendgroupemail');
 
     }
 

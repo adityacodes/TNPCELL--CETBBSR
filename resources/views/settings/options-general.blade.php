@@ -32,6 +32,17 @@
                                     <div class="col-md-3">
                                             <img class="pull-right" style="max-height: 100px;" src="/users/img/logo.jpg">
                                     </div>
+
+                                        <div class="col-md-4">
+                                            <label class="pull-right">Registrations?&nbsp;&nbsp;&nbsp; 
+                                            <div class="togglebutton toggle-danger pull-right">
+                                                <label>
+                                                    <input type="checkbox" name="registrations_open" 
+                                                    @if($settings['registrations_open']) checked="" @endif><span class="toggle"></span>
+                                                </label>
+                                            </div>
+                                            </label>
+                                        </div>
                                 </div>
 
                                 <div class="row">
@@ -122,6 +133,7 @@
                                                 </textarea>
                                         </div>
                                 </div>
+                                
                                 <div class="text-center">
                                     {!! Form::submit('Save Settings', array('class' => 'btn btn-info btn-fill btn-wd', 'id' => 'submit'  )) !!}
                                 </div>
@@ -134,5 +146,15 @@
     </div>
 	
 
+
+@endsection
+
+@section('scripts')
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.icons').remove();
+        });
+        
+    </script>
 
 @endsection

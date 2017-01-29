@@ -22,7 +22,7 @@
                         <div class="content" >
                             <!-- Content goes here -->
                             <div class="bootstrap-admin-no-table-panel-content bootstrap-admin-panel-content collapse in">
-                                {!!Form::open(array('method' => 'POST','url' => 'admin/import', 'files' => true, 'class' => 'form-horizontal'))!!}
+                                {!!Form::open(array('method' => 'POST','url' => 'admin/import', 'files' => true, 'class' => 'form-horizontal', 'autocomplete' => 'off', 'enctype' => 'multipart/form-data' ))!!}
 
                                         <fieldset>
                                             <legend>IMPORT FILE</legend>
