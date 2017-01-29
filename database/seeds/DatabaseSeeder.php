@@ -26,6 +26,11 @@ class DatabaseSeeder extends Seeder
         $this->call(NoticesTableSeeder::class);
         // $this->call(OfficersTableSeeder::class);
         // $this->call(SlidersTableSeeder::class);
+
+        DB::table('settings')->insert([
+                'metaname' => 'registrations_open',
+                'metavalue' => '1',
+            ]);
    
     }
 }
