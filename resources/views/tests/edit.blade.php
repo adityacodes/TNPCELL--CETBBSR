@@ -1,11 +1,10 @@
 @extends('user')
 
-@section('title','Edit TNP U<sup class="required">*</sup>ser')
+@section('title','Edit Test TNP User')
 
 @section('content')
  <div class="row">
         <div class="card">
-        	@include('partials._tnpsettingsnav')
 
 		    <div class="col-lg-12">
 
@@ -13,7 +12,7 @@
 				    <div class="content" >              
 				    	<!-- Content goes here -->
 				    	<fieldset>
-		    				{!! Form::model($tnpuser, ['route' => ['admin.tnpuser.update', $tnpuser->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '' , 'files' => 'true', 'autocomplete' => 'off']) !!}
+		    				{!! Form::model($test, ['route' => ['admin.test.update', $test->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '' , 'files' => 'true', 'autocomplete' => 'off']) !!}
 		    	
 						    <div class="col-md-8">
 						        
@@ -31,7 +30,7 @@
 								    			<label class="control-label pull-right" for="title">Student Name:<sup class="required">*</sup></label>
 								    		</div>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('name', null, array('class' => 'form-control border-input', 'id' => 'tnpuser_name', 'placeholder' => 'Enter name here','maxlength' => '255' )) !!}
+								    			{!! Form::text('name', null, array('class' => 'form-control border-input', 'id' => 'test_name', 'placeholder' => 'Enter name here','maxlength' => '255' )) !!}
 								    		</div>
 								    	</div>
 
@@ -219,13 +218,13 @@
 						            <div class="content-box-large box-with-header">
 
 						            	<div class="well">
-						            		<p><b>Created at :</b>{{ date('M j, Y H:ia', strtotime($tnpuser->created_at)) }}</p><br/>
-						            		<p><b>Updated at :</b>{{ date('M j, Y H:ia', strtotime($tnpuser->updated_at)) }}</p><br/>
+						            		<p><b>Created at :</b>{{ date('M j, Y H:ia', strtotime($test->created_at)) }}</p><br/>
+						            		<p><b>Updated at :</b>{{ date('M j, Y H:ia', strtotime($test->updated_at)) }}</p><br/>
 
 						            	</div>
 
 						            	<div>
-						            		{!! Html::linkRoute('admin.tnpuser.index', 'Cancel', array($tnpuser->id), array('class' =>'btn btn-primary btn-block')) !!}
+						            		{!! Html::linkRoute('admin.test.index', 'Cancel', array($test->id), array('class' =>'btn btn-primary btn-block')) !!}
 						            		
 							            	{!! Form::submit('Update', array('class' => 'btn btn-success btn-block', 'id' => 'submit'  ))  !!}
 						            	</div>

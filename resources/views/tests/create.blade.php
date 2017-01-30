@@ -1,6 +1,6 @@
 @extends('user')
 
-@section('title',' Create New tnpuser')
+@section('title',' Create New TEST')
 
 @section('stylesheets')
 <style>
@@ -14,7 +14,6 @@
 @section('content')
      <div class="row">
         <div class="card">
-                @include('partials._tnpsettingsnav')
 
                 <div class="col-lg-12">
                		 <div class="card tab-content">  
@@ -23,21 +22,21 @@
 			                        <i class="ti-pencil"></i>
 			                           
 			                </div>
-			                <h4 class="title" style="font-weight: bold;">CREATE NEW Tnp User</h4>
+			                <h4 class="title" style="font-weight: bold;">CREATE NEW TEST TNP USER</h4>
  
-			                <button type="button" class="btn btn-primary pull-right" onclick="window.location='{{ route("admin.tnpuser.index") }}'">Cancel</button>
+			                <button type="button" class="btn btn-primary pull-right" onclick="window.location='{{ route("admin.test.index") }}'">Cancel</button>
 			                <p class="category">Items marked <sup class="required">*</sup> are required.</p>
 			            </div>
 		                 
 		                <div class="content">
 		                <h4>
-					    	{!! Form::open(array('route' => 'admin.tnpuser.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'enctype' => 'multipart/form-data', 'files' => 'true', 'autocomplete' => 'off')) !!}
+					    	{!! Form::open(array('route' => 'admin.test.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'enctype' => 'multipart/form-data', 'files' => 'true', 'autocomplete' => 'off')) !!}
 					                    <div class="form-group">
 					                    	<div class="col-lg-3">
 								    			<label class="control-label pull-right" for="title">Student Name: <sup class="required">*</sup></label>
 								    		</div>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('name', null, array('class' => 'form-control border-input', 'id' => 'tnpuser_name', 'placeholder' => 'Enter name here','maxlength' => '255' )) !!}
+								    			{!! Form::text('name', null, array('class' => 'form-control border-input', 'id' => 'test_name', 'placeholder' => 'Enter name here','maxlength' => '255' )) !!}
 								    		</div>
 								    	</div>
 
@@ -82,9 +81,9 @@
 								    	</div>
 
 								    	<div class="form-group">
-								    		<label class="col-lg-3 control-label" for="tenthpercentage">Tenth Percentage :<sup class="required">*</sup></label>
+								    		<label class="col-lg-3 control-label" for="tenthpercent">Tenth Percentage :<sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('tenthpercentage', null, array('class' => 'form-control border-input', 'id' => 'tenthpercentage', 'placeholder' => 'Enter value here ', 'required' => '' )) !!}
+								    			{!! Form::text('tenthpercent', null, array('class' => 'form-control border-input', 'id' => 'tenthpercent', 'placeholder' => 'Enter value here ', 'required' => '' )) !!}
 								    		</div>
 								    	</div>
 
@@ -103,9 +102,9 @@
 								    	</div>
 
 								    	<div class="form-group">
-								    		<label class="col-lg-3 control-label" for="twelthpercentage">Twelth Percentage :<sup class="required">*</sup></label>
+								    		<label class="col-lg-3 control-label" for="twelthpercent">Twelth Percentage :<sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('twelthpercentage', null, array('class' => 'form-control border-input', 'id' => 'twelthpercentage', 'placeholder' => 'Enter value here ' )) !!}
+								    			{!! Form::text('twelthpercent', null, array('class' => 'form-control border-input', 'id' => 'twelthpercent', 'placeholder' => 'Enter value here ' )) !!}
 								    		</div>
 								    	</div>
 

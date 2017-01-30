@@ -1,6 +1,6 @@
 @extends('user')
 
-@section('title','Edit TNP U<sup class="required">*</sup>ser')
+@section('title','Edit TNP User')
 
 @section('content')
  <div class="row">

@@ -130,6 +130,7 @@
 		Route::resource('admin/link', 'LinkController');
 		Route::resource('admin/guideline', 'GuidelineController');
 		Route::resource('admin/fest', 'FestController');
+		Route::resource('admin/test', 'TestTNPController');
 	//Export and Import features in Admin Panel
 	Route::get('admin/export/excel/{postid}', [
 		'as' => 'admin.export.excel',

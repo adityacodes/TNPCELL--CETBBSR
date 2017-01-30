@@ -94,15 +94,15 @@ class TnpUserController extends Controller
               $tnp->dob = $request->dob;
               $tnp->gender  = $request->gender;
 
-              $tnp->tenthyear = $request->tenth_year;
-              $tnp->tenthpercent = $request->tenth_percent;
-              $tnp->tenthboard  = $request->tenth_board;
+              $tnp->tenthyear = $request->tenthyear;
+              $tnp->tenthpercent = $request->tenthpercent;
+              $tnp->tenthboard  = $request->tenthboard;
 
-              if(!empty($request->diploma_year)){
+              if(!empty($request->diplomayear)){
                 //Diploma request
-                    $tnp->diplomayear = $request->diploma_year;
-                    $tnp->diplomapercent = $request->diploma_percent;
-                    $tnp->diplomaboard = $request->diploma_board;
+                    $tnp->diplomayear = $request->diplomayear;
+                    $tnp->diplomapercent = $request->diplomapercent;
+                    $tnp->diplomaboard = $request->diplomaboard;
                     $tnp->twelthyear = " ";
                     $tnp->twelthpercent = " ";
                     $tnp->twelthboard = " ";
@@ -112,9 +112,9 @@ class TnpUserController extends Controller
                   $tnp->diplomayear = " ";
                   $tnp->diplomapercent = " ";
                   $tnp->diplomaboard = " ";
-                  $tnp->twelthyear = $request->twelth_year;
-                  $tnp->twelthpercent = $request->twelth_percent;
-                  $tnp->twelthboard = $request->twelth_board;
+                  $tnp->twelthyear = $request->twelthyear;
+                  $tnp->twelthpercent = $request->twelthpercent;
+                  $tnp->twelthboard = $request->twelthboard;
               }
               
               $tnp->cgpa = $request->cgpa;
@@ -136,7 +136,6 @@ class TnpUserController extends Controller
               }
               $tnp->internships  = $request->internships;
               $tnp->email = $request->email;
-              $tnp->timestamps = false;
 
               $tnp->save();
 
@@ -219,7 +218,7 @@ class TnpUserController extends Controller
               $tnp->tenthpercent = $request->tenthpercent;
               $tnp->tenthboard  = $request->tenthboard;
 
-              if(!empty($request->diploma_year)){
+              if(!empty($request->diplomayear)){
                 //Diploma request
                     $tnp->diplomayear = $request->diplomayear;
                     $tnp->diplomapercent = $request->diplomapercent;
@@ -247,7 +246,7 @@ class TnpUserController extends Controller
               $tnp->mname = $request->mname;
               $tnp->moccupation  =  $request->moccupation;
 
-              if(empty($request->relative_name)){
+              if(empty($request->rname)){
                   $tnp->rname = " ";
                   $tnp->roccupation  = " ";
               }
@@ -257,7 +256,6 @@ class TnpUserController extends Controller
               }
               $tnp->internships  = $request->internships;
               $tnp->email = $request->email;
-              $tnp->timestamps = false;
 
               $tnp->save();
 

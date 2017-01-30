@@ -1,6 +1,6 @@
 @extends('user')
 
-@section('title',' All TNP Users')
+@section('title',' All TEST TNP Users')
 
 @section('stylesheets')
 <style type="text/css">
@@ -31,15 +31,14 @@
 
 <div class="row">
 	<div class="card">
-		@include('partials._tnpsettingsnav')
 		<div class="col-lg-12">
 			<div class="card" id="my-tab-content" class="tab-content">
 
 
 				<div class="header">
-					<h4 class="title">All TNP Users
-						<a href="{{ route('admin.tnpuser.create') }}" class="btn btn-success pull-right"><i class="ti-plus"></i> NEW TNP USER</a>
-						<div ><b>Total TNP Users:</b><span class="badge label-success">{{$tnpusers->total()}}</span></div>
+					<h4 class="title">All TEST TNP Users
+						<a href="{{ route('admin.test.create') }}" class="btn btn-success pull-right"><i class="ti-plus"></i> NEW TEST TNP USER</a>
+						<div ><b>Total TEST TNP Users:</b><span class="badge label-success">{{$tests->total()}}</span></div>
 					</h4>
 					<hr>
 					<input type="text" id="search" name="search" placeholder="Search..">
@@ -61,23 +60,23 @@
 								</tr>
 							</thead>
 							<tbody id="result"> 	
-								@foreach ($tnpusers as $tnpuser)
+								@foreach ($tests as $test)
 								<tr>
-									<td>{{ $tnpuser->id }}</td>
-									<td>{{ $tnpuser->name }}</td>
-									<td>{{ $tnpuser->regdno }}</td>
-									<td>{{ $tnpuser->branch }}</td>
-									<td>{{ $tnpuser->cgpa }}</td>
-									<td>{{ $tnpuser->backlog }}</td>
+									<td>{{ $test->id }}</td>
+									<td>{{ $test->name }}</td>
+									<td>{{ $test->regdno }}</td>
+									<td>{{ $test->branch }}</td>
+									<td>{{ $test->cgpa }}</td>
+									<td>{{ $test->backlog }}</td>
 
 									<td class="actions">
-										<a href="{{ route('admin.tnpuser.show', $tnpuser->id)}}">
+										<a href="{{ route('admin.test.show', $test->id)}}">
 											<button class="btn btn-md btn-primary">
 												<h6><i class="ti-eye" aria-hidden="true"></i>
 													View</h6>
 												</button>
 											</a>
-											<a href="{{ route('admin.tnpuser.edit', $tnpuser->id) }}">
+											<a href="{{ route('admin.test.edit', $test->id) }}">
 												<button class="btn btn-md btn-warning">
 													<h6><i class="ti-pencil"></i>
 														Edit</h6>
@@ -92,7 +91,7 @@
 							</div>
 
 							<div class="text-center">
-								{!! $tnpusers->render() !!}
+								{!! $tests->render() !!}
 							</div>
 						</h5>
 				</div>
@@ -106,7 +105,7 @@
 
 
 @section('scripts')
-		<script type="text/javascript">
+		{{-- <script type="text/javascript">
 			$(document).ready(function() {
 				var token = $('meta[name="csrf-token"]').val();
 				$.ajaxSetup({
@@ -138,5 +137,5 @@
 				});
 
 			});
-		</script>
+		</script> --}}
 @endsection

@@ -22,6 +22,8 @@ class CreateTestsTable extends Migration
             $table->string('tenthyear',5);
             $table->string('tenthpercent',5);
             $table->string('tenthboard',6);
+            $table->boolean('isdiplomastudent');
+
             $table->string('twelthyear',5);
             $table->string('twelthpercent',5);
             $table->string('twelthboard',6);

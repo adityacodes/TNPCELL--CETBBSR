@@ -82,9 +82,9 @@
 								    	</div>
 
 								    	<div class="form-group">
-								    		<label class="col-lg-3 control-label" for="tenthpercentage">Tenth Percentage :<sup class="required">*</sup></label>
+								    		<label class="col-lg-3 control-label" for="tenthpercent">Tenth Percent :<sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('tenthpercentage', null, array('class' => 'form-control border-input', 'id' => 'tenthpercentage', 'placeholder' => 'Enter value here ', 'required' => '' )) !!}
+								    			{!! Form::text('tenthpercent', null, array('class' => 'form-control border-input', 'id' => 'tenthpercent', 'placeholder' => 'Enter value here ', 'required' => '' )) !!}
 								    		</div>
 								    	</div>
 
@@ -103,9 +103,9 @@
 								    	</div>
 
 								    	<div class="form-group">
-								    		<label class="col-lg-3 control-label" for="twelthpercentage">Twelth Percentage :<sup class="required">*</sup></label>
+								    		<label class="col-lg-3 control-label" for="twelthpercent">Twelth percent :<sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('twelthpercentage', null, array('class' => 'form-control border-input', 'id' => 'twelthpercentage', 'placeholder' => 'Enter value here ' )) !!}
+								    			{!! Form::text('twelthpercent', null, array('class' => 'form-control border-input', 'id' => 'twelthpercent', 'placeholder' => 'Enter value here ' )) !!}
 								    		</div>
 								    	</div>
 
@@ -124,9 +124,9 @@
 								    	</div>
 
 								    	<div class="form-group">
-								    		<label class="col-lg-3 control-label" for="diplomapercentage">Diploma Percentage :<sup class="required">*</sup></label>
+								    		<label class="col-lg-3 control-label" for="diplomapercent">Diploma percent :<sup class="required">*</sup></label>
 								    		<div class="col-lg-4">
-								    			{!! Form::text('diplomapercentage', null, array('class' => 'form-control border-input', 'id' => 'diplomapercentage', 'placeholder' => 'Enter value here ' )) !!}
+								    			{!! Form::text('diplomapercent', null, array('class' => 'form-control border-input', 'id' => 'diplomapercent', 'placeholder' => 'Enter value here ' )) !!}
 								    		</div>
 								    	</div>
 
