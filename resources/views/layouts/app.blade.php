@@ -15,6 +15,9 @@
 
     <!-- CSS FILES -->
     <link href="{{asset('main/css/navbar.css')}}" rel="stylesheet"/>
+
+    @include('partials._userfonts')
+
     <link rel="stylesheet" type="text/css" href="{{asset('main/css/main1.css')}}">
     <link href="{{asset('main/css/style.css')}}" rel="stylesheet" type="text/css" media="all">
 
@@ -38,7 +41,7 @@
            <div class="row clearfix greyishblue-bg">
                 <div class="col-md-12">
                   <div class="container img-responsive text-center" >
-                   <a href="{{url('/')}}"><img  src="/main/images/cetlogo2.png" class="w-100 h-70"></a>
+                   <a href="{{url('/')}}"><img  src="{{asset('main/images/cetlogo2.png')}}" class="w-100 h-70"></a>
                  </div><br>
                 </div>
            </div>
