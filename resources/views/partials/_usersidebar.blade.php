@@ -8,7 +8,7 @@
     <div class="sidebar-wrapper">
 
             <li class="active-pro text-center" style="background-color: white;">
-                <a href="{{url('/')}}"><img id="cetlogo" src="/users/img/logo.jpg"></a>
+                <a href="{{url('/')}}"><img id="cetlogo" src="{{asset('/users/img/logo.jpg')}}"></a>
             </li>
         <div class="logo"> 
 
