@@ -42,7 +42,7 @@
 				                    	@foreach ($sliders as $slider)
 					                        <tr>
 					                            <td>{{ $slider->id }}</td>
-					                            <td><img width="300" height="150" src="/uploads/slider/{{ $slider->slider_image }}"></td>
+					                            <td><img width="300" height="150" src="{{url('/uploads/slider')}}/{{ $slider->slider_image }}"></td>
 					                            <td>{{ date('M j, Y H:i:s', strtotime($slider->created_at)) }}</td>
 					                            <td>{{ date('M j, Y H:i:s', strtotime($slider->updated_at)) }}</td>
 					                            <td class="actions">

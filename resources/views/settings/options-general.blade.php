@@ -30,7 +30,7 @@
                                             </div>
                                     </div>
                                     <div class="col-md-3">
-                                            <img class="pull-right" style="max-height: 100px;" src="/users/img/logo.jpg">
+                                            <img class="pull-right" style="max-height: 100px;" src="{{url('/users/img/logo.jpg')}}">
                                     </div>
 
                                         <div class="col-md-4">
