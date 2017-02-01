@@ -9,7 +9,7 @@
 		box-sizing: border-box;
 		border: 2px solid #ccc;
 		border-radius: 4px;
-		background-image: url('/template/search.png');
+		background-image: url('{{asset('/template/search.png')}}');
 		font-size: 16px;
 		background-color: white;
 		background-position: 10px 10px; 
