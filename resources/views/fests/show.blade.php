@@ -43,7 +43,7 @@
 		                                    <tr>
 		                                        <td>3</td>
 		                                        <td>Fest Image: </td>
-		                                        <td colspan="2"><img width="300" height="150" src="/uploads/fest/{{ $fest->fest_image }}"></td>
+		                                        <td colspan="2"><img width="300" height="150" src="{{url('/uploads/fest')}}/{{ $fest->fest_image }}"></td>
 		                                    </tr>
 						                </tbody>
 						            </table>
