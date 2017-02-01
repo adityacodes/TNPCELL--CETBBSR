@@ -10,7 +10,9 @@ use View;
 use App\TNP;
 use App\Applied;
 
-class NoticeController extends Controller {
+class NoticeController extends Controller 
+{
+
 
 	/**
 	 * Create a new controller instance.

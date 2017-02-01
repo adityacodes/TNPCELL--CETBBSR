@@ -15,7 +15,7 @@
 	                <p class="category">24 Hours performance</p>
 	            </div>
 	            <div class="content">
-	            	<img width="500" height="500" src="/uploads/post/{{$post->image}}" style="max-width: 100%;height: auto;" class="clearfix">
+	            	<img width="500" height="500" src="{{url('/uploads/post')}}/{{$post->image}}" style="max-width: 100%;height: auto;" class="clearfix">
 	                <h5>{{$post->body}}</h5>
 
 	                <div class="footer">

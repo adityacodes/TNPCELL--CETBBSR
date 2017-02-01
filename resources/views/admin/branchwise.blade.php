@@ -103,7 +103,7 @@
 				$('#result').empty();
 				
 				$.ajax({
-					url: 'branchwise',
+					url: '{{ url('admin/branchwise') }}',
 					type: 'PUT',
 					data: "branchname=" + $("#branchname :selected").val() + "&_token=" + token, 
 					success: function(result){
@@ -117,7 +117,7 @@
 			function startsearching()
 				{
 					$.ajax({
-						url: 'searchkeyword',
+						url: '{{ url('admin/searchkeyword') }}',
 						type: 'PUT',
 						data: "keyword=" + $("#search").val() + "&branchname=" + $("#branchname :selected").val() + "&_token=" + token, 
 						success: function(result){

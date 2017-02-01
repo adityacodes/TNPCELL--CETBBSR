@@ -75,11 +75,11 @@
 				//$(this).parents('.panel').toggleClass('panel-warning').toggleClass('panel-default');
 				$('#row2').show();
 				$('#body').empty();
-				$('#xls').attr("href","/admin/export/excel/"+ $("#postid :selected").val());
+				$('#xls').attr("href","{{ url('/admin/export/excel') }}/"+ $("#postid :selected").val());
 				$('#body').append('<i class="fa fa-refresh fa-spin" style="float:right;"></i>');
 				var token = $('input[name="_token"]').val();
 				$.ajax({
-					url: 'applicants',
+					url: '{{ url('admin/applicants') }}',
 					type: 'PUT',
 					data: "postid=" + $("#postid :selected").val() + "&_token=" + token, 
 					success: function(result){

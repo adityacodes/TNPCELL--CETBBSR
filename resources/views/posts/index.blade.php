@@ -35,7 +35,7 @@
 	                            <td>{{ substr($post->title,0,20) }}</td>
 	                            <td>{{ substr($post->body,0,20) }}{{ strlen($post->body) > 10 ? "..." : ""}}</td>
 	                            <td>
-	                            <img width="150" height="100" src="/uploads/post/{{ $post->image }}">
+	                            <img width="150" height="100" src="{{url('/uploads/post')}}/{{ $post->image }}">
 
 	                            </td>
 	                            <td>{{ date('M j, Y H:i:s', strtotime($post->created_at)) }}</td>

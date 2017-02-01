@@ -49,7 +49,7 @@
 				                                    <tr>
 				                                        <td>5</td>
 				                                        <td>officer Image</td>
-				                                        <td colspan="2"><a href="/uploads/officer/{{ $officer->officer_image}}">{{ $officer->officer_image}}</a></td>
+				                                        <td colspan="2"><a href="{{ url('/uploads/officer') }}/{{ $officer->officer_image}}">{{ $officer->officer_image}}</a></td>
 				                                    </tr>
 				                                    
 				                                </tbody>

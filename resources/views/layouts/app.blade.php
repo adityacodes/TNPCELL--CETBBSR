@@ -7,19 +7,19 @@
     <title>TNP-CELL | College Of Engineering &amp; Technology</title>
 
     <!-- Favicon And Shortcut Images -->
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('/favicon.ico')}}" type="image/x-icon">
 
     <!-- Bootstrap -->
-    <link href="{{URL::to('main/css/bootstrap.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('main/css/bootstrap.css')}}" rel="stylesheet" type="text/css">
 
     <!-- CSS FILES -->
-    <link href="{{URL::to('main/css/navbar.css')}}" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="{{URL::to('main/css/main1.css')}}">
-    <link href="{{URL::to('main/css/style.css')}}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{asset('main/css/navbar.css')}}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('main/css/main1.css')}}">
+    <link href="{{asset('main/css/style.css')}}" rel="stylesheet" type="text/css" media="all">
 
     <!--font-Awesome-->
-    <link rel="stylesheet" href="{{URL::to('main/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('main/css/font-awesome.min.css')}}">
     <!--[if lt IE 9]>
        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -38,7 +38,7 @@
            <div class="row clearfix greyishblue-bg">
                 <div class="col-md-12">
                   <div class="container img-responsive text-center" >
-                   <a href="/"><img  src="/main/images/cetlogo2.png" class="w-100 h-70"></a>
+                   <a href="{{url('/')}}"><img  src="/main/images/cetlogo2.png" class="w-100 h-70"></a>
                  </div><br>
                 </div>
            </div>
@@ -58,38 +58,38 @@
                     <div class="collapse navbar-collapse main-nav" id="bs-navbar-collapse-1">           
                       <ul class="nav navbar-nav white-color">
                         <li class="{{Request::is('/')? "active" : ""}}">
-                          <a href="/"><i class="fa fa-btn fa-home"></i> Home</a>
+                          <a href="{{url('/')}}"><i class="fa fa-btn fa-home"></i> Home</a>
                         </li>
 
                         <li class="{{Request::is('whycet')? "active" : ""}}">
-                          <a href="/whycet"> <i class="fa fa-btn fa-question-circle"></i> Why Recruit ?</a>
+                          <a href="{{url('/whycet')}}"> <i class="fa fa-btn fa-question-circle"></i> Why Recruit ?</a>
                         </li>
 
                         <li class="{{Request::is('procedure/*')? "active" : ""}}">
-                          <a href="/procedure/companies"><i class="fa fa-suitcase"></i> Companies</a>
+                          <a href="{{url('/procedure/companies')}}"><i class="fa fa-suitcase"></i> Companies</a>
                         </li>
 
                         <li class="{{Request::is('contact/office')? "active" : ""}}">
-                          <a href="/contact/office"><i class="fa fa-building"></i> Placement Office</a>         
+                          <a href="{{url('/contact/office')}}"><i class="fa fa-building"></i> Placement Office</a>         
                         </li>
 
                         <li class="{{Request::is('contact/location')? "active" : ""}}">
-                          <a href="/contact/location"><i class="fa fa-map-marker"></i> Location</a>        
+                          <a href="{{url('/contact/location')}}"><i class="fa fa-map-marker"></i> Location</a>        
                         </li>
                         <li class="{{ Request::is('our-alumni')? "active" : ""}}">
-                          <a href="/our-alumni"><i class="fa fa-user"></i> Our Alumni</a>
+                          <a href="{{url('/our-alumni')}}"><i class="fa fa-user"></i> Our Alumni</a>
                         </li>
                         <li class="{{ Request::is('fests')? "active" : ""}}">
-                          <a href="/fests"><i class="fa fa-bookmark fa-2"></i> Fests</a>
+                          <a href="{{url('/fests')}}"><i class="fa fa-bookmark fa-2"></i> Fests</a>
                         </li>
 
                         <li class="{{ Request::is('login')? "active" : ""}}">
                           @if (Auth::guest())
 
-                          <a href="/login"><i class="fa fa-btn fa-sign-in"></i> Login</a>
+                          <a href="{{url('/login')}}"><i class="fa fa-btn fa-sign-in"></i> Login</a>
 
                           @else
-                          <a href="/user/dashboard"><i class="fa fa-btn fa-sign-in"></i> Dashboard</a>
+                          <a href="{{url('/user/dashboard')}}"><i class="fa fa-btn fa-sign-in"></i> Dashboard</a>
 
                           @endif
                         </li>
@@ -160,9 +160,9 @@
                               </div>
                               <div class="footer_link2">
                                 <ul>
-                                  <li><a href="/contact/location">How to reach</a></li>
-                                  <li><a href="/campus-map">Campus Map</a></li>
-                                  <li><a href="/files/comdir.pdf" target="_blank">Communication Directory</a></li>
+                                  <li><a href="{{url('/contact/location')}}">How to reach</a></li>
+                                  <li><a href="{{url('/')}}">Campus Map</a></li>
+                                  <li><a href="{{url('/')}}" target="_blank">Communication Directory</a></li>
                                 </ul>
                               </div>
                       </div>
@@ -213,8 +213,8 @@
           </div>
 
 
-          <script type="text/javascript" src="/js/jquery.js"></script>
-          <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+          <script type="text/javascript" src="{{asset('js/jquery.js')}}"></script>
+          <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
           @yield('scripts')
   </body>
 </html>

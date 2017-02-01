@@ -11,6 +11,8 @@ use App\Applied;
 
 class PostController extends Controller {
 
+	private $uploadPath = 'uploads/post';
+	
 	/**
 	 * Create a new controller instance.
 	 *
@@ -82,7 +84,7 @@ class PostController extends Controller {
 
           	if ($request->file('post_image')->isValid()) {
 	            $imageName = time().'.'.$request->file('post_image')->getClientOriginalExtension();
-	            $request->file('post_image')->move('uploads/post', $imageName);
+	            $request->file('post_image')->move($this->uploadPath, $imageName);
         	}
 	        else {
 	          // sending back with error message.
@@ -191,9 +193,9 @@ class PostController extends Controller {
         {
             if($request->file('post_image')->isValid())
             {
-                File::delete('uploads/post/'.$post->image);
+                File::delete($this->uploadPath.'/'.$post->image);
                 $imageName = time().'.'.$request->file('post_image')->getClientOriginalExtension();
-                $request->file('post_image')->move('uploads/post', $imageName);
+                $request->file('post_image')->move($this->uploadPath, $imageName);
                 $post->image = $imageName;
             }
             else{     
@@ -240,7 +242,7 @@ class PostController extends Controller {
 		$applieds = Applied::where('postid', '=', $id)->delete();
 
 		$post = Post::find($id);
-		File::delete('uploads/post/'.$post->image);
+		File::delete($this->uploadPath.'/'.$post->image);
 		$post->delete();
 
 		Session::flash('Success', 'Post Deleted Successfully');

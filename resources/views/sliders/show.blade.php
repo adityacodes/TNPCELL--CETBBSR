@@ -33,7 +33,7 @@
 		                                    <tr>
 		                                        <td>2</td>
 		                                        <td>Slider Image: </td>
-		                                        <td colspan="2"><img width="300" height="150" src="/uploads/slider/{{ $slider->slider_image }}"></td>
+		                                        <td colspan="2"><img width="300" height="150" src="{{ url('/uploads/slider') }}/{{ $slider->slider_image }}"></td>
 		                                    </tr>
 						                </tbody>
 						            </table>

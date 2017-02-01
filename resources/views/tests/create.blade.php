@@ -232,5 +232,5 @@
 @section('scripts')
 
 	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src="assets/js/bootstrap-checkbox-radio.js"></script>
+	<script src="{{asset('assets/js/bootstrap-checkbox-radio.js')}}"></script>
 @endsection

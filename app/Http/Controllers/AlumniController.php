@@ -12,6 +12,8 @@ use App\TNP, File;
 
 class AlumniController extends Controller
 {
+
+    private $uploadPath = 'uploads/alumni';
     /**
      * Create a new controller instance.
      *
@@ -34,10 +36,7 @@ class AlumniController extends Controller
      */
     public function index()
     {
-        //create a variable and store all the blog posts in it
         $alumnis = Alumni::orderBy('id', 'desc')->paginate(5);
-
-        //return a view and pass in the above variabe
         return view('alumnis.index')->withAlumnis($alumnis);
     }
 
@@ -78,7 +77,7 @@ class AlumniController extends Controller
         if ($request->file('alumni_image')->isValid()) {
 
             $imageName = time().'.'.$request->file('alumni_image')->getClientOriginalExtension();
-            $request->file('alumni_image')->move('uploads/alumni', $imageName);
+            $request->file('alumni_image')->move($this->uploadPath, $imageName);
               
         }
         else {
@@ -156,9 +155,9 @@ class AlumniController extends Controller
         {
             if($request->file('alumni_image')->isValid())
             {
-                File::delete('uploads/alumni/'.$alumni->alumni_image);
+                File::delete($this->uploadPath.'/'.$alumni->alumni_image);
                 $imageName = time().'.'.$request->file('alumni_image')->getClientOriginalExtension();
-                $request->file('alumni_image')->move('uploads/alumni', $imageName);
+                $request->file('alumni_image')->move($this->uploadPath, $imageName);
                 $alumni->alumni_image = $imageName;
             }
             else{     
@@ -195,7 +194,7 @@ class AlumniController extends Controller
     {
         
         $alumni = Alumni::find($id);
-        File::delete('uploads/alumni/'.$alumni->alumni_image);
+        File::delete($this->uploadPath.'/'.$alumni->alumni_image);
         $alumni->delete();
 
         Session::flash('Success', 'Alum Deleted Successfully');

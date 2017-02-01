@@ -79,9 +79,7 @@ class AdminController extends Controller
     public function applicantposts()
     {
         $posts = DB::table('posts')->select('id','title')->get();
-        //return a view and pass in the above variabe
         return view('admin.applicants')->with('posts',$posts);
-        //return view('admin.applicants')->withPosts($posts);
     }
 
      /**
@@ -192,10 +190,8 @@ class AdminController extends Controller
               </tr>";
             }
                 
-          }
-          
+          }        
         }
-
     }
 
     public function searchuser(Request $request)

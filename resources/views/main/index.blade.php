@@ -2,10 +2,10 @@
 
 @section('stylesheets')
 
-<link rel="stylesheet" type="text/css" href="/main/css/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="/main/css/owl.theme.css">
-<link rel="stylesheet" type="text/css" href="/main/css/owl.transitions.css">
-<link href="{{URL::to('template/css/main.css')}}" rel="stylesheet" /> 
+<link rel="stylesheet" type="text/css" href="{{url('/main/css/owl.carousel.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url('/main/css/owl.theme.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url('/main/css/owl.transitions.css')}}">
+<link href="{{url('template/css/main.css')}}" rel="stylesheet" /> 
 @endsection
 
 @section('content')
@@ -91,8 +91,8 @@
 @endsection
 
 @section('scripts')
-<script src="{{URL::to('template/js/jquery.newsTicker.min.js')}}" type="text/javascript"></script>
-<script type="text/javascript" src="{{URL::to('main/js/main.js')}}"></script>
-<script type="text/javascript" src="/main/js/owl.carousel.min.js"></script>
+<script src="{{url('template/js/jquery.newsTicker.min.js')}}" type="text/javascript"></script>
+<script type="text/javascript" src="{{url('main/js/main.js')}}"></script>
+<script type="text/javascript" src="{{url('/main/js/owl.carousel.min.js')}}"></script>
 
 @endsection

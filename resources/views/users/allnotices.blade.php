@@ -30,7 +30,7 @@
                                         {{ substr($post->body,0,250) }}{{ strlen($post->body) > 50 ? "..." : ""}}
                                         <div class="clearfix"></div>
 
-                                        <a class="action" href="/notice/{{$post->slug}}"><button type="button" class="btn btn-sm btn-primary pull-right" >See More »</button></a>
+                                        <a class="action" href="{{url('/notice')}}/{{$post->slug}}"><button type="button" class="btn btn-sm btn-primary pull-right" >See More »</button></a>
 
                                         <div class="clearfix"></div>
                                     </div>

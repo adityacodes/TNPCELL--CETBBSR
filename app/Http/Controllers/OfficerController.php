@@ -11,6 +11,9 @@ use App\TNP;
 
 class OfficerController extends Controller
 {
+
+    private $uploadPath = 'uploads/officer';
+
     /**
      * Create a new controller instance.
      *
@@ -76,7 +79,7 @@ class OfficerController extends Controller
         if ($request->file('officer_image')->isValid()) {
 
             $imageName = time().'.'.$request->officer_image->getClientOriginalExtension();
-            $request->officer_image->move('uploads/officer', $imageName);
+            $request->officer_image->move($this->uploadPath, $imageName); 
               
         }
         else {
@@ -149,9 +152,9 @@ class OfficerController extends Controller
         ));
         
         if ($request->file('officer_image')->isValid()) {
-            File::delete('uploads/officer/'.$officer->officer_image);
+            File::delete($this->uploadPath.'/'.$officer->officer_image);
             $imageName = time().'.'.$request->officer_image->getClientOriginalExtension();
-            $request->officer_image->move('uploads/officer', $imageName);
+            $request->officer_image->move($this->uploadPath, $imageName);
             $officer->officer_image = $imageName;  
         }
         else {
@@ -189,7 +192,7 @@ class OfficerController extends Controller
     {
         
         $officer = Officer::find($id);
-        File::delete('uploads/officer/'.$officer->officer_image);
+        File::delete($this->uploadPath.'/'.$officer->officer_image);
         $officer->delete();
 
         Session::flash('Success', 'Officer Deleted Successfully');

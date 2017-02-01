@@ -1,6 +1,6 @@
 @extends('user')
 
-@section('title','EDIT fest')
+@section('title','EDIT FEST')
 
 @section('content')
  <div class="row">
@@ -19,7 +19,7 @@
 						        
 
 						            <div class="content-box-header">
-								        <div class="panel-title"><h3><b>EDIT fest</b></h3></div>
+								        <div class="panel-title"><h3><b>EDIT FEST</b></h3></div>
 								    </div>
 
 						            <div class="content-box-large box-with-header">

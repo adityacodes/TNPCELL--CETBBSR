@@ -22,7 +22,7 @@
 					            	<span class="badge label-success">{{$notices->total()}}</span>
 					            	<br/><br/>
 			            				<b>URL:</b>
-			            				<a target="_blank" href="/news">{{ url('/news/') }}</a>
+			            				<a target="_blank" href="{{ url('/news/') }}">{{ url('/news/') }}</a>
 					            </div>
 				            </h4>
 				            <hr>

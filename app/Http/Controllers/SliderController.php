@@ -11,6 +11,8 @@ use Storage;
 
 class SliderController extends Controller
 {
+    private $uploadPath = 'uploads/slider';
+
     /**
      * Create a new controller instance.
      *
@@ -72,7 +74,7 @@ class SliderController extends Controller
         {
             // Image::make($request->slider_image->getRealPath())->resize(200, 200)->save($path);
             $imageName = time().'.'.$request->slider_image->getClientOriginalExtension();
-            $request->file('slider_image')->move('uploads/slider', $imageName);  
+            $request->file('slider_image')->move($this->uploadPath, $imageName);  
         }
         else {
               Session::flash('warning', 'Uploaded file is not valid');
@@ -137,9 +139,9 @@ class SliderController extends Controller
 
         if ($request->file('slider_image')->isValid()) 
         {
-            File::delete('uploads/slider/'.$slider->slider_image);
+            File::delete($this->uploadPath.'/'.$slider->slider_image);
             $imageName = time().'.'.$request->slider_image->getClientOriginalExtension();
-            $request->file('slider_image')->move('uploads/slider', $imageName);
+            $request->file('slider_image')->move($this->uploadPath, $imageName);
               
         }
         else {
@@ -170,7 +172,7 @@ class SliderController extends Controller
     {
         
         $slider = Slider::find($id);
-        File::delete('uploads/slider/'.$slider->slider_image);
+        File::delete($this->uploadPath.'/'.$slider->slider_image);
         $slider->delete();
 
         Session::flash('Success', 'Slider Deleted Successfully');

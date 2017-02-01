@@ -1,16 +1,16 @@
 
 <!--   Core JS Files   -->
-    <script src="{{URL::to('template/js/jquery-1.10.2.js')}}" type="text/javascript"></script>
-	<script src="{{URL::to('template/js/bootstrap.min.js')}}" type="text/javascript"></script>
-    <script src="{{URL::to('template/js/jquery.newsTicker.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('template/js/jquery-1.10.2.js')}}" type="text/javascript"></script>
+	<script src="{{asset('template/js/bootstrap.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('template/js/jquery.newsTicker.min.js')}}" type="text/javascript"></script>
 	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src="{{URL::to('template/js/bootstrap-checkbox-radio.js')}}"></script>
+	<script src="{{asset('template/js/bootstrap-checkbox-radio.js')}}"></script>
 
     <!--  Notifications Plugin    -->
-    <script src="{{URL::to('template/js/bootstrap-notify.js')}}"></script>
+    <script src="{{asset('template/js/bootstrap-notify.js')}}"></script>
 
     <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-	<script src="{{URL::to('template/js/paper-dashboard.js')}}"></script>
+	<script src="{{asset('template/js/paper-dashboard.js')}}"></script>
 
 	<script type="text/javascript">
     	$(document).ready(function(){

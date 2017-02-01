@@ -73,7 +73,7 @@
 				                                        <td>Notice Image</td>
 				                                        <td><</td>
 				                                        <td>
-				                                        	<img width="150" height="100" src="/uploads/post/{{$post->image}}">
+				                                        	<img width="150" height="100" src="{{ url('/uploads/post') }}/{{$post->image}}">
 				                                        </td>
 				                                    </tr>
 				                                </tbody>
@@ -103,7 +103,9 @@
 	                    
 	                    <div class="content" >
 	                        <div class="well">
-			            		<p><b>URL:</b><a target="_blank" style="word-wrap: break-word;" href="/notice/{{ $post->slug }}">{{ url('/notice/'.$post->slug) }}</a></p><br/>
+			            		<p><b>URL:</b>
+			            		<a target="_blank" style="word-wrap: break-word;" href="{{ url('/notice') }}/{{ $post->slug }}">{{ url('/notice/'.$post->slug) }}
+			            		</a></p><br/>
 			            		<p><b>Created at:</b>{{ date('M j, Y H:iA', strtotime($post->created_at)) }}</p><br/>
 			            		<p><b>Updated at:</b>{{ date('M j, Y H:iA', strtotime($post->updated_at)) }}</p><br/>
 

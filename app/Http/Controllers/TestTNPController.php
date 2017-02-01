@@ -11,6 +11,8 @@ use App\Branch, Validator;
 
 class TestTNPController extends Controller
 {
+    private $uploadPath = 'uploads/test';
+
     /**
      * Create a new controller instance.
      *

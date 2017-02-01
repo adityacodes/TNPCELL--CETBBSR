@@ -10,6 +10,9 @@ use Auth, View, App\TNP, Session;
 
 class FestController extends Controller
 {
+
+    private $uploadPath = 'uploads/fest';
+
     /**
      * Create a new controller instance.
      *
@@ -71,7 +74,7 @@ class FestController extends Controller
         {
             // Image::make($request->fest_image->getRealPath())->resize(200, 200)->save($path);
             $imageName = time().'.'.$request->fest_image->getClientOriginalExtension();
-            $request->fest_image->move(public_path('uploads/fest'), $imageName);  
+            $request->fest_image->move($this->uploadPath, $imageName);  
         }
         else {
               Session::flash('warning', 'Uploaded file is not valid');
@@ -140,9 +143,9 @@ class FestController extends Controller
 
         if ($request->file('fest_image')->isValid()) 
         {
-            File::delete('uploads/fest/'.$fest->fest_image);
+            File::delete($this->uploadPath.'/'.$fest->fest_image);
             $imageName = time().'.'.$request->fest_image->getClientOriginalExtension();
-            $request->fest_image->move(public_path('uploads/fest'), $imageName);
+            $request->fest_image->move($this->uploadPath, $imageName);
               
         }
         else {
@@ -175,7 +178,7 @@ class FestController extends Controller
     {
         
         $fest = Fest::find($id);
-        File::delete('uploads/fest/'.$fest->fest_image);
+        File::delete($this->uploadPath.'/'.$fest->fest_image);
         $fest->delete();
 
         Session::flash('Success', 'fest Deleted Successfully');

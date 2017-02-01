@@ -7,12 +7,12 @@
                 <span class="icon-bar bar2"></span>
                 <span class="icon-bar bar3"></span>
             </button>
-            <a class="navbar-brand" href="#">@yield('title')</a>
+            <a class="navbar-brand" href="{{url('#')}}">@yield('title')</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="{{url('#')}}" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="ti-panel"></i>
 						<p>Stats</p>
                     </a>
@@ -38,7 +38,7 @@
 	                                    <p class="text-center"><strong>{{$user['regdno']}}</strong></p>
 	                                    <p class="text-center small"><h5>{{$user['email']}}</h5></p>
 	                                    <p class="text-left">
-                                            <a class="btn btn-primary btn-block btn-sm" href="/logout">
+                                            <a class="btn btn-primary btn-block btn-sm" href="{{url('/logout')}}">
                                                 <i class="ti-back-right"></i>
                                                 LOGOUT
                                             </a>
@@ -52,19 +52,19 @@
                 </li>
                 <li>
                     @if(Auth::user()->isAdmin() && (Request::is('user/*') || Request::is('notice/*') ) )
-                        <a href="/admin/post" class="btn btn-primary btn-block btn-sm"><i class="ti-back-right"></i> Goto Admin Panel</a>
+                        <a href="{{url('/admin/post')}}" class="btn btn-primary btn-block btn-sm"><i class="ti-back-right"></i> Goto Admin Panel</a>
                     @else
-                        <a href="/user/profile" class="btn btn-primary btn-block btn-sm"><i class="ti-user"></i> Profile</a>
+                        <a href="{{url('/user/profile')}}" class="btn btn-primary btn-block btn-sm"><i class="ti-user"></i> Profile</a>
                  
                     @endif
                 </li>
                 <li>
                     @if(Request::is('admin/*') || Request::is('admin'))
-                        <a href="/user/dashboard" class="btn btn-primary btn-block btn-sm"><i class="ti-back-right"></i> Goto USER Panel</a>
+                        <a href="{{url('/user/dashboard')}}" class="btn btn-primary btn-block btn-sm"><i class="ti-back-right"></i> Goto USER Panel</a>
                     @endif
                 </li>
                 <li>
-                    <a class="btn btn-primary btn-block btn-sm" href="/logout">
+                    <a class="btn btn-primary btn-block btn-sm" href="{{url('/logout')}}">
 						<i class="ti-"></i>
 						<p>LOGOUT</p>
                     </a>

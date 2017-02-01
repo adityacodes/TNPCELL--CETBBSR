@@ -118,7 +118,7 @@
                             @if(empty($post->image))
                                 <i class="ti-wallet"></i>
                             @else
-                                <img height="50" width="50" src="/uploads/post/{{$post->image}}">
+                                <img height="50" width="50" src="{{url('/uploads/post')}}/{{$post->image}}">
                             @endif
                                    
                         </div>
@@ -127,7 +127,7 @@
                     </div>
                     
                     <div class="content">
-                        <img width="400" height="150" src="/uploads/post/{{$post->image}}">
+                        <img width="400" height="150" src="{{url('/uploads/post')}}/{{$post->image}}">
                         <h4><i style="font-weight: 400;" class="ti-pencil"></i>
                             
                                 {{ substr($post->body,0,50) }}{{ strlen($post->body) > 50 ? "..." : ""}}
@@ -141,7 +141,7 @@
                             </div>
                         -->
                             <div class="pull-right">
-                                <a class="action" href="/notice/{{$post->slug}}"><button type="button" class="btn btn-sm btn-primary clearfix" >See More »</button></a>
+                                <a class="action" href="{{url('/notice')}}/{{$post->slug}}"><button type="button" class="btn btn-sm btn-primary clearfix" >See More »</button></a>
                             </div>
                             <hr>
                             <div class="stats">

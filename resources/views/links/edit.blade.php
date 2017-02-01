@@ -23,6 +23,14 @@
 								    </div>
 
 						            <div class="content-box-large box-with-header">
+
+								    	<div class="form-group">
+								    		<label class="col-lg-4 control-label" for="link_subject">LINK NAME :</label>
+								    		<div class="col-lg-4">
+								    			{!! Form::text('link_name', null, array('class' => 'form-control border-input', 'id' => 'link_subject', 'placeholder' => 'Enter link name here', 'required' => '' )) !!}
+								    		</div>
+								    	</div>
+								    	
 						            	<div class="form-group">
 								    		<label class="col-lg-4 control-label" for="link_subject">LINK HREF :</label>
 								    		<div class="col-lg-4">
@@ -33,13 +41,6 @@
 								    		<label class="col-lg-4 control-label" for="link_subject">LINK TARGET :</label>
 								    		<div class="col-lg-4">
 								    			{!! Form::select('link_target', ['_blank' => 'Blank', '_self' => 'Self', '_parent' => 'Parent', '_top' => 'Top'], null, array('class' => 'form-control border-input', 'id' => 'link_target', 'required' => ''))  !!}
-								    		</div>
-								    	</div>
-
-								    	<div class="form-group">
-								    		<label class="col-lg-4 control-label" for="link_subject">LINK NAME :</label>
-								    		<div class="col-lg-4">
-								    			{!! Form::text('link_name', null, array('class' => 'form-control border-input', 'id' => 'link_subject', 'placeholder' => 'Enter link name here', 'required' => '' )) !!}
 								    		</div>
 								    	</div>
 

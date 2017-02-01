@@ -27,7 +27,7 @@
 
                     <strong class="login"><i class="fa fa-pencil"></i> Login Here</strong>
 
-                    <a href="/register">
+                    <a href="{{ url('/register') }}">
                         <button class="btn btn-primary btn-md pull-right">
                             <i class="fa fa-btn fa-user"></i> Register
                         </button>

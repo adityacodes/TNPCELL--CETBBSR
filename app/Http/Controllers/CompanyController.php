@@ -11,6 +11,8 @@ use View, Session, Auth, Validator;
 
 class CompanyController extends Controller
 {
+    private $uploadPath = 'uploads/company';
+
     /**
      * Create a new controller instance.
      *
@@ -76,7 +78,7 @@ class CompanyController extends Controller
 
         if($request->file('company_image')->isValid()){
             $imageName = time().'.'.$request->file('company_image')->getClientOriginalExtension();
-            $request->file('company_image')->move('uploads/company', $imageName);
+            $request->file('company_image')->move($this->uploadPath, $imageName);
         }
         else {
           // sending back with error message.
@@ -153,9 +155,9 @@ class CompanyController extends Controller
         if($request->hasfile('company_image'))
         {
             if($request->file('company_image')->isValid()){
-                File::delete('uploads/company/'.$company->company_image);
+                File::delete($this->uploadPath.'/'.$company->company_image);
                 $imageName = time().'.'.$request->file('company_image')->getClientOriginalExtension();
-                $request->file('company_image')->move('uploads/company', $imageName);
+                $request->file('company_image')->move($this->uploadPath, $imageName);
                 $company->company_image = $imageName;
             }
             else{     
@@ -192,7 +194,7 @@ class CompanyController extends Controller
     public function destroy($id)
     {
         $company = Company::find($id);
-        File::delete('uploads/company/'.$company->company_image);
+        File::delete($this->uploadPath.'/'.$company->company_image);
         $company->delete();
 
         Session::flash('Success', 'Alum Deleted Successfully');
