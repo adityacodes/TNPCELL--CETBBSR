@@ -1,19 +1,19 @@
 <style>
 @font-face {
     font-family: 'font1';
-    src: url('{{url('/main/fonts/Metropolis-Regular.otf')}}');
+    src: url('{{asset('/main/fonts/Metropolis-Regular.otf')}}');
 }
 
 @font-face {
     font-family: 'font2';
-    src: url('{{url('/main/fonts/dance.ttf')}}');
+    src: url('{{asset('/main/fonts/dance.ttf')}}');
 }
 @font-face {
   font-family: 'font3';
-  src: url('{{url('/main/fonts/Simpleness.otf')}}');
+  src: url('{{asset('/main/fonts/Simpleness.otf')}}');
 }
 @font-face {
   font-family: 'font4';
-  src: url('{{url('/main/fonts/Carten.otf')}}');
+  src: url('{{asset('/main/fonts/Carten.otf')}}');
 }
 </style>
