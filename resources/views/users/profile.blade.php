@@ -9,7 +9,8 @@
     <div class="col-lg-4 col-md-5">
         <div class="card card-user">
             <div class="image">
-                <img src="http://placehold.it/365x265" alt="...">
+            {{-- http://placehold.it/365x265 --}}
+                <img src="{{ asset('main/images/user/background.jpg') }}" alt="...">
             </div>
             <div class="content">
                 <div class="author">
